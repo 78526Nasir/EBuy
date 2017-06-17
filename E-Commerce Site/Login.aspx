@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Nasir Islam Sujan" />
     <link rel="stylesheet" href="~/css/main.css" type="text/css" />
-
+    
 
 </head>
 <body>
@@ -21,8 +21,12 @@
             <br />
             <asp:TextBox ID="txtPassword" runat="server" placeholder="Enter password" TextMode="Password" ></asp:TextBox>
             <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" />
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="LoginButtonClickPerformed"/>
+            <br />
+            <br />
+            <asp:Label ID="lblStatus" CssClass="label" runat="server" ></asp:Label>
         </div>
+
     </form>
 </body>
 </html>

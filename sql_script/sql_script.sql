@@ -9,4 +9,5 @@ create table Account(
 )
 
 insert into Account values('Nasir','78526');
+insert into Account values('Sujan','2544');
 

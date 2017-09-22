@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
+    <Content Include="images\user1.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -107,12 +108,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\main.css" />
+    <Content Include="css\loginStyle.css" />
     <Content Include="images\background.jpg" />
     <Content Include="images\user.png" />
     <Content Include="index.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="script\jquery-3.2.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

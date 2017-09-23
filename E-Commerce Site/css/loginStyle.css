@@ -1,6 +1,6 @@
 ﻿
 body{
-    background: #000;
+    background: #111;
 }
 
 .container{
@@ -28,6 +28,7 @@ body{
     font:bold 20px consolas;
     padding-left:30px;
     margin-bottom:30px;
+    
 }
 
 input:focus, input:active{
@@ -37,7 +38,7 @@ input:focus, input:active{
 }
 
 input[type="submit"]{
-    height:50px;
+    height:45px;
     width:150px;
     border-radius:4px;
     outline:none;

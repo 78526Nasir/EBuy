@@ -1,0 +1,37 @@
+﻿.anc-h1{
+    font-size:55px;
+    font-family: Garamond;
+    margin-top:-5px;
+    color:#333;
+    text-shadow:0px 3px 5px rgba(0,0,0,0.5);
+}
+
+.anc-container{
+    width:60%;
+    height:95%;
+    margin:20px auto;
+    border:1px solid #ddd;
+}
+
+.anc-left{
+    text-align:left;
+    width:50%;
+    height:100%;
+    font-family:Calibri;
+    float:left;
+}
+
+.anc-left h3{
+    padding:40px;
+}
+
+.anc-right{
+    height:100%;
+    width:50%;
+}
+
+.anc-right-btn{
+    height:40px;
+    width:80%;
+    margin:40px;
+}

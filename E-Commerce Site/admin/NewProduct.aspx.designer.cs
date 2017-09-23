@@ -11,7 +11,7 @@ namespace E_Commerce_Site.admin
 {
 
 
-    public partial class Test
+    public partial class NewProduct
     {
     }
 }

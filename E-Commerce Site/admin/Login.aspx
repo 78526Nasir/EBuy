@@ -7,13 +7,16 @@
     <title>Login</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nasir Islam Sujan" />
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/loginStyle.css" type="text/css" />
+    <style>
+        *{
+            box-sizing:border-box !important;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1 style="text-align:center; color: #777; font-family: Calibri;">Login to Admin Panel</h1>
+        <h1 style="text-align:center; color: #777; font-family: Garamond;">Login to admin panel</h1>
         <div class="container">
             <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/user1.png" AlternateText="User Icon"  runat="server"/>
             <br />

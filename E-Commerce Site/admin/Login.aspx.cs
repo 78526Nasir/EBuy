@@ -33,6 +33,7 @@ namespace E_Commerce_Site
                 SqlDataReader dataReader=command.ExecuteReader();
                 if (dataReader.Read())
                 {
+                    Session["EShop"] = "EShopAdmin";
                     Response.Redirect("~/index.aspx");
                 }else
                 {

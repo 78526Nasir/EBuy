@@ -2,7 +2,6 @@
     box-sizing:border-box;
 }
 
-
 body {
     margin:0px;
     padding:0px;
@@ -18,100 +17,105 @@ form{
 
 .header-container{
     width:100%;
-    height:230px;
+    height:150px;
     box-shadow:0px 0px 10px rgba(0,0,0,0.3);
     background:#fafafa;       
-}
-
-
-.top{
-    height:100px;
-    width:100%;   
     float:left;
-}
-
-.top:after{
-    content:"";
-    clear:both;
-    display:table;
 }
 
 
 .top-left{
-    width:50%;
+    width:35%;
     height:100%;
     text-align:left;
-    float:left;
+    float: left;
 }
 
 .top-left h1{
     font: bold 50px 'Old English Text MT'; 
-    text-shadow:0px 2px 5px rgba(0,0,0,0.7);
-    padding-left:130px;
+    text-shadow:0px 2px 3px rgba(0,0,0,0.7);
+    padding-left:150px;
     color: #434343;
-    
 }
+
+.top-middle{
+    width:30%;
+    float: left;
+    height:100%;
+}
+
+
 
 .top-right{
-    margin-left: 50%;
-    width: 50%;
+    width:33%;
     height: 100%;
-    text-align: right;ht;
+    float: left;
+    padding: 10px 0px;
+    text-align: center;
 }
 
-.top-right #btnLogout{
-    height:40px;
-    width:120px;
-    padding:5px;
-    margin-right: 185px;
-    margin-top: 30px;
-    border-radius:4px;
-    background:white;
-    font:bold 18px calibri;
-    outline:none;
-    border:1px solid #bbb;
-    box-shadow:0px 2px 3px rgba(0,0,0,0.3);
-    transition:all 0.33s ease;
-}
-
-.top-right #btnLogout:hover {
-   background:#eee;
-   cursor:pointer;
-   border:1px solid #999;
-
-}
-
-.header{
-    width:80%;
-    height:150px;
-    margin:0px auto;
+.top-right h1{
+    box-shadow:none;
     text-align:center;
-    
-}
-
-.left{
-    height:100%;
-    width:20%;
-    float:left;
-    text-align:center;
-}
-
-
-
-.left h1{
     font-family: Cambria;
-    font-size:30px;
+    font-size:22px;
     color: #225558;
     text-decoration:underline;
 }
 
-.left h3 code{
+.top-right code{
     background:#ddd;
     box-shadow: inset 0px 0px 2px rgba(0,0,0,0.3);
     padding:5px 15px;
     border-radius:4px;
     color: darkcyan;
 }
+
+.top-right .info-container{
+    width:40%;
+    height:100%;
+    float:left;
+    padding: 10px 0px;
+}
+
+.top-right .btn-img-container{
+    width:60%;
+    float:left;
+    text-align:right;
+    height:100%;
+}
+
+.top-right #btnLogout {
+    height: 35px;
+    width: 100px;
+    border-radius: 4px;
+    background: white;
+    margin: 10px;
+    font: bold 18px calibri;
+    outline: none;
+    border: 1px solid #bbb;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    transition: all 0.33s ease;
+}
+
+.top-right #btnLogout:hover {
+   background:#eee;
+   cursor:pointer;
+   border:1px solid #999;
+}
+
+
+.img-responsive{
+    height:auto;
+    width:50%;
+    padding:5px;
+    float:left;
+    background:white;
+    border:1px solid #ccc;
+    box-shadow:0px 0px 2px rgba(0,0,0,0.2);
+    border-radius:2px;
+}
+
 
 .middle{
     width:59%;
@@ -126,20 +130,9 @@ form{
     text-align:center;
 }
 
-.img-responsive{
-    height:auto;
-    width:55%;
-    padding:5px;
-    background:white;
-    border:1px solid #ccc;
-    box-shadow:0px 0px 2px rgba(0,0,0,0.2);
-    border-radius:2px;
-}
-
-
 .container{
     width:80%;
-    height:380px;
+    height:600px;
     margin:0px auto;
 }
 

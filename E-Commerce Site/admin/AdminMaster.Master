@@ -7,25 +7,33 @@
     <title>Admin</title>
     <meta charset="utf-8" />
     <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>--%>
-    <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css"/>
-    <link rel="stylesheet" type="text/css" href="~/css/ANC.css"/>
+    <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ANC.css" />
 
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="header-container">
-            <div class="top">
-                <div class="top-left">
-                    <h1>E-Shopping</h1>
+            <div class="top-left">
+                <h1>E-Shopping</h1>
+            </div>
+            <div class="top-middle">
+
+            </div>
+            <div class="top-right">
+                <div class="info-container">
+                    <h1>Admin Panel</h1>
+                    <h5><code>Nasir Islam Sujan</code></h5>
                 </div>
-                <div class="top-right">
+                <div class="btn-img-container">
+                    <img class="img-responsive"  src="../images/user.png" alt="user" />
                     <asp:Button ID="btnLogout" Text="Logout" runat="server" />
                 </div>
             </div>
-            <div class="header">
+
+            <%--<div class="header">
                 <div class="left">
-                    <h1>Admin Panel</h1>
-                    <h3><code>Nasir Islam Sujan</code></h3>
+                    
                 </div>
                 <div class="middle">
                     <asp:ContentPlaceHolder ID="middleContent" runat="server">
@@ -34,14 +42,13 @@
                 </div>
                 <div class="right">
                     <div class="right-top">
-                        <img class="img-responsive" src="../images/user.png" alt="user" />
+                        
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
-        
             </asp:ContentPlaceHolder>
         </div>
         <div class="footer">

@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace E_Commerce_Site.admin
 {
-    public partial class AdminMaster : System.Web.UI.MasterPage
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["EShop"] == null)
-            //{
-            //    Response.Redirect("~/admin/Login.aspx");
-            //}
-        }
 
-        
+        }
     }
 }

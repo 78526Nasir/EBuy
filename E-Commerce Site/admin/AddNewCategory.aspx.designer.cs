@@ -13,12 +13,21 @@ namespace E_Commerce_Site.admin {
     public partial class EditCategory {
         
         /// <summary>
-        /// txtNewCategory control.
+        /// lblAddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewCategory;
+        protected global::System.Web.UI.WebControls.Label lblAddCategory;
+        
+        /// <summary>
+        /// txtCategoryName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
     }
 }

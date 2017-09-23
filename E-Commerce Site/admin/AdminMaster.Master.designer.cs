@@ -31,15 +31,6 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.Button btnLogout;
         
         /// <summary>
-        /// middleContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder middleContent;
-        
-        /// <summary>
         /// ContentPlaceHolder control.
         /// </summary>
         /// <remarks>

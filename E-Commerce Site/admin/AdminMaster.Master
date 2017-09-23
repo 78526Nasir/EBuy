@@ -27,7 +27,9 @@
                     <h3><code>Nasir Islam Sujan</code></h3>
                 </div>
                 <div class="middle">
-                    
+                    <asp:ContentPlaceHolder ID="middleContent" runat="server">
+
+                    </asp:ContentPlaceHolder>
                 </div>
                 <div class="right">
                     <div class="right-top">

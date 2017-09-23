@@ -94,8 +94,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\EditCategory.aspx" />
-    <Content Include="admin\NewProduct.aspx" />
     <Content Include="admin\Test.aspx" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\style.css" />
@@ -131,20 +129,6 @@
     </Compile>
     <Compile Include="admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="admin\EditCategory.aspx.cs">
-      <DependentUpon>EditCategory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\EditCategory.aspx.designer.cs">
-      <DependentUpon>EditCategory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\NewProduct.aspx.cs">
-      <DependentUpon>NewProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\NewProduct.aspx.designer.cs">
-      <DependentUpon>NewProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>

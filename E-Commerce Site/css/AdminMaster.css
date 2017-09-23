@@ -107,7 +107,8 @@ form{
 }
 
 .left h3 code{
-    background:#ccc;
+    background:#ddd;
+    box-shadow: inset 0px 0px 2px rgba(0,0,0,0.3);
     padding:5px 15px;
     border-radius:4px;
     color: darkcyan;

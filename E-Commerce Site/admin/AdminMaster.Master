@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="E_Commerce_Site.admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin</title>
+    <meta charset="utf-8" />
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>--%>
+    <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css"/>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header-container">
+            <div class="top">
+                <div class="top-left">
+                    <h1>E-Shopping</h1>
+                </div>
+                <div class="top-right">
+                    <asp:Button ID="btnLogout" Text="Logout" runat="server" />
+                </div>
+            </div>
+            <div class="header">
+                <div class="left">
+                    <h1>Admin Panel</h1>
+                    <h3><code>Nasir Islam Sujan</code></h3>
+                </div>
+                <div class="middle">
+                    
+                </div>
+                <div class="right">
+                    <div class="right-top">
+                        <img class="img-responsive" src="../images/user.png" alt="user" />
+                    </div>
+                    <div class="adminName"> 
+                        <asp:Label ID="lblAdminName" runat="server" Text="Nasir Islam Sujan"></asp:Label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <div class="copyright">
+                <code>This website is designed and created by <a href="https://github.com/78526Nasir" target="_blank">Nasir Islam Sujan</a> &copy; 2017</code>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1 class="title1">Login to Admin Panel</h1>
+        <h1 style="text-align:center; color: #777; font-family: Calibri;">Login to Admin Panel</h1>
         <div class="container">
             <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/user1.png" AlternateText="User Icon"  runat="server"/>
             <br />

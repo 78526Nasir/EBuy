@@ -1,0 +1,164 @@
+﻿*{
+    box-sizing:border-box;
+}
+
+
+body {
+    margin:0px;
+    padding:0px;
+    background:white;
+    font-family: Calibri, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form{
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+
+.header-container{
+    width:100%;
+    height:300px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+    background:#fafafa;       
+}
+
+
+.top{
+    height:100px;
+    width:100%;   
+    float:left;
+}
+
+.top:after{
+    content:"";
+    clear:both;
+    display:table;
+}
+
+
+.top-left{
+    width:50%;
+    height:100%;
+    text-align:left;
+    float:left;
+}
+
+.top-left h1{
+    font: bold 50px 'Old English Text MT'; 
+    text-shadow:0px 2px 5px rgba(0,0,0,0.7);
+    padding-left:130px;
+    color: #434343;
+    
+}
+
+.top-right{
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
+    text-align: right;ht;
+}
+
+.top-right #btnLogout{
+    height:40px;
+    width:120px;
+    padding:5px;
+    margin-right: 180px;
+    margin-top: 30px;
+    border-radius:4px;
+    background:white;
+    font:bold 18px calibri;
+    outline:none;
+    border:1px solid #bbb;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.3);
+    transition:all 0.33s ease;
+}
+
+.top-right #btnLogout:hover {
+   background:#eee;
+   cursor:pointer;
+   border:1px solid #999;
+
+}
+
+.header{
+    width:80%;
+    height:200px;
+    margin:0px auto;
+    text-align:center;
+    
+}
+
+.left{
+    height:100%;
+    width:20%;
+    float:left;
+    text-align:center;
+}
+
+
+
+.left h1{
+    margin-top:40px;
+    font-family: Cambria;
+    font-size:30px;
+    color: #225558;
+    text-decoration:underline;
+}
+
+.left h3 code{
+    background:#ccc;
+    padding:5px 15px;
+    border-radius:4px;
+    color: darkcyan;
+}
+
+.middle{
+    width:59%;
+    height:100%;
+    float:left;
+}
+
+.right{
+    width:20%;
+    height:100%;
+    float:right;
+    text-align:center;
+}
+
+.img-responsive{
+    margin-top:15px;
+    height:auto;
+    width:60%;
+    padding:5px;
+    background:white;
+    border:1px solid #ccc;
+    box-shadow:0px 0px 2px rgba(0,0,0,0.2);
+    border-radius:2px;
+}
+
+.adminName{
+    margin-top:10px;
+    font:bold 20px garamond;
+}
+
+
+.container{
+    width:80%;
+    height:320px;
+    margin:0px auto;
+}
+
+.footer{
+    height:50px;
+    width:100%;
+    background:#fafafa;
+    border-top:6px solid #ddd;
+}
+
+.footer .copyright{
+    margin-top:10px;
+    text-align:center;
+    font-weight:bold;
+}
+

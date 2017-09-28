@@ -1,0 +1,123 @@
+﻿*{
+    box-sizing:border-box;
+}
+
+body {
+    background:#fafafa;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin:0px;
+    padding:0px;
+}
+
+.container{
+    width:30%;
+    height:550px;
+    margin:0px auto;
+    margin-top:50px;
+    background:white;
+    border-radius:4px;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.3);
+}
+
+.container:hover{
+    box-shadow:0px 3px 5px rgba(0,0,0,0.4);
+}
+
+.head{
+    width:100%;
+    border:2px dashed #43af5c;
+    background:#fff;
+    text-align:center;
+    color:green;
+    background:#ccffcc;
+}
+
+.head h2{
+    padding:10px;
+}
+
+.body{
+    margin-top:40px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+tr,td{
+/*     border:1px solid black; */
+    height:50px;
+}
+
+.label{
+    padding:30px 20px;
+    font:bold 20px garamond;
+    color: #448822;
+}
+
+.text-field{
+    height:40px;
+    width:230px;
+    padding:0px 10px;
+    margin:0px 10px;
+    border-radius:2px;
+    border:1px solid #77dd66;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+    font:bold 16px garamond;
+    color:#4caf50;
+}
+
+.text-field:active, .text-field:focus{
+    box-shadow:0px 0px 8px rgba(120,225,80,0.5);
+}
+
+hr{
+    margin:10px 25px 0px 20px;
+    border:1px dashed #4caf50;
+}
+
+.radio-container{
+    padding:0px 20px 0px 40px!important;
+}
+
+.radio-container label{
+    color:#119922;
+    font:bold 16px garamond;
+    cursor:pointer;
+}
+
+.hr2{
+    border-style:dashed;
+    margin:0px 25px 0px 20px;
+}
+
+.button{
+    text-align:center;
+    margin:30px auto;
+
+}
+
+.button input{
+    padding:10px 35px;
+    border:1px solid #4caf50;
+    background:white;
+    border-radius:2px;
+    color:green;
+    font:bold 16px garamond;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+}
+
+.button input:hover{
+    background:#16b738;
+    color:white;
+    cursor:pointer;
+}
+
+.agreement{
+    margin:20px;
+    color:#119922
+}

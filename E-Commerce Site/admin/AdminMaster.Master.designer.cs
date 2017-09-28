@@ -13,13 +13,22 @@ namespace E_Commerce_Site.admin {
     public partial class AdminMaster {
         
         /// <summary>
-        /// form1 control.
+        /// lblWebsiteName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblWebsiteName;
+        
+        /// <summary>
+        /// middle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder middle;
         
         /// <summary>
         /// btnLogout control.
@@ -31,12 +40,12 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.Button btnLogout;
         
         /// <summary>
-        /// ContentPlaceHolder control.
+        /// body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
     }
 }

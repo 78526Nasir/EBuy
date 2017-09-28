@@ -96,9 +96,7 @@
   <ItemGroup>
     <Content Include="admin\AddNewCategory.aspx" />
     <Content Include="admin\NewProduct.aspx" />
-    <Content Include="admin\WebForm1.aspx" />
     <Content Include="css\AdminMaster.css" />
-    <Content Include="css\ANC.css" />
     <Content Include="css\style.css" />
     <Content Include="images\user1.png" />
     <Content Include="packages.config" />
@@ -126,13 +124,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin\AdminMaster.Master.cs">
-      <DependentUpon>AdminMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\AdminMaster.Master.designer.cs">
-      <DependentUpon>AdminMaster.Master</DependentUpon>
-    </Compile>
     <Compile Include="admin\AddNewCategory.aspx.cs">
       <DependentUpon>AddNewCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,19 +131,19 @@
     <Compile Include="admin\AddNewCategory.aspx.designer.cs">
       <DependentUpon>AddNewCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="admin\NewProduct.aspx.cs">
       <DependentUpon>NewProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\NewProduct.aspx.designer.cs">
       <DependentUpon>NewProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
     <div class=container>
         <div class="head">
-            <h1> Hello </h1>
+            
         </div>
     </div>
     </form>

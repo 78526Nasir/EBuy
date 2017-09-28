@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace E_Commerce_Site.admin
 {
-    public partial class EditCategory : System.Web.UI.Page
+    public partial class AddNewCategory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

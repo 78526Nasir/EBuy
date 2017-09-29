@@ -73,3 +73,18 @@ input[type="submit"]:hover{
     border-radius:50%;
     
 }
+
+.redirect-to-reg{
+    color:#777;
+    font:14px consolas;
+}
+
+.redirect-to-reg a{
+    text-decoration:none;
+    color:#888;
+    font-weight:bold;
+}
+
+.redirect-to-reg a:hover{
+    text-decoration:underline;
+}

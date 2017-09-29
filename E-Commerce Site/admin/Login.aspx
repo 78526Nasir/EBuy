@@ -28,6 +28,8 @@
             <br />
             <br />
             <asp:Label ID="lblStatus" CssClass="label" runat="server" ></asp:Label>
+            <br />
+            <asp:Label ID="lblReglink" CssClass="redirect-to-reg" runat="server">Don't have an account? <a href="../Registration.aspx">click here</a></asp:Label>
         </div>
 
     </form>

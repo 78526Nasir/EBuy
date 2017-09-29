@@ -71,7 +71,7 @@ tr,td{
 }
 
 .text-field:active, .text-field:focus{
-    box-shadow:0px 0px 8px rgba(120,225,80,0.5);
+    box-shadow:0px 0px 10px rgba(120,225,80,0.5);
 }
 
 hr{

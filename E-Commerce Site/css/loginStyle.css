@@ -1,90 +1,95 @@
 ﻿
-body{
+body {
     background: #111;
 }
 
-.container{
-    background:rgba(0,0,0,0.2);
-    height:400px;
-    width:500px;
-    text-align:center;
-    border:1px solid #444;
-    margin:0px auto;
-    margin-top:100px;
-    padding-top:50px;
-    border-radius:4px;
-
+.container {
+    background: rgba(0,0,0,0.2);
+    height: 420px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid #444;
+    margin: 0px auto;
+    margin-top: 100px;
+    padding-top: 50px;
+    border-radius: 4px;
 }
 
-.username, .password{
-    position:relative;
-    height:50px;
-    width:300px;
-    border-radius:5px;
-    border:1px solid #666;
-    outline:none;
-    background:rgba(0,0,0,0.2);
-    color:#999;
-    font:bold 20px consolas;
-    padding-left:30px;
-    margin-bottom:30px;
-    
+.username, .password {
+    position: relative;
+    height: 50px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    outline: none;
+    background: rgba(0,0,0,0.2);
+    color: #999;
+    font: bold 20px consolas;
+    padding-left: 30px;
+    margin-bottom: 30px;
 }
 
-input:focus, input:active{
-    background:black;
-    color:#bbb;
-    border:1px solid #bbb;
+input:focus, input:active {
+    background: black;
+    color: #bbb;
+    border: 1px solid #bbb;
 }
 
-input[type="submit"]{
-    height:45px;
-    width:150px;
-    border-radius:4px;
-    outline:none;
-    color:#999;
-    background:rgba(0,0,0,0.1);
-    border:1px solid #666;
-    font:bold 20px consolas;
-    transition:all 0.33s ease-in-out;
-    
+input[type="submit"] {
+    height: 45px;
+    width: 150px;
+    border-radius: 4px;
+    outline: none;
+    color: #999;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #666;
+    font: bold 20px consolas;
+    transition: all 0.33s ease-in-out;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background: #aaa;
     border: 1px solid #999;
     color: black;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
 
-.label{
+.label {
     color: crimson;
-    font:bold 20px calibri;
+    font: bold 20px calibri;
 }
 
-.img-style{
-    height:150px;
-    width:150px;
-    margin-top:-130px;
-    margin-bottom:50px;
-    background:#777;
-    border-radius:50%;
-    
+.img-style {
+    height: 150px;
+    width: 150px;
+    margin-top: -130px;
+    margin-bottom: 50px;
+    background: #777;
+    border-radius: 50%;
 }
 
-.redirect-to-reg{
-    color:#777;
-    font:14px consolas;
+
+.redirect {
+    color: #777;
+    font: 14px consolas;
+    margin-top: 10px;
 }
 
-.redirect-to-reg a{
-    text-decoration:none;
-    color:#888;
-    font-weight:bold;
+.redirect a {
+    text-decoration: none;
+    color: #888;
+    font-weight: bold;
 }
 
-.redirect-to-reg a:hover{
-    text-decoration:underline;
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+.footer{
+    margin-top: 15px;
+    padding-top: 5px;
+    width: 100%;
+    border-top: 1px solid #444;
 }

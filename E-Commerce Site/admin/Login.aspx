@@ -7,29 +7,33 @@
     <title>Login</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nasir Islam Sujan" />
-    <link rel="stylesheet" href="~/css/loginStyle.css" type="text/css" />
+    
     <style>
-        *{
-            box-sizing:border-box !important;
+        * {
+            box-sizing: border-box !important;
         }
+
     </style>
+    <link rel="stylesheet" href="../css/loginStyle.css" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1 style="text-align:center; color: #777; font-family: Garamond;">Login to admin panel</h1>
+        <h1 style="text-align: center; color: #777; font-family: Garamond;">Login to admin panel</h1>
         <div class="container">
-            <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/user1.png" AlternateText="User Icon"  runat="server"/>
+            <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/user1.png" AlternateText="User Icon" runat="server" />
             <br />
             <asp:TextBox ID="txtUsername" CssClass="username" runat="server" placeholder="Enter username"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtPassword" CssClass="password" runat="server" placeholder="Enter password" TextMode="Password" ></asp:TextBox>
+            <asp:TextBox ID="txtPassword" CssClass="password" runat="server" placeholder="Enter password" TextMode="Password"></asp:TextBox>
             <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="LoginButtonClickPerformed"/>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="LoginButtonClickPerformed" />
             <br />
             <br />
-            <asp:Label ID="lblStatus" CssClass="label" runat="server" ></asp:Label>
+            <asp:Label ID="lblStatus" CssClass="label" runat="server"></asp:Label>
             <br />
-            <asp:Label ID="lblReglink" CssClass="redirect-to-reg" runat="server">Don't have an account? <a href="../Registration.aspx">click here</a></asp:Label>
+            <div class="footer">
+                <asp:Label ID="lblReglink" CssClass="redirect" runat="server">Don't have an account? <a href="../Registration.aspx">click here</a></asp:Label>
+            </div>
         </div>
 
     </form>

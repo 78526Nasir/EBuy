@@ -57,10 +57,11 @@
 
             </asp:ContentPlaceHolder>
         </div>
+        <div class="copyright"> 
+            <code>This project is designed and developed by <strong> <a href="#">Nasir islam Sujan</a></strong></code>
+        </div>
    </div>
-    <div>
-
-    </div>
+    
        
 </body>
 </html>

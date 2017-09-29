@@ -1,0 +1,84 @@
+﻿.anc-title{
+    margin-top:50px;
+    font:bold 35px Calibri;
+    color:cadetblue;
+}
+
+.anc-body-content{
+    width:80%;
+    margin:0px auto;
+    margin-top:20px;
+    height:400px;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
+    border-radius:4px;
+}
+
+.form{
+    padding-top:60px;
+    margin-left:200px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+
+td{
+    padding:10px 50px;
+}
+
+.anc-label{
+    font:bold 20px calibri;
+    color: #434343;
+}
+
+.anc-textbox{
+    height:40px;
+    width:300px;
+    font:bold 16px calibri;
+    padding:5px 20px;
+    color:#434343;
+    outline:none;
+    border-radius:2px;
+    border:1px solid #434343;    
+}
+
+.anc-textbox:focus, .anc-textbox:active{
+    box-shadow:0px 0px 10px rgba(59, 217, 249, 0.2);
+    border:1px solid #4db7cc;
+}
+
+.anc-textarea{
+    height:100px;
+    width:300px;
+    resize:none;
+    border:1px solid #434343;
+    font:bold 16px calibri;
+    border-radius:2px;
+    outline:none;
+    padding:5px 20px;
+}
+
+.anc-textarea:focus, .anc-textarea:active{
+    box-shadow:0px 0px 10px rgba(59, 217, 249, 0.2);
+    border:1px solid #4db7cc;
+}
+
+
+.anc-btn-add{
+    height:40px;
+    width:120px;
+    border:1px solid #777;
+    border-radius:3px;
+    background:white;
+    outline:none;
+    font:bold 20px calibri;
+    transition:all 0.33s ease-in;
+}
+
+.anc-btn-add:hover{
+    background:#f9f9f9;
+    cursor:pointer;
+    box-shadow:0px 1px 1px rgba(0,0,0,0.2);
+    
+}

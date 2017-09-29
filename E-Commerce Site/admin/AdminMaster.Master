@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/ANC.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/anc.css" />
 
     <style>
         * {
@@ -52,10 +52,15 @@
                 <li><a href="#">Home</a></li>
             </ul>
         </div>
-        <div class="body-content">
-            <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+
+            </asp:ContentPlaceHolder>
         </div>
    </div>
+    <div>
+
+    </div>
        
 </body>
 </html>

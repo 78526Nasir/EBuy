@@ -29,7 +29,7 @@
                             <label class="label" id="lblEmail" runat="server">Email</label>
                         </td>
                         <td>
-                            <input class="text-field" type="text" runat="server" placeholder="Enter email" />
+                            <input class="text-field" type="email" runat="server" placeholder="Enter email" />
                         </td>
                     </tr>
                     <tr>
@@ -37,7 +37,7 @@
                             <label class="label" id="lblAge" runat="server">Age</label>
                         </td>
                         <td>
-                            <input class="text-field" type="text" runat="server" placeholder="Enter age" />
+                            <input class="text-field" type="number" runat="server" placeholder="Enter age" />
                         </td>
                     </tr>
                     <tr>
@@ -53,7 +53,7 @@
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
                         <td>
-                            <input class="text-field" type="text" runat="server" placeholder="Enter password" />
+                            <input class="text-field" type="password" runat="server" placeholder="Enter password" />
                         </td>
                     </tr>
                 </table>

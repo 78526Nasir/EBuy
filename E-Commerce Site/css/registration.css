@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .container{
-    width:30%;
+    width:40%;
     height:550px;
     margin:0px auto;
     margin-top:50px;
@@ -47,21 +47,21 @@ table{
 }
 
 tr,td{
-/*     border:1px solid black; */
-    height:50px;
+    /*     border:1px solid black; */
+    height:50px;padding: 0px 10px;
 }
 
 .label{
-    padding:0px 20px;
+    padding: 0px 50px;
     font:bold 20px garamond;
     color: #448822;
 }
 
 .text-field{
     height:40px;
-    width:230px;
+    width: 240px;
     padding:0px 10px;
-    margin:0px 10px;
+    margin: 0px 20px;
     border-radius:2px;
     border:1px solid #77dd66;
     outline:none;
@@ -75,7 +75,7 @@ tr,td{
 }
 
 hr{
-    margin:10px 25px 0px 20px;
+    margin: 10px 55px 0px 60px;
     border:1px dashed #4caf50;
 }
 
@@ -91,7 +91,7 @@ hr{
 
 .hr2{
     border-style:dashed;
-    margin:0px 25px 0px 20px;
+    margin: 0px 55px 0px 60px;
 }
 
 .button{
@@ -118,6 +118,8 @@ hr{
 }
 
 .agreement{
-    margin:20px;
-    color:#119922
+    margin: 20px 55px;
+    color:#119922;
+    /* font-size: 18px; */
+    font: bold 18px garamond;
 }

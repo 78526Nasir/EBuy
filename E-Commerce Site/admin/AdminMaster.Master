@@ -45,8 +45,8 @@
     <div class="main-content">
         <div class="menu-bar">
             <ul>
-                <li><a href="AddNewCategory.aspx">Add New Category</a></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="AddNewCategory.aspx">New Category</a></li>
+                <li><a href="NewProduct.aspx">New Product</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Home</a></li>

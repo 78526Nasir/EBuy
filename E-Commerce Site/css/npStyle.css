@@ -1,0 +1,15 @@
+﻿.np-title{
+    margin-top:50px;
+    font:bold 35px Calibri;
+    color:cadetblue;
+
+}
+
+.np-body-content{
+    width:80%;
+    margin:0px auto;
+    margin-top:20px;
+    height:400px;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
+    border-radius:4px;
+}

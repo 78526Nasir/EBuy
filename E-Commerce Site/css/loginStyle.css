@@ -85,6 +85,7 @@ input[type="submit"]:hover {
 
 .redirect a:hover {
     text-decoration: underline;
+    color:#aaa;
 }
 
 .footer{

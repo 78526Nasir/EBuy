@@ -98,6 +98,7 @@
     <Content Include="admin\NewProduct.aspx" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\anc.css" />
+    <Content Include="css\npStyle.css" />
     <Content Include="css\registration.css" />
     <Content Include="images\user1.png" />
     <Content Include="packages.config" />

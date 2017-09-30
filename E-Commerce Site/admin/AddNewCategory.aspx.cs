@@ -11,6 +11,11 @@ namespace E_Commerce_Site.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void addButtonClickPerformed(object sender, EventArgs e)
+        {
 
         }
     }

@@ -21,7 +21,7 @@
                             <label class="label" id="lblFullName" runat="server">Full Name</label>
                         </td>
                         <td>
-                            <input class="text-field" type="text" runat="server" placeholder="Enter full name" />
+                            <asp:TextBox CssClass="text-field" runat="server" ID="txtFullName" placeholder="Enter full name" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -29,7 +29,7 @@
                             <label class="label" id="lblEmail" runat="server">Email</label>
                         </td>
                         <td>
-                            <input class="text-field" type="email" runat="server" placeholder="Enter email" />
+                            <asp:TextBox CssClass="text-field" TextMode="Email" ID="txtEmail" runat="server" placeholder="Enter email" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -37,7 +37,7 @@
                             <label class="label" id="lblAge" runat="server">Age</label>
                         </td>
                         <td>
-                            <input class="text-field" type="number" runat="server" placeholder="Enter age" />
+                            <asp:TextBox CssClass="text-field" ID="txtAge" TextMode="number" runat="server" placeholder="Enter age" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -45,7 +45,7 @@
                             <label class="label" id="lblReligion" runat="server">Religion</label>
                         </td>
                         <td>
-                            <input class="text-field" type="text" runat="server" placeholder="Enter religion" />
+                            <asp:TextBox CssClass="text-field" runat="server" ID="txtReligion" placeholder="Enter religion" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -53,7 +53,7 @@
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
                         <td>
-                            <input class="text-field" type="password" runat="server" placeholder="Enter password" />
+                            <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -78,7 +78,7 @@
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
             <div class="button">
-                <input type="submit" runat="server" id="btnRegister" value="Register" />
+                <asp:Button ID="btnRegister" runat="server" Text="Register"/>
             </div>
         </div>
     </form>

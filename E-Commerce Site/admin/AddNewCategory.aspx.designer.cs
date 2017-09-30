@@ -28,7 +28,7 @@ namespace E_Commerce_Site.admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCategoryName;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
         
         /// <summary>
         /// lblDescription control.
@@ -55,6 +55,6 @@ namespace E_Commerce_Site.admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
     }
 }

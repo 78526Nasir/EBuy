@@ -12,7 +12,7 @@
                         <label class="anc-label" id="lblCategoryName" runat="server">Add Category</label>
                     </td>
                     <td>
-                        <input class="anc-textbox" type="text" id="txtCategoryName" runat="server"  placeholder="Enter new category"/>
+                        <asp:TextBox CssClass="anc-textbox" ID="txtCategoryName" runat="server" placeholder="Enter new category"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -26,7 +26,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input id="btnAdd" class="anc-btn-add" type="submit" runat="server" vale="Add" />
+                        <asp:Button ID="btnAdd" CssClass="anc-btn-add" runat="server" Text="Add" OnClick="addButtonClickPerformed"></asp:Button>
                     </td>
                 </tr>
             </table>

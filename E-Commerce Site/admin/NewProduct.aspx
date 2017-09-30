@@ -21,6 +21,9 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="ddlProductCategory" runat="server" CssClass="np-ddl">
+                            <asp:ListItem Value="ddl" Text="Select Items"></asp:ListItem>
+                            <asp:ListItem Value="ddl" Text="Items"></asp:ListItem>
+                            <asp:ListItem Value="ddl" Text="Select"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -37,7 +40,7 @@
                         <label class="anc-label" id="lblProductImage" runat="server">Product Image</label>
                     </td>
                     <td>
-                        <asp:FileUpload ID="imageUpload" runat="server" CssClass="np-fileupload" />
+                        <asp:FileUpload ID="imageUpload" runat="server" Height="40px" Width="300px" />
                     </td>
                 </tr>
                 <tr>

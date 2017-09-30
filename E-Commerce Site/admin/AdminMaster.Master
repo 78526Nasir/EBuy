@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css" />
     <link rel="stylesheet" type="text/css" href="~/css/anc.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/npStyle.css">
 
     <style>
         * {

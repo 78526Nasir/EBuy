@@ -47,9 +47,7 @@
                 <ul>
                     <li><a href="AddNewCategory.aspx">New Category</a></li>
                     <li><a href="NewProduct.aspx">New Product</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Customer Oders</a></li>
                 </ul>
             </div>
             <div>
@@ -57,7 +55,7 @@
                 </asp:ContentPlaceHolder>
             </div>
             <div class="copyright">
-                <code>This project is designed and developed by <strong><a href="#">Nasir islam Sujan</a></strong></code>
+                <code>This project is designed and developed by <strong><a href="#">Nasir islam Sujan</a> &copy;</strong>2017</code>
             </div>
         </div>
 

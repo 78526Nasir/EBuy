@@ -78,7 +78,7 @@
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
             <div class="button">
-                <asp:Button ID="btnRegister" runat="server" Text="Register"/>
+                <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="registerButtonClickPerformed"/>
             </div>
         </div>
     </form>

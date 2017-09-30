@@ -41,4 +41,27 @@
     font:bold 16px calibri;
 }
 
-    
+.choose-file{
+    border:1px solid #333;
+    padding:10px 20px;
+    border-radius:2px;
+    background:white;
+    color:#666;
+    font:bold 16px calibri;
+    position:relative;
+    z-index:1;
+    cursor:pointer;
+}
+
+.choose-file:{
+    border:3px solid black;
+}
+
+.file-upload{
+    position:absolute;
+    left:15px;
+    outline:none;
+    font:bold 16px calibri;
+    color:#666;
+    z-index:-1;
+}

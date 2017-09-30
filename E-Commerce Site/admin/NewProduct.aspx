@@ -40,7 +40,10 @@
                         <label class="anc-label" id="lblProductImage" runat="server">Product Image</label>
                     </td>
                     <td>
-                        <asp:FileUpload ID="imageUpload" runat="server" Height="40px" Width="300px" />
+                        <label class="choose-file">
+                            Choose File
+                        <asp:FileUpload  CssClass="file-upload" ID="imageUpload" runat="server" />
+                        </label>
                     </td>
                 </tr>
                 <tr>

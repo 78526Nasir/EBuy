@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="admin\AddNewCategory.aspx" />
     <Content Include="admin\NewProduct.aspx" />
+    <Content Include="admin\Order.aspx" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\anc.css" />
     <Content Include="css\npStyle.css" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="admin\NewProduct.aspx.designer.cs">
       <DependentUpon>NewProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

@@ -53,10 +53,6 @@
     cursor:pointer;
 }
 
-.choose-file:{
-    border:3px solid black;
-}
-
 .file-upload{
     position:absolute;
     left:15px;

@@ -47,7 +47,6 @@ table{
 }
 
 tr,td{
-    /*     border:1px solid black; */
     height:50px;padding: 0px 10px;
 }
 
@@ -80,7 +79,7 @@ hr{
 }
 
 .radio-container{
-    padding:0px 20px 0px 40px!important;
+    padding:0px 20px 0px 60px !important;
 }
 
 .radio-container label{

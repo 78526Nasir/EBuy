@@ -10,8 +10,11 @@
 
 </head>
 <body>
-    <h1 class="title">Login</h1>
+    
     <div class="container">
+        <div class="top">
+            <h1 class="title">Login</h1>
+        </div>
         <form id="form1" runat="server">
             <asp:TextBox ID="txtUsername" placeholder="Enter username" CssClass="text-field first" runat="server" ></asp:TextBox>
             <br />
@@ -19,9 +22,11 @@
             <br />
             <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-login"/>
             <br />
-            <asp:Label ID="status" runat="server" CssClass="status-report">Status</asp:Label>
+            <asp:Label ID="status" runat="server" CssClass="status-report"></asp:Label>
             <br />
-            <asp:Label ID="redirectToReg" CssClass="redirect-to-reg" runat="server">Don't have an account? <a href="#">click here</a></asp:Label>
+            <div class="bottom">
+                <asp:Label ID="redirectToReg" CssClass="redirect-to-reg" runat="server">Don't have an account? <a href="Registration.aspx">click here</a></asp:Label>
+            </div>
         </form>
     </div>
 </body>

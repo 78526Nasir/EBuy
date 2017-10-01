@@ -171,6 +171,7 @@
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Libraries\User.cs" />
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

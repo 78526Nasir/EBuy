@@ -24,5 +24,19 @@ namespace E_Commerce_Site.Libraries
             _age = age;
         }
 
+        public void setUsername(string username)
+        {
+            _username = username;
+        }
+        public string getUsername()
+        {
+            return _username;
+        }
+
+        public string getGender()
+        {
+            return _gender;
+        }
+
     }
 }

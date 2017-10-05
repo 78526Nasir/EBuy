@@ -13,9 +13,9 @@ h1,h2,h3,h4,h5,h6{
 
 .container{
     width:40%;
-    height:550px;
+    height:600px;
     margin:0px auto;
-    margin-top:50px;
+    margin-top:30px;
     background:white;
     border-radius:4px;
     box-shadow:0px 2px 3px rgba(0,0,0,0.3);
@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .body{
-    margin-top:40px;
+    margin-top:30px;
 }
 
 table{
@@ -47,7 +47,8 @@ table{
 }
 
 tr,td{
-    height:50px;padding: 0px 10px;
+    height:50px;
+    padding: 0px 10px;
 }
 
 .label{
@@ -119,6 +120,5 @@ hr{
 .agreement{
     margin: 20px 55px;
     color:#119922;
-    /* font-size: 18px; */
     font: bold 18px garamond;
 }

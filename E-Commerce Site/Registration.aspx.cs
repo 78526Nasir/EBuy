@@ -11,12 +11,14 @@ namespace E_Commerce_Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

@@ -102,6 +102,7 @@
     <Content Include="css\npStyle.css" />
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
+    <Content Include="images\Calendar-icon.png" />
     <Content Include="images\user1.png" />
     <Content Include="UserLogin.aspx" />
     <Content Include="packages.config" />

@@ -40,28 +40,37 @@ h1,h2,h3,h4,h5,h6{
 
 .body{
     margin-top:30px;
+    width: 100%;
 }
 
 table{
     border-collapse:collapse;
+    width: 90%;
+    margin: 0px auto;
 }
 
 tr,td{
     height:50px;
-    padding: 0px 10px;
 }
 
+.left{
+    width: 50%;
+}
+
+.right{
+    width: 50%;
+    /* padding: 0px 20px; */
+}
 .label{
-    padding: 0px 50px;
-    font:bold 20px garamond;
+    padding: 0px 20px;
+    font: bold 20px garamond;
     color: #448822;
 }
 
 .text-field{
     height:40px;
-    width: 240px;
+    width: 95%;
     padding:0px 10px;
-    margin: 0px 20px;
     border-radius:2px;
     border:1px solid #77dd66;
     outline:none;
@@ -72,6 +81,7 @@ tr,td{
 
 .text-field:active, .text-field:focus{
     box-shadow:0px 0px 10px rgba(120,225,80,0.5);
+    border: 1px solid limegreen;
 }
 
 hr{
@@ -80,7 +90,7 @@ hr{
 }
 
 .radio-container{
-    padding:0px 20px 0px 60px !important;
+    padding:0px 20px;
 }
 
 .radio-container label{
@@ -89,6 +99,7 @@ hr{
     cursor:pointer;
 }
 
+
 .hr2{
     border-style:dashed;
     margin: 0px 55px 0px 60px;
@@ -96,8 +107,7 @@ hr{
 
 .button{
     text-align:center;
-    margin:30px auto;
-
+    margin: 20px auto;
 }
 
 .button input{
@@ -118,7 +128,16 @@ hr{
 }
 
 .agreement{
-    margin: 20px 55px;
+    margin: 10px 0px 5px 46px;
     color:#119922;
     font: bold 18px garamond;
+}
+
+.dob::-webkit-inner-spin-button {
+    height:40px;
+}
+
+.dob::-webkit-calendar-picker-indicator{
+    font-size:16px;
+    color:#333;
 }

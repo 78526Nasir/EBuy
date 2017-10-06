@@ -85,13 +85,13 @@ namespace E_Commerce_Site {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAge;
         
         /// <summary>
-        /// txtAge control.
+        /// txtDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAge;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDOB;
         
         /// <summary>
         /// lblReligion control.
@@ -128,6 +128,24 @@ namespace E_Commerce_Site {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        
+        /// <summary>
+        /// lblConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblConfirmPassword;
+        
+        /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
         /// lblGender control.

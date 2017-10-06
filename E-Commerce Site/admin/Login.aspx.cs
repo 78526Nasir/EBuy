@@ -38,7 +38,6 @@ namespace E_Commerce_Site
                 }else
                 {
                     lblStatus.Text = "Username or password not matched !";
-                    
                 }
 
             }

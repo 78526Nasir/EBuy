@@ -1,4 +1,8 @@
-﻿/* Generic function for required field validation*/
+﻿/* Adding unobtrusive javascript on button control*/
+
+
+
+/* Generic function for required field validation*/
 
 function usernameValidation() {
     var element = document.getElementById("txtUsername");
@@ -103,4 +107,16 @@ function confirmPasswordValidation() {
         alertEle.style.visibility = "hidden";
     }
 }
+
+
+//document.addEventListener('DOMContentLoaded', WireUpEvents);
+
+//function WireUpEvents() {
+//    var button1 = document.getElementById('btnRegister');
+//    button1.addEventListener('click', button1_Click);
+//}
+
+//function button1_Click() {
+//    //alert("HEllo");
+//}
 

@@ -58,11 +58,15 @@ tr,td{
 }
 
 .right{
-    width: 45%;
+    width: 40%;
     /* padding: 0px 20px; */
 }
 
 .alert{
+    width:5%;
+}
+
+.required{
     width:5%;
 }
 

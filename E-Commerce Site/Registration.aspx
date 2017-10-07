@@ -6,8 +6,9 @@
     <title>Registration</title>
     <meta name="author" content="Nasir Islam Sujan" />
     <link rel="stylesheet" type="text/css" href="~/css/registration.css" />
-    <script type="text/javascript" src="script/validation.js"></script>
-    
+    <script type="text/javascript" src="script/validation.js">
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,6 +22,9 @@
                         <td class="left">
                             <label class="label" id="lblUsername" runat="server">Username</label>
                         </td>
+                        <td class="required">
+                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="*" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                        </td>
                         <td class="right">
                             <asp:TextBox CssClass="text-field" name="User" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();">
                             </asp:TextBox>
@@ -33,7 +37,10 @@
                         <td class="left">
                             <label class="label" id="lblFullName" runat="server">Full Name</label>
                         </td>
-                        <td  class="right">
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
+                        </td>
+                        <td class="right">
                             <asp:TextBox CssClass="text-field" runat="server" ID="txtFullName" placeholder="Enter full name" onblur="fullNameValidation();">
                             </asp:TextBox>
                         </td>
@@ -45,7 +52,10 @@
                         <td class="left">
                             <label class="label" id="lblEmail" runat="server">Email</label>
                         </td>
-                        <td  class="right">
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
+                        </td>
+                        <td class="right">
                             <asp:TextBox CssClass="text-field" TextMode="Email" ID="txtEmail" runat="server" placeholder="Enter email" onblur="emailValidation();">
                             </asp:TextBox>
                         </td>
@@ -57,8 +67,11 @@
                         <td class="left">
                             <label class="label" id="lblAge" runat="server">Date of Birth</label>
                         </td>
-                        <td  class="right">
-                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();"/>
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
+                        </td>
+                        <td class="right">
+                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();" />
                         </td>
                         <td class="alert">
                             <span id="dobAlert" class="alert-span">&#9888;</span>
@@ -67,6 +80,9 @@
                     <tr>
                         <td class="left">
                             <label class="label" id="lblReligion" runat="server">Religion</label>
+                        </td>
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
                         </td>
                         <td class="right">
                             <asp:TextBox CssClass="text-field" runat="server" ID="txtReligion" placeholder="Enter religion" onblur="religionValidation();">
@@ -80,6 +96,9 @@
                         <td class="left">
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
+                        </td>
                         <td class="right">
                             <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password" onblur="passwordValidation();">
                             </asp:TextBox>
@@ -91,6 +110,9 @@
                     <tr>
                         <td class="left">
                             <label class="label" id="lblConfirmPassword" runat="server">Confirm Password</label>
+                        </td>
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
                         </td>
                         <td class="right">
                             <asp:TextBox class="text-field" TextMode="password" ID="txtConfirmPassword" runat="server" placeholder="Reenter password" onblur="confirmPasswordValidation();"></asp:TextBox>
@@ -105,11 +127,16 @@
                         <td class="left">
                             <label class="label" id="lblGender" runat="server">Gender</label>
                         </td>
-                        <td class="radio-container">
-                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" onblur="genderValidation();" />Male</label>
+                        <td class="required">
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
                         </td>
                         <td class="radio-container">
-                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" onblur="genderValidation();"/>Female</label>
+                            <label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" onblur="genderValidation();" />Male</label>
+                        </td>
+                        <td class="radio-container">
+                            <label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" onblur="genderValidation();" />Female</label>
                         </td>
                         <td class="alert">
                             <span id="gAlert" class="alert-span">&#9888;</span>
@@ -122,7 +149,7 @@
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
             <div class="button">
-                <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="registerButtonClickPerformed" />
+                <asp:Button ID="btnRegister" runat="server" Text="Register" />
             </div>
         </div>
     </form>

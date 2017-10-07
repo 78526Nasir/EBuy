@@ -1,5 +1,15 @@
-﻿/* Adding unobtrusive javascript on button control*/
+﻿/* 
+    // Check the terms and conditions checkbox first 
+    // by default set the button cursor to not-allowed
+    // If checked then allow cursor
+*/
 
+window.onload = function () {
+    var checkbox = document.getElementById("cbAgreement");
+    if (!checkbox.checked) {
+        document.getElementById("btnRegister").disabled = true;
+    }
+};
 
 
 /* Generic function for required field validation*/
@@ -108,6 +118,20 @@ function confirmPasswordValidation() {
     }
 }
 
+//function genderValidation() {
+//    var element = document.getElementById("rMale");
+//    var element2 = document.getElementById("rFemale");
+//    var alertEle = document.getElementById("gAlert");
+
+//    if (!element.checked && !element2.checked) {
+//        alertEle.style.visibility = "visible";
+//    } else {
+//        alertEle.style.visibility = "hidden";
+//    }
+//}
+
+/* Adding unobtrusive javascript on button control*/
+/* Adding an extra event listener for register button */
 
 document.addEventListener('DOMContentLoaded', WireUpEvents);
 
@@ -124,6 +148,15 @@ function button1_Click() {
     religionValidation();
     passwordValidation();
     confirmPasswordValidation();
-
+    //genderValidation();
 }
 
+
+function isChecked() {
+    var checkbox = document.getElementById("cbAgreement");
+    if (!checkbox.checked) {
+        document.getElementById("btnRegister").disabled = true;
+    } else {
+        document.getElementById("btnRegister").disabled = false;
+    }
+}

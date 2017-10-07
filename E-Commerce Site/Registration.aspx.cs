@@ -17,7 +17,7 @@ namespace E_Commerce_Site
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/UserLogin.aspx");
         }
  
     }

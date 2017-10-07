@@ -30,7 +30,7 @@
                             <span id="unAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Username required" ControlToValidate="txtUsername">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +46,7 @@
                             <span id="fnAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rbv2" runat="server" ErrorMessage="" ControlToValidate="txtFullName"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rbv2" runat="server" ErrorMessage="Full Name Required" ControlToValidate="txtFullName">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +62,7 @@
                             <span id="eAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="Email required" ControlToValidate="txtEmail">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +77,7 @@
                             <span id="dobAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv4" ControlToValidate="txtDOB" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv4" ControlToValidate="txtDOB" runat="server" ErrorMessage="Date of Birth">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -93,7 +93,7 @@
                             <span id="rAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv5" runat="server" ErrorMessage="" ControlToValidate="txtReligion"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv5" runat="server" ErrorMessage="Religion required" ControlToValidate="txtReligion">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -109,7 +109,7 @@
                             <span id="pAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="Password required" ControlToValidate="txtPassword">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -124,7 +124,7 @@
                             <span id="cpAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv7" runat="server" ErrorMessage="" ControlToValidate="txtConfirmPassword"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv7" runat="server" ErrorMessage="Confirm password required" ControlToValidate="txtConfirmPassword">&nbsp;</asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -136,31 +136,30 @@
                         
                         <td class="radio-container">
                             <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" onblur="genderValidation();" />Male</label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male"/>Male</label>
                         </td>
                         <td class="radio-container">
                             <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" onblur="genderValidation();" />Female</label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male"/>Female</label>
                         </td>
                         <td class="alert">
                             <span id="gAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="agreement">
-                <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" />
+                <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" onchange="isChecked();" />
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
             <div class="button">
-                <asp:Button ID="btnRegister" runat="server" Text="Register" />
+                <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="registerButtonClickPerformed" />
             </div>
         </div>
         <div class="notify">
-            <p class="validation-text">Test</p>
+            <asp:ValidationSummary CssClass="validation-summary" ID="ValidationSummary1" runat="server" />
         </div>
     </form>
 </body>

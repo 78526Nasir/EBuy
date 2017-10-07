@@ -139,6 +139,15 @@ hr{
     cursor:pointer;
 }
 
+.button input:disabled {
+    background: white;
+    border:none;
+    color:green;
+    border:1px solid #4caf50;
+    cursor: not-allowed;
+}
+
+
 .agreement{
     margin: 10px 0px 5px 46px;
     color:#119922;
@@ -170,8 +179,12 @@ hr{
     top:30px;
     right:20px;
     background:rgba(255,0,0,0.1);
+    color:#ff4444;
     border-radius:4px;
     box-shadow:0px 2px 5px rgba(0,0,0,0.4);
-
 }
 
+.validation-summary{
+    font-weight:bold;
+    font-family:monospace;
+}

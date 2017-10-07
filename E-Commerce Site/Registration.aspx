@@ -38,7 +38,7 @@
                             </asp:TextBox>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="fnAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                     <tr>
@@ -50,7 +50,7 @@
                             </asp:TextBox>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="eAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +61,7 @@
                             <input class="text-field dob fixed" type="date" id="txtDOB" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();"/>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="dobAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                     <tr>
@@ -73,7 +73,7 @@
                             </asp:TextBox>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="rAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +85,7 @@
                             </asp:TextBox>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="pAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                     <tr>
@@ -96,7 +96,7 @@
                             <asp:TextBox class="text-field" TextMode="password" ID="txtConfirmPassword" runat="server" placeholder="Reenter password" onblur="confirmPasswordValidation();"></asp:TextBox>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="cpAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                 </table>
@@ -112,7 +112,7 @@
                             <label><input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" onblur="genderValidation();"/>Female</label>
                         </td>
                         <td class="alert">
-                            <span class="alert-span">&#9888;</span>
+                            <span id="gAlert" class="alert-span">&#9888;</span>
                         </td>
                     </tr>
                 </table>

@@ -29,3 +29,33 @@ function fullNameValidation() {
         alertEle.style.visibility = "hidden";
     }
 }
+
+function emailValidation() {
+    var element = document.getElementById("txtEmail");
+    var alertEle = document.getElementById("eAlert");
+    if (!element.value) {
+        alertEle.style.visibility = "visible";
+        element.style.border = "1px solid red";
+        element.style.boxShadow = "0px 0px 5px rgba(255,0,0,0.4)";
+
+    } else {
+        element.style.border = "1px solid #77dd66";
+        element.style.boxShadow = "none";
+        alertEle.style.visibility = "hidden";
+    }
+}
+
+function dobValidation() {
+    var element = document.getElementById("txtDOB");
+    var alertEle = document.getElementById("dobAlert");
+    if (!element.value) {
+        alertEle.style.visibility = "visible";
+        element.style.border = "1px solid red";
+        element.style.boxShadow = "0px 0px 5px rgba(255,0,0,0.4)";
+
+    } else {
+        element.style.border = "1px solid #77dd66";
+        element.style.boxShadow = "none";
+        alertEle.style.visibility = "hidden";
+    }
+}

@@ -159,6 +159,9 @@
                 <asp:Button ID="btnRegister" runat="server" Text="Register" />
             </div>
         </div>
+        <div class="notify">
+            <p class="validation-text">Test</p>
+        </div>
     </form>
 </body>
 </html>

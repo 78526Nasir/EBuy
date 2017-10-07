@@ -9,7 +9,23 @@ function usernameValidation() {
         element.style.boxShadow = "0px 0px 5px rgba(255,0,0,0.4)";
 
     } else {
-       alertEle.style.visibility = "hidden";
+        element.style.border = "1px solid #77dd66";
+        element.style.boxShadow = "none";
+        alertEle.style.visibility = "hidden";
     }
 }
 
+function fullNameValidation() {
+    var element = document.getElementById("txtFullName");
+    var alertEle = document.getElementById("fnAlert");
+    if (!element.value) {
+        alertEle.style.visibility = "visible";
+        element.style.border = "1px solid red";
+        element.style.boxShadow = "0px 0px 5px rgba(255,0,0,0.4)";
+
+    } else {
+        element.style.border = "1px solid #77dd66";
+        element.style.boxShadow = "none";
+        alertEle.style.visibility = "hidden";
+    }
+}

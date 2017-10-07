@@ -54,11 +54,11 @@ tr,td{
 }
 
 .left{
-    width: 50%;
+    width: 45%;
 }
 
 .right{
-    width: 40%;
+    width: 48%;
     /* padding: 0px 20px; */
 }
 
@@ -67,7 +67,7 @@ tr,td{
 }
 
 .required{
-    width:5%;
+    width: 2%;
 }
 
 .label{
@@ -78,7 +78,7 @@ tr,td{
 
 .text-field{
     height:40px;
-    width: 95%;
+    width: 100%;
     padding:0px 10px;
     border-radius:2px;
     border:1px solid #77dd66;
@@ -157,7 +157,7 @@ hr{
 
 .alert-span{
     position:relative;
-    left:-40px;
+    left: -30px;
     color:#ff4444;
     font:bold 18px calibri;
     visibility:hidden;

@@ -109,14 +109,21 @@ function confirmPasswordValidation() {
 }
 
 
-//document.addEventListener('DOMContentLoaded', WireUpEvents);
+document.addEventListener('DOMContentLoaded', WireUpEvents);
 
-//function WireUpEvents() {
-//    var button1 = document.getElementById('btnRegister');
-//    button1.addEventListener('click', button1_Click);
-//}
+function WireUpEvents() {
+    var button1 = document.getElementById('btnRegister');
+    button1.addEventListener('click', button1_Click);
+}
 
-//function button1_Click() {
-//    //alert("HEllo");
-//}
+function button1_Click() {
+    usernameValidation();
+    fullNameValidation();
+    emailValidation();
+    dobValidation();
+    religionValidation();
+    passwordValidation();
+    confirmPasswordValidation();
+
+}
 

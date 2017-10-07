@@ -104,6 +104,7 @@
     <Content Include="css\userlogin.css" />
     <Content Include="images\Calendar-icon.png" />
     <Content Include="images\user1.png" />
+    <Content Include="script\validation.js" />
     <Content Include="UserLogin.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

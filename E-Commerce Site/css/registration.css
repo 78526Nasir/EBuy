@@ -58,9 +58,14 @@ tr,td{
 }
 
 .right{
-    width: 50%;
+    width: 45%;
     /* padding: 0px 20px; */
 }
+
+.alert{
+    width:5%;
+}
+
 .label{
     padding: 0px 20px;
     font: bold 20px garamond;
@@ -89,14 +94,15 @@ hr{
     border:1px dashed #4caf50;
 }
 
-.radio-container{
+/*.radio-container{
     padding:0px 20px;
-}
+}*/
 
 .radio-container label{
     color:#119922;
     font:bold 16px garamond;
     cursor:pointer;
+    
 }
 
 
@@ -119,6 +125,7 @@ hr{
     font:bold 16px garamond;
     outline:none;
     transition:all 0.33s ease-in-out;
+    
 }
 
 .button input:hover{
@@ -140,4 +147,12 @@ hr{
 .dob::-webkit-calendar-picker-indicator{
     font-size:16px;
     color:#333;
+}
+
+.alert-span{
+    position:relative;
+    left:-40px;
+    color:#ff4444;
+    font:bold 18px calibri;
+    visibility:hidden;
 }

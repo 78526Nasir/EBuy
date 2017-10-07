@@ -22,7 +22,8 @@
                             <label class="label" id="lblUsername" runat="server">Username</label>
                         </td>
                         <td class="right">
-                            <asp:TextBox CssClass="text-field" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();"></asp:TextBox>
+                            <asp:TextBox CssClass="text-field" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();">
+                            </asp:TextBox>
                         </td>
                         <td class="alert">
                             <span id="unAlert" class="alert-span">&#9888;</span>
@@ -33,7 +34,8 @@
                             <label class="label" id="lblFullName" runat="server">Full Name</label>
                         </td>
                         <td  class="right">
-                            <asp:TextBox CssClass="text-field" runat="server" ID="txtFullName" placeholder="Enter full name"></asp:TextBox>
+                            <asp:TextBox CssClass="text-field" runat="server" ID="txtFullName" placeholder="Enter full name" onblur="fullNameValidation();">
+                            </asp:TextBox>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -44,7 +46,8 @@
                             <label class="label" id="lblEmail" runat="server">Email</label>
                         </td>
                         <td  class="right">
-                            <asp:TextBox CssClass="text-field" TextMode="Email" ID="txtEmail" runat="server" placeholder="Enter email"></asp:TextBox>
+                            <asp:TextBox CssClass="text-field" TextMode="Email" ID="txtEmail" runat="server" placeholder="Enter email" onblur="emailValidation();">
+                            </asp:TextBox>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -55,7 +58,7 @@
                             <label class="label" id="lblAge" runat="server">Date of Birth</label>
                         </td>
                         <td  class="right">
-                            <input class="text-field dob fixed" type="date" id="txtDOB" runat="server" placeholder="Enter date of Birth" />
+                            <input class="text-field dob fixed" type="date" id="txtDOB" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();"/>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -66,7 +69,8 @@
                             <label class="label" id="lblReligion" runat="server">Religion</label>
                         </td>
                         <td class="right">
-                            <asp:TextBox CssClass="text-field" runat="server" ID="txtReligion" placeholder="Enter religion"></asp:TextBox>
+                            <asp:TextBox CssClass="text-field" runat="server" ID="txtReligion" placeholder="Enter religion" onblur="religionValidation();">
+                            </asp:TextBox>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -77,7 +81,8 @@
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
                         <td class="right">
-                            <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password"></asp:TextBox>
+                            <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password" onblur="passwordValidation();">
+                            </asp:TextBox>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -88,7 +93,7 @@
                             <label class="label" id="lblConfirmPassword" runat="server">Confirm Password</label>
                         </td>
                         <td class="right">
-                            <asp:TextBox class="text-field" TextMode="password" ID="txtConfirmPassword" runat="server" placeholder="Reenter password"></asp:TextBox>
+                            <asp:TextBox class="text-field" TextMode="password" ID="txtConfirmPassword" runat="server" placeholder="Reenter password" onblur="confirmPasswordValidation();"></asp:TextBox>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>
@@ -101,12 +106,10 @@
                             <label class="label" id="lblGender" runat="server">Gender</label>
                         </td>
                         <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" />Male</label>
+                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" onblur="genderValidation();" />Male</label>
                         </td>
                         <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" />Female</label>
+                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" onblur="genderValidation();"/>Female</label>
                         </td>
                         <td class="alert">
                             <span class="alert-span">&#9888;</span>

@@ -23,7 +23,7 @@
                             <label class="label" id="lblUsername" runat="server">Username</label>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="*" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
                         </td>
                         <td class="right">
                             <asp:TextBox CssClass="text-field" name="User" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();">

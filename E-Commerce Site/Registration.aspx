@@ -22,7 +22,7 @@
                             <label class="label" id="lblUsername" runat="server">Username</label>
                         </td>
                         <td class="right">
-                            <asp:TextBox CssClass="text-field" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();">
+                            <asp:TextBox CssClass="text-field" name="User" runat="server" ID="txtUsername" placeholder="Enter username" onblur="usernameValidation();">
                             </asp:TextBox>
                         </td>
                         <td class="alert">
@@ -58,7 +58,7 @@
                             <label class="label" id="lblAge" runat="server">Date of Birth</label>
                         </td>
                         <td  class="right">
-                            <input class="text-field dob fixed" type="date" id="txtDOB" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();"/>
+                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();"/>
                         </td>
                         <td class="alert">
                             <span id="dobAlert" class="alert-span">&#9888;</span>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="E_Commerce_Site.Login1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="E_Commerce_Site.UserLogin" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
             <br />
             <asp:TextBox ID="txtPassword" placeholder="Enter password" TextMode="Password" CssClass="text-field" runat="server" ></asp:TextBox>
             <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-login"/>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-login" OnClick="LoginButtonClickPerformed"/>
             <br />
             <asp:Label ID="status" runat="server" CssClass="status-report"></asp:Label>
             <br />

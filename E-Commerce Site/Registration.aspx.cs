@@ -17,7 +17,22 @@ namespace E_Commerce_Site
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)
         {
-            Response.Redirect("~/UserLogin.aspx");
+
+            User newUser = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.ToString());
+            if (newUser.registration())
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
+            }
+        }
+        private string selectedGender()
+        {
+            if (rMale.Checked)
+            {
+                return rMale.ToString();
+            }else
+            {
+                return rFemale.ToString();
+            }
         }
  
     }

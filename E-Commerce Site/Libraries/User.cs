@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DataAccessLayer;
 
 namespace E_Commerce_Site.Libraries
 {
@@ -20,6 +21,17 @@ namespace E_Commerce_Site.Libraries
         private string _country;
         private string _city;
         private string _district;
+
+        /// <summary>
+        /// Constructor for Login purpose
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        public User(string username,string password)
+        {
+            _username = username;
+            _password = password;
+        }
 
         /// <summary>
         /// Constructor for general user
@@ -55,7 +67,7 @@ namespace E_Commerce_Site.Libraries
             _religion = religion;
             _email = email;
             _dob = dob;
-            _age = calculateAge(""); // TO DO
+            _age = calculateAge(dob); 
         }
 
         public void setUsername(string username)
@@ -85,9 +97,15 @@ namespace E_Commerce_Site.Libraries
         /// User Authentication
         /// </summary>
         /// <returns></returns>
+        //public string getPassword()
+        //{
+        //    return "";
+        //}
+
+
         public string getPassword()
         {
-            return "";
+            return _password;
         }
         public void setGender(string gender)
         {
@@ -169,17 +187,37 @@ namespace E_Commerce_Site.Libraries
         {
             return _district;
         }
-        
-        
+
+
         /// <summary>
-        /// TO DO
         /// Finding Age from given Date of Birth
         /// </summary>
         /// <param name="dob"></param>
         /// <returns>Age</returns>
         private int calculateAge(string dob)
         {
-            return 0;
+            DateTime dateOfBirth = Convert.ToDateTime(dob);
+            DateTime Now = DateTime.Now;
+            int Years = new DateTime(DateTime.Now.Subtract(dateOfBirth).Ticks).Year - 1;
+            return Years;
+        }
+
+        public Boolean login()
+        {
+            return checkUser(this.getUsername(), this.getPassword();
+            
+        }
+        private Boolean checkUser(string username,string password)
+        {
+            DataAccess dataAccess = new DataAccess();
+            return dataAccess.select(username, password);
+        }
+
+        public Boolean registration()
+        {
+            DataAccess dataAccess = new DataAccess();
+            return dataAccess.insert(this.getUsername(), this.getFullName(), this.getEmail(), this.getDateOfBirth(), this.getAge(), this.getReligion(), this.getPassword(), this.getGender());
+
         }
     }
 }

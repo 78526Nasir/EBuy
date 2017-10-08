@@ -10,7 +10,7 @@
 namespace E_Commerce_Site {
     
     
-    public partial class Login1 {
+    public partial class UserLogin {
         
         /// <summary>
         /// form1 control.

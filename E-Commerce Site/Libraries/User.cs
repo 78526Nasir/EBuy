@@ -204,8 +204,7 @@ namespace E_Commerce_Site.Libraries
 
         public Boolean login()
         {
-            return checkUser(this.getUsername(), this.getPassword();
-            
+            return checkUser(this.getUsername(), this.getPassword());
         }
         private Boolean checkUser(string username,string password)
         {

@@ -14,17 +14,15 @@ namespace DataAccessLayer
         string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
         public SqlConnection connectDB()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                return con;
-            }
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            return con;
         }
         public Boolean insert(string username, string fullName, string email, string dob, int age, string religion, string password, string gender)
         {
             using (SqlConnection con = connectDB())
             {
-                string insert_query = "INSERT INTO USER VALUES(@username, @fullName, @email, @dob, @age, @religion,@password, @gender)";
+                string insert_query = "INSERT INTO [USER] VALUES(@username, @fullName, @email, @dob, @age, @religion,@password, @gender)";
                 SqlCommand cmd = new SqlCommand(insert_query, con);
 
                 cmd.Parameters.AddWithValue("@username", username);
@@ -35,7 +33,7 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@religion", religion);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@gender", gender);
-                
+
                 cmd.ExecuteNonQuery();
 
                 return true;
@@ -47,9 +45,9 @@ namespace DataAccessLayer
 
         public Boolean select(string username, string password)
         {
-            using(SqlConnection con = connectDB())
+            using (SqlConnection con = connectDB())
             {
-                string select_query = "SELECT * FROM USER WHERE username=@username AND password=@password";
+                string select_query = "SELECT * FROM [USER] WHERE username=@username AND password=@password";
                 SqlCommand cmd = new SqlCommand(select_query, con);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -59,13 +57,14 @@ namespace DataAccessLayer
                 if (dr.Read())
                 {
                     return true;
-                }else
+                }
+                else
                 {
                     return false;
                 }
-                    
+
             }
-            
+
         }
     }
 }

@@ -71,7 +71,7 @@
                         </td>
                         
                         <td class="right">
-                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" placeholder="Enter date of Birth" onblur="dobValidation();" />
+                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" onblur="dobValidation();" />
                         </td>
                         <td class="alert">
                             <span id="dobAlert" class="alert-span">&#9888;</span>

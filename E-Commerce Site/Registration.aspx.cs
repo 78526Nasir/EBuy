@@ -17,8 +17,9 @@ namespace E_Commerce_Site
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)
         {
+            // problem in Gender value
 
-            User newUser = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.ToString());
+            User newUser = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.Value);
             if (newUser.registration())
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
@@ -28,10 +29,10 @@ namespace E_Commerce_Site
         {
             if (rMale.Checked)
             {
-                return rMale.ToString();
+                return "male";
             }else
             {
-                return rFemale.ToString();
+                return "female";
             }
         }
  

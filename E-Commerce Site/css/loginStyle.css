@@ -5,7 +5,7 @@ body {
 
 .container {
     background: rgba(0,0,0,0.2);
-    height: 420px;
+    height: 400px;
     width: 500px;
     text-align: center;
     border: 1px solid #444;
@@ -26,7 +26,7 @@ body {
     color: #999;
     font: bold 20px consolas;
     padding-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 input:focus, input:active {
@@ -68,29 +68,4 @@ input[type="submit"]:hover {
     margin-bottom: 50px;
     background: #777;
     border-radius: 50%;
-}
-
-
-.redirect {
-    color: #777;
-    font: 14px consolas;
-    margin-top: 10px;
-}
-
-.redirect a {
-    text-decoration: none;
-    color: #888;
-    font-weight: bold;
-}
-
-.redirect a:hover {
-    text-decoration: underline;
-    color:#aaa;
-}
-
-.footer{
-    margin-top: 15px;
-    padding-top: 5px;
-    width: 100%;
-    border-top: 1px solid #444;
 }

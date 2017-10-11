@@ -30,10 +30,6 @@
             <br />
             <br />
             <asp:Label ID="lblStatus" CssClass="label" runat="server"></asp:Label>
-            <br />
-            <div class="footer">
-                <asp:Label ID="lblReglink" CssClass="redirect" runat="server">Don't have an account? <a href="../Registration.aspx">click here</a></asp:Label>
-            </div>
         </div>
 
     </form>

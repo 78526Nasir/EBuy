@@ -20,8 +20,8 @@ namespace E_Commerce_Site
             User newUser = new User(txtUsername.Text, txtPassword.Text);
             if (newUser.login())
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
                 Response.Redirect("~/index.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
             }
         }
 

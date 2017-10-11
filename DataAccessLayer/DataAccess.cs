@@ -33,14 +33,10 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@religion", religion);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@gender", gender);
-
                 cmd.ExecuteNonQuery();
 
                 return true;
-
             }
-
-
         }
 
         public Boolean select(string username, string password)
@@ -51,9 +47,7 @@ namespace DataAccessLayer
                 SqlCommand cmd = new SqlCommand(select_query, con);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
-
                 SqlDataReader dr = cmd.ExecuteReader();
-
                 if (dr.Read())
                 {
                     return true;
@@ -62,9 +56,7 @@ namespace DataAccessLayer
                 {
                     return false;
                 }
-
             }
-
         }
     }
 }

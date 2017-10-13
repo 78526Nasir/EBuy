@@ -17,7 +17,7 @@
 }
 
 .left-menu-ul li a{
-    padding:15px 20px;
+    padding:10px 20px;
     text-decoration:none;
     font:bold 20px calibri;
     color:#434343;
@@ -66,6 +66,7 @@ cu-left-control-panel-first{
 .cu-main-content{
     margin-top:20px;
     margin-left:22%;
+    padding-bottom:50px;
     width:77%;
     height:auto;
     text-align:center;
@@ -168,9 +169,9 @@ tr,td{
 
 .validation-summary{
     width:265px;
-    background:rgba(255,0,0,0.2);
+    background:rgba(255,0,0,0.3);
     position:absolute;
-    top:35%;
+    top:20%;
     margin-left:15px;
     box-shadow:0px 0px 5px rgba(0,0,0,0.3);
     border-radius:5px;  
@@ -204,3 +205,54 @@ tr,td{
     cursor:pointer;
 }
 
+.cu-danger-h1{
+    padding:30px;
+    text-decoration:underline;
+    color:#ff5555;
+}
+
+.cu-delete-user{
+    margin:0px auto;
+    padding:5%;
+    width:60%;
+    border-radius:5px;
+    border:1px solid #ff4444;
+    background:white;
+    box-shadow:0px 0px 5px rgba(255,0,0,0.5);
+}
+
+.cu-danger-textbox{
+    height:40px;
+    width:60%;
+    border-radius:2px;
+    border:1px solid #ff4444;
+    padding:0px 10px;
+    outline:none;
+    font:bold 16px calibri;
+    color:red;
+    transition:all 0.33s ease-in-out;
+}
+
+.cu-danger-textbox:focus, .cu-danger-textbox:active{
+    border:1px solid #ff4444;
+    box-shadow:0px 0px 10px rgba(255,0,0,0.2);
+}
+
+.cu-btn-delete{
+    height:40px;
+    margin-top:20px;
+    width:25%;
+    background:white;
+    border:1px solid red;
+    border-radius:2px;
+    font:bold 16px calibri;
+    color:red;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+}
+
+.cu-btn-delete:hover{
+    background:red;
+    color:white;
+    cursor:pointer;
+}

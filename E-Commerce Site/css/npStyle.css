@@ -14,9 +14,13 @@
     border-radius:4px;
 }
 
-.form{
+.np-form{
     margin-top:30px;
     padding-top:40px;
+}
+
+.np-table{
+    margin:0px auto;
 }
 
 .np-ddl{
@@ -32,8 +36,8 @@
 }
 
 .np-ddl:active, .np-ddl:focus{
-    box-shadow:0px 0px 10px rgba(59, 217, 249, 0.2);
-    border:1px solid #4db7cc;
+    box-shadow:0px 0px 10px rgba(1, 164, 197, 0.2);
+    border:1px solid #06b7da;
 }
 
 .np-ddl option{

@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 .ul li a {
     text-decoration: none;
     display: block;
-    color: #4caf50;
+    color: #434343;
     padding: 14px 20px;
     font: bold 20px calibri;
     transition:all 0.33s ease-in-out;
@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ul li a:hover {
-    background:#ccc;
+    background:#4caf50;
     color:black;
 }
 

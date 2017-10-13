@@ -16,7 +16,11 @@
             <div class="head">
                 <h2>Registration</h2>
             </div>
+
             <div class="body">
+
+                <!-- Table for registration form -->
+
                 <table class="responsive-table">
                     <tr>
                         <td class="left">
@@ -53,7 +57,7 @@
                         <td class="left">
                             <label class="label" id="lblEmail" runat="server">Email</label>
                         </td>
-                        
+
                         <td class="right">
                             <asp:TextBox CssClass="text-field" TextMode="Email" ID="txtEmail" runat="server" placeholder="Enter email" onblur="emailValidation();">
                             </asp:TextBox>
@@ -70,7 +74,7 @@
                         <td class="left">
                             <label class="label" id="lblAge" runat="server">Date of Birth</label>
                         </td>
-                        
+
                         <td class="right">
                             <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" onblur="dobValidation();" />
                         </td>
@@ -85,7 +89,7 @@
                         <td class="left">
                             <label class="label" id="lblReligion" runat="server">Religion</label>
                         </td>
-                        
+
                         <td class="right">
                             <asp:TextBox CssClass="text-field" runat="server" ID="txtReligion" placeholder="Enter religion" onblur="religionValidation();">
                             </asp:TextBox>
@@ -101,7 +105,7 @@
                         <td class="left">
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
-                        
+
                         <td class="right">
                             <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password" onblur="passwordValidation();">
                             </asp:TextBox>
@@ -117,7 +121,7 @@
                         <td class="left">
                             <label class="label" id="lblConfirmPassword" runat="server">Confirm Password</label>
                         </td>
-                        
+
                         <td class="right">
                             <asp:TextBox class="text-field" TextMode="password" ID="txtConfirmPassword" runat="server" placeholder="Reenter password" onblur="confirmPasswordValidation();"></asp:TextBox>
                         </td>
@@ -129,34 +133,47 @@
                         </td>
                     </tr>
                 </table>
+
+                <!-- Table for gender -->
+
                 <table class="responsive-table">
                     <tr>
                         <td class="left">
                             <label class="label" id="lblGender" runat="server">Gender</label>
                         </td>
-                        
+
                         <td class="radio-container">
-                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male"/>Male</label>
+                            <label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" />Male</label>
                         </td>
                         <td class="radio-container">
-                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male"/>Female</label>
+                            <label>
+                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" />Female</label>
                         </td>
                         <td class="alert">
                             <span id="gAlert" class="alert-span">&#9888;</span>
                         </td>
-                        <td class="required">
-                        </td>
+                        <td class="required"></td>
                     </tr>
                 </table>
             </div>
+
+            <!-- Terms and conditions agreement div-->
+
             <div class="agreement">
                 <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" onchange="isChecked();" />
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
+            
+            <!-- Registration Button Control-->
+
             <div class="button">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="registerButtonClickPerformed" />
             </div>
         </div>
+
+        <!--Validation summary div-->
+
         <div class="notify">
             <asp:ValidationSummary CssClass="validation-summary" ID="ValidationSummary1" runat="server" />
         </div>

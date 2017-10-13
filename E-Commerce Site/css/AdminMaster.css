@@ -9,6 +9,7 @@ body {
     font-family: Calibri, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
     padding: 0px;
@@ -135,24 +136,22 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
     background:#f9f9f9;
     text-align:right;
-    border-bottom:3px solid gray;
+    border-bottom:1px solid lightgray;
     overflow:hidden;
 }
 
-
-ul {
+.ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
     padding-right:150px;
-    
 }
 
-ul li{
+.ul li{
     float:right;
 }
 
-ul li a {
+.ul li a {
     text-decoration: none;
     display: block;
     color: #4caf50;
@@ -162,7 +161,7 @@ ul li a {
     
 }
 
-ul li a:hover {
+.ul li a:hover {
     background:#ccc;
     color:black;
 }
@@ -173,6 +172,7 @@ ul li a:hover {
     clear:both;
     display:table;
 }
+
 
 .copyright{
     width:100%;

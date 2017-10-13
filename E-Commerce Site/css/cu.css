@@ -1,0 +1,20 @@
+﻿
+.cu-title{
+    margin-top:50px;
+    font:bold 35px Calibri;
+    color:cadetblue;
+}
+
+.cu-body-container{
+    width:100%;
+    height:auto;
+
+}
+
+.cu-left-control-panel{
+    width:20%;
+    height:100%;
+    position:fixed;
+    background:#eee;
+    border-right:3px solid #ddd;
+}

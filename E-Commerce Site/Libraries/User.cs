@@ -27,25 +27,10 @@ namespace E_Commerce_Site.Libraries
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        public User(string username,string password)
+        public User(string username, string password)
         {
             _username = username;
             _password = password;
-        }
-
-        /// <summary>
-        /// Constructor for general user
-        /// </summary>
-        /// <param name="fullName"></param>
-        /// <param name="gender"></param>
-        /// <param name="religion"></param>
-        /// <param name="age"></param>
-        public User(string fullName, string gender, string religion, int age)
-        {
-            _fullName = fullName;
-            _gender = gender;
-            _religion = religion;
-            _age = age;
         }
 
         /// <summary>

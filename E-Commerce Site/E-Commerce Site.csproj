@@ -95,10 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\AddNewCategory.aspx" />
+    <Content Include="admin\ControlUser.aspx" />
     <Content Include="admin\NewProduct.aspx" />
     <Content Include="admin\Order.aspx" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\anc.css" />
+    <Content Include="css\cu.css" />
     <Content Include="css\npStyle.css" />
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
@@ -144,6 +146,13 @@
     </Compile>
     <Compile Include="admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ControlUser.aspx.cs">
+      <DependentUpon>ControlUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ControlUser.aspx.designer.cs">
+      <DependentUpon>ControlUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\NewProduct.aspx.cs">
       <DependentUpon>NewProduct.aspx</DependentUpon>

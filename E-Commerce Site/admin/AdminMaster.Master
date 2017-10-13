@@ -4,13 +4,13 @@
 
 <html>
 <head runat="server">
-    <title>Admin</title>
+    <title>Admin Panel</title>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css" />
     <link rel="stylesheet" type="text/css" href="~/css/anc.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/npStyle.css">
-
+    <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/cu.css" />
     <style>
         * {
             box-sizing: border-box;
@@ -45,9 +45,10 @@
         <div class="main-content">
             <div class="menu-bar">
                 <ul>
+                    <li><a href="ControlUser.aspx">Control User</a></li>
+                    <li><a href="#">Customer Oders</a></li>
                     <li><a href="AddNewCategory.aspx">New Category</a></li>
                     <li><a href="NewProduct.aspx">New Product</a></li>
-                    <li><a href="#">Customer Oders</a></li>
                 </ul>
             </div>
             <div>

@@ -21,13 +21,14 @@
 
 .np-ddl{
     height:40px;
-    border:1px solid #434343;
+    border:1px solid #999;
     width:300px;
-    border-radius:2px;
+    border-radius:3px;
     outline:none;
     padding-left:20px;
     color:#666;
     font:bold 16px calibri;
+    transition:all 0.33s ease-in-out;
 }
 
 .np-ddl:active, .np-ddl:focus{
@@ -42,15 +43,23 @@
 }
 
 .choose-file{
-    border:1px solid #333;
+    border:1px solid #999;
     padding:10px 20px;
-    border-radius:2px;
+    border-radius:3px;
     background:white;
-    color:#666;
+    color:#777;
     font:bold 16px calibri;
     position:relative;
     z-index:1;
     cursor:pointer;
+    transition:all 0.33s ease-in-out;
+}
+
+.choose-file:hover{
+    background:#f9f9f9;
+    cursor:pointer;
+    color:black;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
 }
 
 .file-upload{

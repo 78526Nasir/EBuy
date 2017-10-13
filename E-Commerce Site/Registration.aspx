@@ -62,7 +62,8 @@
                             <span id="eAlert" class="alert-span">&#9888;</span>
                         </td>
                         <td class="required">
-                            <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="Email required" ControlToValidate="txtEmail">&nbsp;</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="Email required" ControlToValidate="txtEmail" Display="Dynamic">&nbsp;</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="rev1" runat="server" ErrorMessage="Enter valid email address" ControlToValidate="txtEmail" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">&nbsp;</asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -135,12 +136,10 @@
                         </td>
                         
                         <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male"/>Male</label>
+                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male"/>Male</label>
                         </td>
                         <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male"/>Female</label>
+                            <label><input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male"/>Female</label>
                         </td>
                         <td class="alert">
                             <span id="gAlert" class="alert-span">&#9888;</span>

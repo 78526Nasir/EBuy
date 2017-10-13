@@ -4,8 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="middle" runat="server">
     <h1 class="cu-title">Control User</h1>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <div class="cu-body-container">
         
@@ -14,8 +14,8 @@
         <div class="cu-left-control-panel">
             <ul class="left-menu-ul">
                 <li><a href="#new-user">Add new user</a></li>
-                <li><a href="#">Block user</a></li>
-                <li><a href="#">Delete user</a></li>
+                <li><a href="#cuDangerState">Delete user</a></li>
+                <li><a href="#">Users list</a></li>
             </ul>
         </div>
 
@@ -121,6 +121,7 @@
                 <!-- Table for Gender -->
 
                 <table class="responsive-table2">
+
                     <tr>
                         <td class="left-label">
                             <label class="label" id="lblGender" runat="server">Gender</label>
@@ -143,9 +144,18 @@
                 </div>
 
             </div>
-        </div>
 
-        <!--Validation Summary div-->
+            <h1 class="cu-danger-h1">Delete User</h1>
+            <div id="cuDangerState" class="cu-delete-user">
+                <asp:TextBox ID="txtSearchUser" placeholder="Search user for delete" CssClass="cu-danger-textbox" runat="server"></asp:TextBox>
+                <asp:GridView ID="gv1" runat="server"></asp:GridView>
+                <asp:Button ID="btnDeleteUser" CssClass="cu-btn-delete" runat="server" Text="Delete" CausesValidation="false"/>
+            </div>
+        </div>
+        
+        
+
+        <!--Validation Summary div | Below the left-menu-panel -->
 
         <div class="validation-summary">
             <asp:ValidationSummary CssClass="erro-message-summary" ID="ValidationSummary1" runat="server" />

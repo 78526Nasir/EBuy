@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <div class="anc-body-content">
-        <div class="form">
-            <table>
+        <div class="anc-form">
+            <table class="anc-table">
                 <tr>
                     <td>
                         <label class="anc-label" id="lblCategoryName" runat="server">Add Category</label>

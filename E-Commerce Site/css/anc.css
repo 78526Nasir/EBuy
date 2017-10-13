@@ -39,38 +39,41 @@ td{
     padding:5px 20px;
     color:#434343;
     outline:none;
-    border-radius:2px;
-    border:1px solid #434343;    
+    border-radius:3px;
+    border:1px solid #999;    
+    transition:all 0.33s ease-in-out;
 }
 
 .anc-textbox:focus, .anc-textbox:active{
-    box-shadow:0px 0px 10px rgba(59, 217, 249, 0.2);
-    border:1px solid #4db7cc;
+    box-shadow:0px 0px 10px rgba(72, 219, 248, 0.2);
+    border:1px solid #7bd9ec;
 }
 
 .anc-textarea{
     height:100px;
     width:300px;
     resize:none;
-    border:1px solid #434343;
+    border:1px solid #999;
     font:bold 16px calibri;
-    border-radius:2px;
+    border-radius:3px;
     outline:none;
     padding:5px 20px;
+    transition:all 0.33s ease-in-out;
 }
 
 .anc-textarea:focus, .anc-textarea:active{
-    box-shadow:0px 0px 10px rgba(59, 217, 249, 0.2);
-    border:1px solid #4db7cc;
+    box-shadow:0px 0px 10px rgba(72, 219, 248, 0.2);
+    border:1px solid #7bd9ec;
 }
 
 
 .anc-btn-add{
     height:40px;
     width:120px;
-    border:1px solid #777;
+    border:1px solid #999;
     border-radius:3px;
     background:white;
+    color:#777;
     outline:none;
     font:bold 20px calibri;
     transition:all 0.33s ease-in;
@@ -79,6 +82,7 @@ td{
 .anc-btn-add:hover{
     background:#f9f9f9;
     cursor:pointer;
+    color:black;
     box-shadow:0px 1px 3px rgba(0,0,0,0.2);
     
 }

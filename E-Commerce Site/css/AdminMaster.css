@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .left-header {
-    width: 40%;
+    width: 30%;
     padding-top: 20px;
     padding-left: 100px;
     float: left;
@@ -48,14 +48,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .middle-header {
-    width: 25%;
+    width: 35%;
+    text-align: center;
     float: left;
     height:100%;
 }
 
 .right-header {
     width: 35%;
-    float: left;
+    float: right;
 }
 
 .img-container {
@@ -134,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
     background:#f9f9f9;
     text-align:right;
-    /*border-bottom:3px solid #eee;*/
+    border-bottom:3px solid gray;
     overflow:hidden;
 }
 
@@ -188,3 +189,4 @@ ul li a:hover {
     text-decoration:underline;
     color:#111;
 }
+

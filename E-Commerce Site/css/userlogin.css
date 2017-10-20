@@ -8,7 +8,7 @@
 .container{
     width:25%;
     margin:0px auto;
-    height:400px;    
+    height:410px;    
     margin-top:100px;
     text-align:center;
     box-shadow:0px 0px 5px rgba(0,0,0,0.4);
@@ -49,6 +49,24 @@
     box-shadow:0px 0px 5px rgba(40, 240, 240, 0.2);
 }
 
+p{
+    margin:-15px 55px 0px 0px;
+    text-align:right;
+    font:12px monospace;
+}
+
+p a{
+    text-decoration:none;
+    font-weight:bold;
+    outline:none;
+    color:#444;
+}
+
+p a:hover{
+    color:black;
+    text-decoration:underline;
+}
+
 .btn-login{
     height:40px;
     width:40%;
@@ -71,7 +89,7 @@
 
 .status-report{
     color:#ff2244;
-    font:bold 20px calibri;
+    font:bold 12px monospace;
 }
 
 .bottom{
@@ -88,9 +106,25 @@
 .redirect-to-reg a{
     font-weight:bold;
     text-decoration:none;
+    outline:none;
     color:#444;
 }
 
 .redirect-to-reg a:hover{
     color:black;
+    text-decoration:underline;
 }
+
+.validation-summary{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:200px;
+    height:auto;
+    background:#ff9999;
+    font:bold 12px monospace;
+    text-align:left;
+    border-radius:3px;
+    box-shadow:0px 0px 5px rgba(245,78,34,0.4);
+}
+

@@ -144,7 +144,7 @@
                 </div>
 
             </div>
-
+            <hr/>
             <h1 class="cu-danger-h1">Delete User</h1>
             <div id="cuDangerState" class="cu-delete-user">
                 <asp:TextBox ID="txtSearchUser" placeholder="Search user for delete" CssClass="cu-danger-textbox" runat="server"></asp:TextBox>

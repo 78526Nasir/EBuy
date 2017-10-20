@@ -68,6 +68,7 @@ drop table Category
 select * from Category
 
 -- Store Procedure for insert data into Category TABLE --
+
 create proc sp_addNewCategory
 @categoryName varchar(50),
 @categoryDesc varchar(500)

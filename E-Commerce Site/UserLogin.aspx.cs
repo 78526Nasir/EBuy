@@ -22,6 +22,9 @@ namespace E_Commerce_Site
             {
                 Response.Redirect("~/index.aspx");
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
+            }else
+            {
+                status.Text = "username and/or password not matched!";
             }
         }
 

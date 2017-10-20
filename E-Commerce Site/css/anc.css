@@ -37,7 +37,7 @@ td{
     width:300px;
     font:bold 16px calibri;
     padding:5px 20px;
-    color:#434343;
+    color:black;
     outline:none;
     border-radius:3px;
     border:1px solid #999;    
@@ -81,5 +81,4 @@ td{
     background:#f9f9f9;
     cursor:pointer;
     box-shadow:0px 1px 3px rgba(0,0,0,0.2);
-    
 }

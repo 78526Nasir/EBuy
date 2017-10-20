@@ -18,13 +18,16 @@
         <form id="form1" runat="server">
             <asp:TextBox ID="txtUsername" placeholder="Enter username" CssClass="text-field first" runat="server" onblur="usernameValidation()"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfv1" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username required">&nbsp;</asp:RequiredFieldValidator>
-
+            <span id="unAlert" class="alert-1">&#9888;</span>
             <br />
+
             <asp:TextBox ID="txtPassword" placeholder="Enter password" TextMode="Password" CssClass="text-field" runat="server" onblur="passwordValidation()"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password required">&nbsp;</asp:RequiredFieldValidator>
+            <span id="pAlert" class="alert-2">&#9888;</span>
+            
             <p>Forget <a href="#">password?</a></p>
-
             <br />
+
             <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-login" OnClick="LoginButtonClickPerformed" />
             <br />
             <asp:Label ID="status" runat="server" CssClass="status-report"></asp:Label>

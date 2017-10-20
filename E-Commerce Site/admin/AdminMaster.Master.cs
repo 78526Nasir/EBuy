@@ -11,7 +11,9 @@ namespace E_Commerce_Site.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["EShop"] == null)
+            // To do 
+            // Uncomment this code snippet
+            //if (Session["AdminSession"] == null)
             //{
             //    Response.Redirect("~/admin/Login.aspx");
             //}

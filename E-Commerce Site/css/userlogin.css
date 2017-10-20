@@ -14,6 +14,7 @@
     box-shadow:0px 0px 5px rgba(0,0,0,0.4);
     border-radius:4px;
     background:#fafafa;
+    position:relative;
 }
 
 .top{
@@ -38,6 +39,7 @@
     outline:none;
     box-shadow:0px 0px 2px rgba(0,0,0,0.1);
     transition:all 0.33s ease-in-out;
+
 }
 
 .first{
@@ -117,8 +119,8 @@ p a:hover{
 
 .validation-summary{
     position:absolute;
-    top:20px;
-    right:20px;
+    top:-80px;
+    right:-480px;
     width:200px;
     height:auto;
     background:#ff9999;
@@ -128,3 +130,20 @@ p a:hover{
     box-shadow:0px 0px 5px rgba(245,78,34,0.4);
 }
 
+.alert-1{
+    position:absolute;
+    top:120px;
+    right:70px;
+    color:red;
+    font-weight:bold;
+    visibility:hidden;
+}
+
+.alert-2{
+    position:absolute;
+    top:195px;
+    right:70px;
+    color:red;
+    font-weight:bold;
+    visibility:hidden;
+}

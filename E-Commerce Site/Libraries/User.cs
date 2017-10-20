@@ -193,15 +193,13 @@ namespace E_Commerce_Site.Libraries
         }
         private Boolean checkUser(string username,string password)
         {
-            DataAccess dataAccess = new DataAccess();
-            return dataAccess.select(username, password);
+            return DataAccess.select(getUsername(), getPassword());
+            
         }
 
         public Boolean registration()
         {
-            DataAccess dataAccess = new DataAccess();
-            return dataAccess.insert(this.getUsername(), this.getFullName(), this.getEmail(), this.getDateOfBirth(), this.getAge(), this.getReligion(), this.getPassword(), this.getGender());
-
+            return DataAccess.insert(getUsername(), getFullName(), getEmail(), getDateOfBirth(), getAge(), getReligion(), getPassword(), getGender());
         }
     }
 }

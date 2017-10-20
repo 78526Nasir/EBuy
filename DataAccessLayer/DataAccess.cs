@@ -11,14 +11,15 @@ namespace DataAccessLayer
 {
     public class DataAccess
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
-        public SqlConnection connectDB()
+        static string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
+        public static SqlConnection connectDB()
         {
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             return con;
         }
-        public Boolean insert(string username, string fullName, string email, string dob, int age, string religion, string password, string gender)
+
+        public static Boolean insert(string username, string fullName, string email, string dob, int age, string religion, string password, string gender)
         {
             using (SqlConnection con = connectDB())
             {
@@ -39,7 +40,7 @@ namespace DataAccessLayer
             }
         }
 
-        public Boolean select(string username, string password)
+        public static Boolean select(string username, string password)
         {
             using (SqlConnection con = connectDB())
             {
@@ -56,6 +57,35 @@ namespace DataAccessLayer
                 {
                     return false;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Generic method for creating SqlParameter
+        /// </summary>
+        /// <param name="parameterName"></param>
+        /// <param name="value"></param>
+        /// <returns>return SqlParameter object</returns>
+
+        public static SqlParameter addParameter(string parameterName, object value)
+        {
+            SqlParameter parameter = new SqlParameter(parameterName, value);
+            return parameter;
+        }
+
+        public static DataTable executeDTByProcedure(string procedureName, SqlParameter[] parameters)
+        {
+            using (SqlConnection con = connectDB())
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = procedureName;
+                cmd.Parameters.AddRange(parameters);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
             }
         }
     }

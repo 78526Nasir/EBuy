@@ -73,6 +73,14 @@ namespace DataAccessLayer
             return parameter;
         }
 
+        /// <summary>
+        /// Generic method for execute any store procedure
+        /// whether the sp for insert, update , select or delete
+        /// it will work genericlly for all type of store procedure
+        /// </summary>
+        /// <param name="procedureName"></param>
+        /// <param name="parameters"></param>
+        /// <returns>return DataTable object</returns>
         public static DataTable executeDTByProcedure(string procedureName, SqlParameter[] parameters)
         {
             using (SqlConnection con = connectDB())
@@ -80,7 +88,10 @@ namespace DataAccessLayer
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 cmd.CommandText = procedureName;
-                cmd.Parameters.AddRange(parameters);
+                if (parameters != null)
+                {
+                    cmd.Parameters.AddRange(parameters);
+                }
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

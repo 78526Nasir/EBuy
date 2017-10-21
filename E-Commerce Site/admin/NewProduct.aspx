@@ -20,10 +20,7 @@
                         <label class="anc-label" id="lblProductCategory" runat="server">Product Category</label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlProductCategory" runat="server" CssClass="np-ddl">
-                            <asp:ListItem Value="ddl" Text="Select Items"></asp:ListItem>
-                            <asp:ListItem Value="ddl" Text="Items"></asp:ListItem>
-                            <asp:ListItem Value="ddl" Text="Select"></asp:ListItem>
+                        <asp:DropDownList ID="ddlProductCategory" runat="server" CssClass="np-ddl" DataTextField="Category_Name" DataValueField="Category_ID">                        
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -57,7 +54,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnAdd" CssClass="anc-btn-add" runat="server" Text="Add"></asp:Button>
+                        <asp:Button ID="btnAdd" CssClass="anc-btn-add" runat="server" Text="Add" OnClick="btnAdd_Click"></asp:Button>
                     </td>
                 </tr>
             </table>

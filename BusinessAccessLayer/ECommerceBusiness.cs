@@ -35,6 +35,10 @@ namespace BusinessAccessLayer
             DataAccess.executeDTByProcedure("sp_addNewCategory", parameters);
         }
 
+        public DataTable getAllCategories()
+        {
+            return DataAccess.executeDTByProcedure("sp_getAllCategory", null); // second parameter is set to be null because of it is select query
+        }
         
     }
 }

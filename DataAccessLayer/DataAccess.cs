@@ -34,6 +34,7 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@religion", religion);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@gender", gender);
+
                 cmd.ExecuteNonQuery();
 
                 return true;

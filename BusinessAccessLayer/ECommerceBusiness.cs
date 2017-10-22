@@ -23,6 +23,7 @@ namespace BusinessAccessLayer
         public string categoryDescription;
 
         public string productName;
+        public string productCategory;
         public string productDescription;
         public string productPrice;
         public string productImage;
@@ -39,6 +40,7 @@ namespace BusinessAccessLayer
         {
             return DataAccess.executeDTByProcedure("sp_getAllCategory", null); // second parameter is set to be null because of it is select query
         }
+
         
     }
 }

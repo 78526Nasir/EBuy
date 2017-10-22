@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="E_Commerce_Site.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="E_Commerce_Site.UI.Welcome" %>
 
 <!DOCTYPE html>
 
@@ -8,8 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="container">
-        <h1>Welcome To The Website</h1>
+    <div>
+        <h1>Welcome to our website!</h1>
     </div>
     </form>
 </body>

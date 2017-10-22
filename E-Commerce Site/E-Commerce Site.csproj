@@ -108,7 +108,7 @@
     <Content Include="images\user1.png" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
-    <Content Include="UserLogin.aspx" />
+    <Content Include="UI\UserLogin.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -125,10 +125,11 @@
     <Content Include="css\loginStyle.css" />
     <Content Include="images\background.jpg" />
     <Content Include="images\user.png" />
-    <Content Include="index.aspx" />
+    <Content Include="UI\Redirect.aspx" />
     <Content Include="admin\Login.aspx" />
-    <Content Include="Registration.aspx" />
+    <Content Include="UI\Registration.aspx" />
     <Content Include="script\jquery-3.2.1.min.js" />
+    <Content Include="UI\Welcome.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -169,12 +170,12 @@
     <Compile Include="admin\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="UI\Redirect.aspx.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="UI\Redirect.aspx.designer.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -184,20 +185,27 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Libraries\User.cs" />
-    <Compile Include="UserLogin.aspx.cs">
+    <Compile Include="UI\UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserLogin.aspx.designer.cs">
+    <Compile Include="UI\UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration.aspx.cs">
+    <Compile Include="UI\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registration.aspx.designer.cs">
+    <Compile Include="UI\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

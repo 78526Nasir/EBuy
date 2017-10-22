@@ -21,7 +21,17 @@ namespace E_Commerce_Site.admin
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                productName = txtProductName.Text,
+                productCategory = ddlProductCategory.SelectedItem.Text,
+                productDescription=taProductDesc.InnerText,
+                productPrice=txtProductPrice.Text,
+                // To do handle the image file
+                
+                
+            };
+            //addNewProduct();
         }
 
         private void getAllCategories()

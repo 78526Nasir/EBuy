@@ -37,8 +37,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .website-name {
     font: bold 40px 'Old English Text MT';
-    text-shadow: 0px 3px 5px rgba(0,0,0,0.7);
+    text-shadow: 0px 3px 5px rgba(0,0,0,0.2);
     color: #434343;
+    cursor:default;
+}
+
+.website-name:hover{
+    animation: colorize 4s;
+    -webkit-animation:colorize 4s;
+}
+
+@keyframes colorize{
+    0% {color: #226688}
+    25% {color: #228866} 
+    50% {color: #4caf50}
+    75% {color: darkcyan}
+    100% {color: purple}
 }
 
 .left-header h2 {

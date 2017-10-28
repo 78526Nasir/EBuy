@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
     <link rel="stylesheet" type="text/css" href="~/css/cu.css" />
     <link rel="stylesheet" type="text/css" href="~/css/partnership.css" />
-    <script type="text/javascript" src="../script/clientScript.js"></script>
 
     <style>
         * {

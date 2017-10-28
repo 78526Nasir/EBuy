@@ -108,7 +108,6 @@
     <Content Include="css\userlogin.css" />
     <Content Include="images\Calendar-icon.png" />
     <Content Include="images\user1.png" />
-    <Content Include="script\jQuery-3.2.1.js" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
     <Content Include="UI\UserLogin.aspx" />

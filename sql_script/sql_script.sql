@@ -20,16 +20,17 @@ insert into Account values('Sujan','2544');
 
 -- User TABLE --
 create table [User](
-	 [user_id]	int identity,	
-     username	varchar(50) not null,
-     fullname	varchar(100) not null,
-     email		varchar(100) not null,
-     dob		datetime not null,
-     age		int not null,
-     religion   varchar(20) not null,
-     [password]	varchar(100) not null,
-     gender		varchar(10) not null
-     
+	 [user_id]		int identity,	
+     username		varchar(50) not null,
+     fullname		varchar(100) not null,
+     email			varchar(100) not null,
+     dob			datetime not null,
+     age			int not null,
+     religion		varchar(20) not null,
+     [password]		varchar(100) not null,
+     gender			varchar(10) not null,
+     salt			varchar(max),
+     [Hash]			varchar(max),
      constraint pk_U_id primary key ([user_id])
 )
 
@@ -126,7 +127,7 @@ begin
 	insert into Company values(@CompanyName,@CompanyDesc,@PartnershipDate)
 end
 
-BMW is a Germany-based company which currently produces automobiles and motorcycles, and produced engines until 1945. The company was founded in 1916 and has its headquarters in Munich, Bavaria.
-TATA is an india multinational conglomerate holding company headquartered in Mumbai, Maharashtra, India. It was founded in 1868 by Jamseti TATA and gained international recognization after purchasing serveral global companies.
-Ferrari is an Italian sports car manufacturer based in Marancello. Founded by Enzo Ferrari  in 1939 out of Alfa Romeo's race division as Auto Avio Costruzioni, the company built its first car in 1940.
+
+
+
 

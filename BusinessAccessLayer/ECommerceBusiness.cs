@@ -10,37 +10,51 @@ using DataAccessLayer;
 
 
 /// <summary>
-/// Business Access Layer mainly deals with the Business
-/// since this is a E-commerce site
-/// so the main business belongs with product and category
+/// Business Access Layer mainly deals with the Business;
+/// Since this is a E-commerce site
+/// so the main business belongs with product and category and company
 /// </summary>
 namespace BusinessAccessLayer
 {
     public class ECommerceBusiness
     {
-
-        public string categoryName;
-        public string categoryDescription;
-
-        public string productName;
-        public string productCategory;
-        public string productDescription;
-        public string productPrice;
-        public string productImage;
+        public Category CategoryObj { get; set;}
+        public Product ProductObj { get; set; }
+        public Company CompanyObj { get; set; }
 
         public void addNewCategory()
         {
             SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@categoryName", categoryName);
-            parameters[1] = DataAccess.addParameter("@categoryDesc", categoryDescription);
+            parameters[0] = DataAccess.addParameter("@categoryName", CategoryObj.CategoryName);
+            parameters[1] = DataAccess.addParameter("@categoryDesc", CategoryObj.CategoryDescription);
             DataAccess.executeDTByProcedure("sp_addNewCategory", parameters);
+        }
+
+        public void addNewProduct()
+        {
+            // TO DO
+        }
+
+        public void addNewCompany()
+        {
+            SqlParameter[] parameters = new SqlParameter[3];
+            parameters[0] = DataAccess.addParameter("@CompanyName", CompanyObj.CompanyName);
+            parameters[1] = DataAccess.addParameter("@CompanyDesc", CompanyObj.CompanyDescription);
+            parameters[2] = DataAccess.addParameter("@PartnershipDate", CompanyObj.PartnershipDate);
+            DataAccess.executeDTByProcedure("sp_addNewCompany", parameters);
         }
 
         public DataTable getAllCategories()
         {
-            return DataAccess.executeDTByProcedure("sp_getAllCategory", null); // second parameter is set to be null because of it is select query
+            // second parameter is set to be null because of it is select query
+            return DataAccess.executeDTByProcedure("sp_getAllCategory", null); 
         }
 
-        
+        public DataTable getAllCompanies()
+        {
+            // second parameter is set to be null because of it is select query
+            return DataAccess.executeDTByProcedure("sp_getAllCompanies", null); 
+        }
+
     }
 }

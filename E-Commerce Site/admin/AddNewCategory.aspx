@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <div class="anc-body-content">
-
-        <div class="validation">
+        
+        <div class="validation" id="validation-summary">
             <asp:ValidationSummary ID="vs1" runat="server" />
         </div>
 

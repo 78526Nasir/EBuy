@@ -14,6 +14,17 @@
             <asp:ValidationSummary ID="vs3" runat="server" />
         </div>
 
+        <div id="ev-info">
+        </div>
+
+        <script type="text/javascript">
+            function invalidImage() {
+                var ele = document.getElementById("ev-info");
+                ele.style.visibility = "visible";
+                ele.innerText = "<%=this.errorMessage%>";
+            }
+        </script>
+
         <div class="np-form">
             <table class="np-table">
                 <tr>
@@ -100,7 +111,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnAdd" CssClass="anc-btn-add" runat="server" Text="Add" OnClick="btnAdd_Click"></asp:Button>
+                        <asp:Button ID="btnAdd" CssClass="anc-btn-add np-btn-add" runat="server" Text="Add" OnClick="btnAdd_Click"></asp:Button>
                     </td>
                 </tr>
 

@@ -39,11 +39,9 @@ namespace E_Commerce_Site.admin
                 {
                     CategoryObj = category
                 };
-
+                
                 ecb.addNewCategory();
-
                 resetForm();
-
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Confirmation", "alert('Successfully added a new category into database')", true);
             }
         }
@@ -55,3 +53,21 @@ namespace E_Commerce_Site.admin
         }
     }
 }
+
+
+/*
+
+<script type="text/javascript">
+     function myFunction() {
+         //some code here
+         alert('Function called successfully!');
+     }
+</script>
+
+
+
+protected void btnServerSide_Click(object sender, EventArgs e)
+{
+    ScriptManager.RegisterStartupScript(this, GetType(), "myFunction", "myFunction();", true);            
+} 
+*/

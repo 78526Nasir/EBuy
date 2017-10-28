@@ -93,6 +93,7 @@ namespace DataAccessLayer
                 {
                     cmd.Parameters.AddRange(parameters);
                 }
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

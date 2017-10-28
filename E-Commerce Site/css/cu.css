@@ -26,7 +26,7 @@
 }
 
 .left-menu-ul li a:hover{
-    background:#ddd !important;
+    background:#bbb !important;
     color:black;
 }
 .cu-left-control-panel{
@@ -170,7 +170,7 @@ tr,td{
 
 .validation-summary{
     width:265px;
-    background:rgba(255,0,0,0.3);
+    background:#ff8888;
     position:absolute;
     top:20%;
     margin-left:15px;

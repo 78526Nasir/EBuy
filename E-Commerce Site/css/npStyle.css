@@ -2,24 +2,30 @@
     margin-top:50px;
     font:bold 35px Calibri;
     color:cadetblue;
+}
 
+.np-title:hover{
+    cursor:default;
 }
 
 .np-body-content{
     width:80%;
     margin:0px auto;
     margin-top:20px;
-    height:500px;
-    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
-    border-radius:4px;
+    height:570px;
 }
 
 .np-form{
-    margin-top:30px;
-    padding-top:40px;
+    width:70%;
+    margin-top:50px;
+    padding:30px;
+    margin-left:28%;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
+    border-radius:5px;
 }
 
 .np-table{
+    border-collapse:collapse;
     margin:0px auto;
 }
 

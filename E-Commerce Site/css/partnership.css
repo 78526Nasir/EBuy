@@ -1,0 +1,63 @@
+﻿.p-body-content{
+    width:80%;
+    margin:0px auto;
+    margin-top:20px;
+    height:400px;
+}
+
+.p-form{
+    width:70%;
+    margin-top:50px;
+    padding:30px;
+    margin-left:28%;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
+    border-radius:5px;
+}
+
+.p-table{
+    border-collapse:collapse;
+    margin:0px auto;
+}
+
+.p-add-btn{
+    width:180px;
+    height:40px;
+    margin-top:10px;
+    border:1px solid #999;
+    border-radius:3px;
+    background:white;
+    outline:none;
+    font:bold 20px calibri;
+    transition:all 0.33s ease-in;
+}
+
+.p-add-btn:hover{
+    background:#f9f9f9;
+    cursor:pointer;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+}
+
+.p-dob{
+    height:40px;
+    width:300px;
+    border:1px solid #999;
+    border-radius:3px;
+    padding-left:15px;
+    font:bold 16px calibri;
+    outline:none;
+}
+
+.p-dob:focus, .p-dob:active{
+    box-shadow:0px 0px 10px rgba(1, 164, 197, 0.2);
+    border:1px solid #06b7da;
+}
+
+.p-dob::-webkit-inner-spin-button {
+    height:40px;
+}
+
+.p-dob::-webkit-calendar-picker-indicator{
+    font-size:16px;
+    padding:20px 10px;
+    color:#226688;
+}

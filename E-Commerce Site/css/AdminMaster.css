@@ -43,15 +43,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .website-name:hover{
-    animation: colorize 4s;
-    -webkit-animation:colorize 4s;
+    animation: colorize 5s;
+    -webkit-animation:colorize 5s;
 }
 
 @keyframes colorize{
-    0% {color: #226688}
-    25% {color: #228866} 
-    50% {color: #4caf50}
-    75% {color: darkcyan}
+    0% {color: black}
+    25%{color:#226688}
+    50% {color: orange} 
+    75% {color: #4caf50}
     100% {color: purple}
 }
 
@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     float: left;
     height:100%;
+    cursor:default;
 }
 
 .right-header {

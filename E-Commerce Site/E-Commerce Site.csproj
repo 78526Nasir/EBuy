@@ -98,14 +98,17 @@
     <Content Include="admin\ControlUser.aspx" />
     <Content Include="admin\NewProduct.aspx" />
     <Content Include="admin\Order.aspx" />
+    <Content Include="admin\Partnership.aspx" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\anc.css" />
     <Content Include="css\cu.css" />
     <Content Include="css\npStyle.css" />
+    <Content Include="css\partnership.css" />
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
     <Content Include="images\Calendar-icon.png" />
     <Content Include="images\user1.png" />
+    <Content Include="script\jQuery-3.2.1.js" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
     <Content Include="UI\UserLogin.aspx" />
@@ -128,7 +131,6 @@
     <Content Include="UI\Redirect.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="UI\Registration.aspx" />
-    <Content Include="script\jquery-3.2.1.min.js" />
     <Content Include="UI\Welcome.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -169,6 +171,13 @@
     </Compile>
     <Compile Include="admin\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Partnership.aspx.cs">
+      <DependentUpon>Partnership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Partnership.aspx.designer.cs">
+      <DependentUpon>Partnership.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Redirect.aspx.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>

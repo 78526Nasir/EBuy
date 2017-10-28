@@ -7,7 +7,7 @@
     <title>Login</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="~/css/userlogin.css" />
-    <script src="script/loginValidation.js"></script>
+    <script src="../script/loginValidation.js" type="text/javascript"></script>
 </head>
 <body>
 

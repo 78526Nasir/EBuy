@@ -6,7 +6,7 @@
     <title>Registration</title>
     <meta name="author" content="Nasir Islam Sujan" />
     <link rel="stylesheet" type="text/css" href="~/css/registration.css" />
-    <script type="text/javascript" src="script/validation.js">
+    <script type="text/javascript" src="../script/validation.js">
     </script>
 
 </head>
@@ -76,7 +76,7 @@
                         </td>
 
                         <td class="right">
-                            <input class="text-field dob fixed" type="date" id="txtDOB" max="2000-12-31" runat="server" onblur="dobValidation();" />
+                            <input class="text-field dob fixed" type="date" id="txtDOB" min="1950-01-01" max="2000-12-31" runat="server" onblur="dobValidation();" />
                         </td>
                         <td class="alert">
                             <span id="dobAlert" class="alert-span">&#9888;</span>

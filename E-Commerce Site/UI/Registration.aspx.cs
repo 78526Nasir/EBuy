@@ -17,8 +17,6 @@ namespace E_Commerce_Site
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)
         {
-            // problem in Gender value
-
             User newUser = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.Value);
             if (newUser.registration())
             {

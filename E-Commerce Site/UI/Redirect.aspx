@@ -1,0 +1,32 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Redirect.aspx.cs" Inherits="E_Commerce_Site.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Redirect</title>
+    <meta charset="utf-8" />
+
+    <style>
+        p{
+            font:20px consolas;
+            color:#434343;
+        }
+        p a{
+            text-decoration:none;
+            color:#333;
+        }
+        p a:hover{
+            text-decoration:underline;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <p>Redirect to <a href="UserLogin.aspx" target="_blank">Login Page</a></p>
+    </div>
+    </form>
+</body>
+</html>

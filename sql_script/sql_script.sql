@@ -12,6 +12,7 @@ create table Account(
 )
 
 
+INFORMATION_SCHEMA 
 
 insert into Account values('Nasir','78526');
 insert into Account values('Sujan','2544');
@@ -37,7 +38,7 @@ drop table [User]
 INSERT INTO [USER] VALUES('sujan', 'nasir islam sujan', 's@s.com', 1995-12-17, 21,'islam', '1', 'male')
 
 
-select * from [User]
+select * from [User]  
 
 
 -- Product TABLE --
@@ -45,15 +46,16 @@ select * from [User]
 create table Product
 (
 	Product_ID			int primary key identity,
-	Name				varchar(50),
+	Product_Name		varchar(50),
 	[Description]		varchar(500),
 	Price				varchar(20),
 	ImageUrl			varchar(500),
 	Category_ID			int
+	
 )
 
 drop table Product
-
+select * from Product
 
 -- Category TABLE --
 
@@ -65,9 +67,12 @@ create table Category
 )
 
 drop table Category
+
 select * from Category
 
--- Store Procedure for insert data into Category TABLE --
+select LEN(category_description) as Characters from category where category_id=3
+
+-- STORE PROCEDURE for insert data into Category TABLE --
 
 create proc sp_addNewCategory
 @categoryName varchar(50),
@@ -77,3 +82,51 @@ as
 begin
 	insert into Category values(@categoryName,@categoryDesc)
 end
+
+-- STORE PROCEDURE for select all Category Name --
+
+create proc sp_getAllCategory
+as
+begin
+	select * from category
+end
+
+drop sp_getAllCategory
+
+
+-- Company TABLE --
+
+create table Company
+(
+	Company_ID			int primary key identity,
+	Company_Name		varchar(50) not null,
+	Company_Desc		varchar(500) not null,
+	Partnership_date	datetime not null,
+)
+
+drop table company
+
+-- STORE PROCEDURE for select all Company --
+create proc sp_getAllCompanies
+as 
+begin
+	select * from Company
+end
+
+
+-- STORE PROCEDURE for insert data into Company TABLE ---
+
+create proc sp_addNewCompany
+@CompanyName		varchar(50),
+@CompanyDesc		varchar(500),
+@PartnershipDate	datetime
+
+as
+begin
+	insert into Company values(@CompanyName,@CompanyDesc,@PartnershipDate)
+end
+
+BMW is a Germany-based company which currently produces automobiles and motorcycles, and produced engines until 1945. The company was founded in 1916 and has its headquarters in Munich, Bavaria.
+TATA is an india multinational conglomerate holding company headquartered in Mumbai, Maharashtra, India. It was founded in 1868 by Jamseti TATA and gained international recognization after purchasing serveral global companies.
+Ferrari is an Italian sports car manufacturer based in Marancello. Founded by Enzo Ferrari  in 1939 out of Alfa Romeo's race division as Auto Avio Costruzioni, the company built its first car in 1940.
+

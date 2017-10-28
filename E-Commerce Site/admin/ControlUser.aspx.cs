@@ -13,5 +13,10 @@ namespace E_Commerce_Site.admin
         {
 
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

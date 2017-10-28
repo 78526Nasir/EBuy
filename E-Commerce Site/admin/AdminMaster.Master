@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="~/css/anc.css" />
     <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
     <link rel="stylesheet" type="text/css" href="~/css/cu.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/partnership.css" />
     
+    <script type="text/javascript" src="../script/MasterPageValidation.js"></script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -57,6 +60,7 @@
             <div class="menu-bar">
                 <ul class="ul">
                     <li><a href="ControlUser.aspx">Control User</a></li>
+                    <li><a href="Partnership.aspx">Partnership</a></li>
                     <li><a href="#">Customer Oders</a></li>
                     <li><a href="AddNewCategory.aspx">New Category</a></li>
                     <li><a href="NewProduct.aspx">New Product</a></li>

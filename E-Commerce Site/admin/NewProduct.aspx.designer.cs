@@ -13,6 +13,15 @@ namespace E_Commerce_Site.admin {
     public partial class NewProduct {
         
         /// <summary>
+        /// vs3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vs3;
+        
+        /// <summary>
         /// lblProductName control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProductName;
+        
+        /// <summary>
+        /// rfv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv1;
         
         /// <summary>
         /// lblProductCategory control.
@@ -49,6 +67,15 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.DropDownList ddlProductCategory;
         
         /// <summary>
+        /// rvf2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf2;
+        
+        /// <summary>
         /// lblProductDescription control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea taProductDesc;
+        
+        /// <summary>
+        /// rvf3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf3;
         
         /// <summary>
         /// lblProductImage control.
@@ -85,6 +121,15 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.FileUpload imageUpload;
         
         /// <summary>
+        /// rvf4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf4;
+        
+        /// <summary>
         /// lblProuctPrice control.
         /// </summary>
         /// <remarks>
@@ -101,6 +146,42 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProductPrice;
+        
+        /// <summary>
+        /// rvf5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf5;
+        
+        /// <summary>
+        /// lblCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCompany;
+        
+        /// <summary>
+        /// ddlProductCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProductCompany;
+        
+        /// <summary>
+        /// rvf6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf6;
         
         /// <summary>
         /// btnAdd control.

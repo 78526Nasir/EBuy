@@ -140,7 +140,7 @@
                 <!-- Registration button Control -->
 
                 <div class="button">
-                    <asp:Button ID="btnRegister" runat="server" Text="Register" />
+                    <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                 </div>
 
             </div>

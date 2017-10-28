@@ -16,22 +16,45 @@ namespace E_Commerce_Site.admin
             if (!IsPostBack)
             {
                 getAllCategories();
+                getAllCompanies();
             }
         }
 
+        /// <summary>
+        /// Intialize Product and ECommerceBusiness object dynamically at runtime;
+        /// Avoid using constructor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            ECommerceBusiness ecb = new ECommerceBusiness
+            /*
+             * check whether user fill all the required filed or not 
+             * server-site validation
+            */
+            if (IsValid) 
             {
-                productName = txtProductName.Text,
-                productCategory = ddlProductCategory.SelectedItem.Text,
-                productDescription=taProductDesc.InnerText,
-                productPrice=txtProductPrice.Text,
-                // To do handle the image file
-                
-                
-            };
-            //addNewProduct();
+                Product product = new Product
+                {
+                    ProductName = txtProductName.Text,
+                    ProductCategory = ddlProductCategory.SelectedItem.Text,
+                    ProductDescription = taProductDesc.InnerText,
+                    ProductPrice = txtProductPrice.Text,
+                    /* TO DO 
+                     * hadling product image later 
+                        ProductImage =
+                    must meet some security issue
+                    */
+                    ProductCompany = ddlProductCompany.SelectedItem.Text
+                };
+
+                ECommerceBusiness ecb = new ECommerceBusiness
+                {
+                    ProductObj = product
+                };
+
+                //addNewProduct();
+            }
         }
 
         private void getAllCategories()
@@ -47,6 +70,20 @@ namespace E_Commerce_Site.admin
             }
         }
 
-        
+        private void getAllCompanies()
+        {
+            ECommerceBusiness ecb = new ECommerceBusiness();
+            DataTable dt = ecb.getAllCompanies();
+
+            if (dt.Rows.Count > 0)
+            {
+                ListItem item = new ListItem("Select Company", "-1");
+                ddlProductCompany.DataSource = dt;
+                ddlProductCompany.DataBind();
+                ddlProductCompany.Items.Insert(0, item);
+            }
+        }
+
+
     }
 }

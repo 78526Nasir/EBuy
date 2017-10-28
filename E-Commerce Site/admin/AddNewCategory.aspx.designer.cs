@@ -13,6 +13,15 @@ namespace E_Commerce_Site.admin {
     public partial class AddNewCategory {
         
         /// <summary>
+        /// vs1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vs1;
+        
+        /// <summary>
         /// lblCategoryName control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
         
         /// <summary>
+        /// rfv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv1;
+        
+        /// <summary>
         /// lblDescription control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea taDescription;
+        
+        /// <summary>
+        /// rfv2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv2;
         
         /// <summary>
         /// btnAdd control.

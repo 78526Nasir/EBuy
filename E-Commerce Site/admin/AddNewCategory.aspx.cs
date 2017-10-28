@@ -15,15 +15,41 @@ namespace E_Commerce_Site.admin
             
         }
 
+        /// <summary>
+        /// Intialize Category and ECommerceBusiness object dynamically at runtime;
+        /// Avoid using constructor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void addButtonClickPerformed(object sender, EventArgs e)
         {
-            ECommerceBusiness ecb = new ECommerceBusiness
+            /*
+             * check whether user fill all the required filed or not 
+             * server-site validation
+            */
+            if (IsValid)
             {
-                categoryName = txtCategoryName.Text,
-                categoryDescription = taDescription.InnerText
-            };
+                Category category = new Category
+                {
+                    CategoryName = txtCategoryName.Text,
+                    CategoryDescription = taDescription.InnerText,
+                };
 
-            ecb.addNewCategory();
+                ECommerceBusiness ecb = new ECommerceBusiness
+                {
+                    CategoryObj = category
+                };
+
+                ecb.addNewCategory();
+
+                resetForm();
+
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Confirmation", "alert('Successfully added a new category into database')", true);
+            }
+        }
+
+        private void resetForm()
+        {
             txtCategoryName.Text = string.Empty;
             taDescription.InnerText = string.Empty;
         }

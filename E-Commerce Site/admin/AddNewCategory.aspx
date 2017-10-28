@@ -5,6 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <div class="anc-body-content">
+
+        <div class="validation">
+            <asp:ValidationSummary ID="vs1" runat="server" />
+        </div>
+
         <div class="anc-form">
             <table class="anc-table">
                 <tr>
@@ -14,6 +19,10 @@
                     <td>
                         <asp:TextBox CssClass="anc-textbox" ID="txtCategoryName" runat="server" placeholder="Enter new category"></asp:TextBox>
                     </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Category name required" ControlToValidate="txtCategoryName" 
+                            style="font-weight: bold; color: #FFFFFF;">&nbsp;</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -21,6 +30,10 @@
                     </td>
                     <td>
                         <textarea id="taDescription" class="anc-textarea" runat="server" placeholder="Enter short description.."></textarea>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfv2" runat="server" ErrorMessage="Category description required" ControlToValidate="taDescription"
+                             style="font-weight: bold; color: #FFFFFF;">&nbsp;</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

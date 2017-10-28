@@ -160,3 +160,5 @@ function isChecked() {
         document.getElementById("btnRegister").disabled = false;
     }
 }
+
+

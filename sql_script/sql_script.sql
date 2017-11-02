@@ -12,13 +12,13 @@ create table Account(
 )
 
 
-INFORMATION_SCHEMA 
 
 insert into Account values('Nasir','78526');
 insert into Account values('Sujan','2544');
 
 
 -- User TABLE --
+
 create table [User](
 	 [user_id]		int identity,	
      username		varchar(50) not null,
@@ -31,15 +31,63 @@ create table [User](
      gender			varchar(10) not null,
      salt			varchar(max),
      [Hash]			varchar(max),
+     
      constraint pk_U_id primary key ([user_id])
 )
 
 drop table [User]
 
-INSERT INTO [USER] VALUES('sujan', 'nasir islam sujan', 's@s.com', 1995-12-17, 21,'islam', '1', 'male')
+select * from [user]
 
 
-select * from [User]  
+-- STORE PROCEDURE for INSERT data into USER TABLE--
+
+create proc sp_addNewUser
+@username		varchar(50),
+@fullname		varchar(100),
+@email			varchar(100),
+@dob			datetime,
+@age			int,
+@religion		varchar(20),
+@password		varchar(100),
+@gender			varchar(10),
+@salt			varchar(max),
+@hash			varchar(max)
+
+as
+begin 
+	insert into [User](username,fullname,email,dob,age,religion,[password],gender,salt,[hash]) values
+				(@username,@fullname,@email,@dob,@age,@religion,@password,@gender,@salt,@hash)
+end
+select * from [User]
+
+
+-- STORE PROCEDURE for SELECT USER --
+
+create proc sp_selectUser
+@username varchar(50),
+@hash varchar(100)
+as 
+begin
+	select username,[Hash] from [User] where username=@username and [Hash]=@hash
+end
+
+
+
+drop proc sp_selectUser
+
+-- STORE PROCEDURE for SELECT USER by Username--
+
+create proc sp_retriveSaltAgainstUser
+@username varchar(50)
+as 
+begin
+	select salt from [User] where username=@username
+end
+
+drop proc sp_retriveSaltAgainstUser
+
+select * from [user]
 
 
 -- Product TABLE --
@@ -130,4 +178,34 @@ end
 
 
 
+-- Create admin TABLE --
+
+create table [admin]
+(
+	Admin_ID	int primary key identity,
+	username	varchar(50) not null,
+	FullName	varchar(50),
+	[Password]	varchar(50) not null,
+	ImageUrl	varchar(max)
+)
+
+drop table admin
+
+
+-- Store Prcocedures for Admin Table --
+
+
+-- Store procedure for select all Admin --
+create proc sp_selectAdmin 
+@username varchar(50),
+@password varchar(50)
+as
+begin
+	select * from [admin] where username=@username and [Password]=@password
+end
+
+insert into [admin] (username,fullname,password) values('sujan','Nasir Islam Sujan','78526')
+
+
+drop proc sp_selectAdmin
 

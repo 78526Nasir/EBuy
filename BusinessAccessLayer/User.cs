@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using DataAccessLayer;
 
-namespace E_Commerce_Site.Libraries
+
+namespace BusinessAccessLayer
 {
     public class User
     {
@@ -21,16 +22,26 @@ namespace E_Commerce_Site.Libraries
         private string _country;
         private string _city;
         private string _district;
+        private string _salt;
+        private string _hash;
 
+        /// <summary>
+        /// Constructor for retrive record against username
+        /// </summary>
+        /// <param name="username"></param>
+        public User(string username)
+        {
+            _username = username;
+        }
         /// <summary>
         /// Constructor for Login purpose
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        public User(string username, string password)
+        public User(string username, string saltedHash)
         {
             _username = username;
-            _password = password;
+            _hash = saltedHash;
         }
 
         /// <summary>
@@ -47,12 +58,18 @@ namespace E_Commerce_Site.Libraries
         {
             _username = username;
             _fullName = fullName;
-            _password = password;
-            _gender = gender;
-            _religion = religion;
             _email = email;
             _dob = dob;
-            _age = calculateAge(dob); 
+            _age = calculateAge(dob);
+            _religion = religion;
+            _password = password;
+            _gender = gender;
+        }
+
+        public void setHashAndSalt(string hash, string salt)
+        {
+            _hash = hash;
+            _salt = salt;
         }
 
         public void setUsername(string username)
@@ -71,22 +88,12 @@ namespace E_Commerce_Site.Libraries
         {
             return _fullName;
         }
-        public void setPassword(string password)
-        {
-            _password = password;
-        }
 
-        /// <summary>
-        /// TO DO 
-        /// Hashing and Salting
-        /// User Authentication
-        /// </summary>
-        /// <returns></returns>
-        //public string getPassword()
+        // To Do
+        //public void setPassword(string password)
         //{
-        //    return "";
+        //    _password = password;
         //}
-
 
         public string getPassword()
         {
@@ -172,7 +179,14 @@ namespace E_Commerce_Site.Libraries
         {
             return _district;
         }
-
+        public string getSalt()
+        {
+            return _salt;
+        }
+        public string getHash()
+        {
+            return _hash;
+        }
 
         /// <summary>
         /// Finding Age from given Date of Birth
@@ -187,19 +201,28 @@ namespace E_Commerce_Site.Libraries
             return Years;
         }
 
-        public Boolean login()
+
+
+        public bool login()
         {
-            return checkUser(this.getUsername(), this.getPassword());
-        }
-        private Boolean checkUser(string username,string password)
-        {
-            return DataAccess.select(getUsername(), getPassword());
-            
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                UserObj = this
+            };
+
+            return ecb.selectUser();
         }
 
-        public Boolean registration()
+        public bool registration()
         {
-            return DataAccess.insert(getUsername(), getFullName(), getEmail(), getDateOfBirth(), getAge(), getReligion(), getPassword(), getGender());
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                UserObj = this
+            };
+
+            ecb.addNewUser();
+
+            return true;
         }
     }
 }

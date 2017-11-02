@@ -11,7 +11,7 @@ namespace BusinessAccessLayer
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
         
-        // Do not create any constructor 
-        // creating property that are dynamically initialize on runtime
+        // creating property that are dynamically initialize on the fly
+
     }
 }

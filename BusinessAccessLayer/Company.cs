@@ -12,6 +12,6 @@ namespace BusinessAccessLayer
         public string CompanyDescription { get; set; }
         public string PartnershipDate { get; set; }
 
-        // Properties are initialize dynamically at runtime
+        // Properties are initialize dynamically on the fly
     }
 }

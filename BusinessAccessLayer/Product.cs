@@ -11,11 +11,11 @@ namespace BusinessAccessLayer
         public string ProductName { get; set; }
         public string ProductCategory { get; set; }
         public string ProductDescription { get; set; }
-        public string ProductPrice { get; set; }
+        public string ProductPrice { get; set; } // TODO
         public string ProductImage { get; set; }
         public string ProductCompany { get; set; }
 
-        // objects are initialize dynamically at runtime
+        // objects are initialize dynamically on the fly
 
         /*
             public Product(string productName, string productCategory, string productDescription, string productImage, string productCompany)

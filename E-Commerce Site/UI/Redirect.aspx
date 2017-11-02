@@ -14,11 +14,10 @@
         }
         p a{
             text-decoration:none;
-            color:#333;
+            color:blue;
         }
         p a:hover{
             text-decoration:underline;
-            color:blue;
         }
     </style>
 </head>

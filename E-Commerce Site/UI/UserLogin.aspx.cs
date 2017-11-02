@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BusinessAccessLayer;
 using E_Commerce_Site.Libraries;
 
 namespace E_Commerce_Site
@@ -17,18 +18,55 @@ namespace E_Commerce_Site
 
         protected void LoginButtonClickPerformed(object sender, EventArgs e)
         {
-            User newUser = new User(txtUsername.Text, txtPassword.Text);
-            if (newUser.login())
+            string saltedHashedPassword = retriveSaltedHash();
+
+            if (saltedHashedPassword != null)
             {
-                Response.Redirect("~/UI/Welcome.aspx");
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully logged in!')", true);
-            }else
+                User user = new User(txtUsername.Text, saltedHashedPassword);
+
+                if (user.login())
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully logged in!')", true);
+                    Response.Redirect("~/UI/Welcome.aspx");
+                }
+                else
+                {
+                    status.Text = "username and/or password not matched!";
+                }
+            }
+            else
             {
                 status.Text = "username and/or password not matched!";
             }
         }
 
-        
+        private string retriveSaltedHash()
+        {
+            User user = new User(txtUsername.Text);
+
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                UserObj = user
+            };
+
+            string takeSalt = ecb.retriveSaltAgainstUser();
+            string takeHash;
+
+            if (takeSalt != null)
+            {
+                takeHash = generateTempHashWithSalt(takeSalt);
+            }else
+            {
+                takeHash = null;
+            }
+
+            return takeHash;
+        }
+        private string generateTempHashWithSalt(string salt)
+        {
+            string tempHash = HashingAndSalting.createSaltedHash(txtPassword.Text, salt);
+            return tempHash;
+        }
 
     }
 }

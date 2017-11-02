@@ -130,6 +130,7 @@
                         </td>
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv7" runat="server" ErrorMessage="Confirm password required" ControlToValidate="txtConfirmPassword">&nbsp;</asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="cv1" runat="server" ErrorMessage="Password and confirm password not match" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword">&nbsp;</asp:CompareValidator>
                         </td>
                     </tr>
                 </table>

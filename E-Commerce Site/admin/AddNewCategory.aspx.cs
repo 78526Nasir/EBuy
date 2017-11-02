@@ -15,12 +15,6 @@ namespace E_Commerce_Site.admin
             
         }
 
-        /// <summary>
-        /// Intialize Category and ECommerceBusiness object dynamically at runtime;
-        /// Avoid using constructor
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void addButtonClickPerformed(object sender, EventArgs e)
         {
             /*
@@ -54,20 +48,3 @@ namespace E_Commerce_Site.admin
     }
 }
 
-
-/*
-
-<script type="text/javascript">
-     function myFunction() {
-         //some code here
-         alert('Function called successfully!');
-     }
-</script>
-
-
-
-protected void btnServerSide_Click(object sender, EventArgs e)
-{
-    ScriptManager.RegisterStartupScript(this, GetType(), "myFunction", "myFunction();", true);            
-} 
-*/

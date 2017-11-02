@@ -16,12 +16,6 @@ namespace E_Commerce_Site.admin
             
         }
 
-        /// <summary>
-        /// Intialize Company and ECommerceBusiness object dynamically at runtime;
-        /// Avoid using constructor
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             /*

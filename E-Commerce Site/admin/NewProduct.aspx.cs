@@ -33,32 +33,43 @@ namespace E_Commerce_Site.admin
             }
             else
             {
+                string path = "Uploads/" + imageUpload.FileName;
                 /*
-                * check whether user fill all the required field or not 
-                * server-site validation
-                */
+                 * check whether user fill all the required field or not 
+                 * server-site validation
+                 */
                 if (IsValid)
                 {
                     Product product = new Product
                     {
                         ProductName = txtProductName.Text,
-                        ProductCategory = ddlProductCategory.SelectedItem.Text,
+                        ProductCategory = ddlProductCategory.SelectedIndex,
                         ProductDescription = taProductDesc.InnerText,
                         ProductPrice = txtProductPrice.Text,
-                        ProductImage = physicalPath(),
-                        ProductCompany = ddlProductCompany.SelectedItem.Text
+                        ProductImage = path,
+                        ProductCompany = ddlProductCompany.SelectedIndex
                     };
 
                     ECommerceBusiness ecb = new ECommerceBusiness
                     {
                         ProductObj = product
                     };
+
                     ecb.addNewProduct();
-                    // to do list
-                    // reset
-                    // confirmation message
+                    resetForm();
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully added a new product into database!')", true);
                 }
             }
+        }
+
+        private void resetForm()
+        {
+            txtProductName.Text = string.Empty;
+            txtProductPrice.Text = string.Empty;
+            taProductDesc.InnerText = string.Empty;
+            imageUpload.Attributes.Clear();
+            ddlProductCategory.SelectedIndex = -1;
+            ddlProductCompany.SelectedIndex = -1;
         }
 
         private void getAllCategories()

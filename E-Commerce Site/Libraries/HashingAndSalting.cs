@@ -5,6 +5,7 @@ using System.Web;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
+
 namespace E_Commerce_Site.Libraries
 {
     public class HashingAndSalting
@@ -23,19 +24,6 @@ namespace E_Commerce_Site.Libraries
                 range.GetBytes(salt);
             }
             return salt;
-        }
-        /// <summary>
-        /// Generate saltedHash;
-        /// Use KeyDerivation algorithm;
-        /// Iterate 10000 times
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public static string createSaltedHash(string password)
-        {
-            byte[] salt = createSalt();
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(password, salt, KeyDerivationPrf.HMACSHA1, 10000, 256 / 8));
-            return hashed;
         }
 
         public static string createSaltedHash(string password, out string saltValue)

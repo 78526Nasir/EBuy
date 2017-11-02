@@ -37,27 +37,6 @@ namespace E_Commerce_Site
             {
                 lblStatus.Text = "Username or password not matched !";
             }
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    string sql_query = "Select * from Account where username=@un and password=@pw";
-
-            //    SqlCommand command = new SqlCommand(sql_query, connection);
-            //    connection.Open();
-            //    command.Parameters.AddWithValue("@un", txtUsername.Text);
-            //    command.Parameters.AddWithValue("@pw", txtPassword.Text);
-
-            //    SqlDataReader dataReader=command.ExecuteReader();
-            //    if (dataReader.Read())
-            //    {
-            //        Session["AdminSession"] = "EC_Admin";
-            //        Response.Redirect("~/index.aspx");
-            //    }else
-            //    {
-            //        lblStatus.Text = "Username or password not matched !";
-            //    }
-
-            //}
         }
     }
 }

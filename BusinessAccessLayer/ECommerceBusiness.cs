@@ -34,7 +34,14 @@ namespace BusinessAccessLayer
 
         public void addNewProduct()
         {
-            // TO DO
+            SqlParameter[] parameters = new SqlParameter[6];
+            parameters[0] = DataAccess.addParameter("@productName", ProductObj.ProductName);
+            parameters[1] = DataAccess.addParameter("@description", ProductObj.ProductDescription);
+            parameters[2] = DataAccess.addParameter("@price", ProductObj.ProductPrice);
+            parameters[3] = DataAccess.addParameter("@categoryID", ProductObj.ProductCategory);
+            parameters[4] = DataAccess.addParameter("@companyID", ProductObj.ProductCompany);
+            parameters[5] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
+            DataAccess.executeDTByProcedure("sp_addNewProduct", parameters);
         }
 
         public void addNewCompany()

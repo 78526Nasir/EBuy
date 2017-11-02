@@ -69,3 +69,14 @@ input[type="submit"]:hover {
     background: #777;
     border-radius: 50%;
 }
+
+.validation-summary{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:#ff4444;
+    font:bold 12px consolas;
+    width:220px;
+    border-radius:5px;
+    text-overflow:ellipsis;
+}

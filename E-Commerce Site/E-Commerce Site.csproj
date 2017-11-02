@@ -201,7 +201,6 @@
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Libraries\User.cs" />
     <Compile Include="UI\UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,10 +228,6 @@
     <ProjectReference Include="..\BusinessAccessLayer\BusinessAccessLayer.csproj">
       <Project>{447d8444-4f15-4c1a-b66d-2f96068e766c}</Project>
       <Name>BusinessAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{47631514-b618-470f-8648-00f3eb89ba80}</Project>
-      <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

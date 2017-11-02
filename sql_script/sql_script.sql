@@ -98,13 +98,30 @@ create table Product
 	Product_Name		varchar(50),
 	[Description]		varchar(500),
 	Price				varchar(20),
+	Category_ID			int,
+	Company_ID			int,
 	ImageUrl			varchar(500),
-	Category_ID			int
-	
 )
 
 drop table Product
 select * from Product
+
+
+
+-- STORE PROCEDURE for add new product --
+create proc sp_addNewProduct
+@productName		varchar(50),
+@description		varchar(500),
+@price				varchar(20),
+@categoryID			int,
+@companyID			int,
+@imageUrl			varchar(500)
+as 
+begin
+	insert into Product values(@productName,@description,@price,@categoryID,@companyID,@imageUrl)
+end
+
+drop proc sp_addNewProduct
 
 -- Category TABLE --
 

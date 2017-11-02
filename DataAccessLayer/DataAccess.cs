@@ -19,55 +19,12 @@ namespace DataAccessLayer
             return con;
         }
 
-        public static Boolean insert(string username, string fullName, string email, string dob, int age, string religion, string password, string gender)
-        {
-            using (SqlConnection con = connectDB())
-            {
-                string insert_query = "INSERT INTO [USER] VALUES(@username, @fullName, @email, @dob, @age, @religion,@password, @gender)";
-                SqlCommand cmd = new SqlCommand(insert_query, con);
-
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@fullName", fullName);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@dob", dob);
-                cmd.Parameters.AddWithValue("@age", age);
-                cmd.Parameters.AddWithValue("@religion", religion);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@gender", gender);
-
-                cmd.ExecuteNonQuery();
-
-                return true;
-            }
-        }
-
-        public static Boolean select(string username, string password)
-        {
-            using (SqlConnection con = connectDB())
-            {
-                string select_query = "SELECT * FROM [USER] WHERE username=@username AND password=@password";
-                SqlCommand cmd = new SqlCommand(select_query, con);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-
         /// <summary>
         /// Generic method for creating SqlParameter
         /// </summary>
         /// <param name="parameterName"></param>
         /// <param name="value"></param>
         /// <returns>return SqlParameter object</returns>
-
         public static SqlParameter addParameter(string parameterName, object value)
         {
             SqlParameter parameter = new SqlParameter(parameterName, value);

@@ -14,10 +14,10 @@
             <table class="anc-table">
                 <tr>
                     <td>
-                        <label class="anc-label" id="lblCategoryName" runat="server">Add Category</label>
+                        <label class="anc-label" id="lblCategoryName" runat="server">Category Name</label>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="anc-textbox" ID="txtCategoryName" runat="server" placeholder="Enter new category"></asp:TextBox>
+                        <asp:TextBox CssClass="anc-textbox" ID="txtCategoryName" runat="server" placeholder="Enter category name"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Category name required" ControlToValidate="txtCategoryName" 

@@ -44,7 +44,7 @@
                         <div class="img-container">
                             <img src="../images/user.png" alt="Admin Image" class="img-responsive" />
                         </div>
-                        <asp:Button ID="btnLogout" CssClass="btn-logout" runat="server" CausesValidation="false" Text="Logout" />
+                        <asp:Button ID="btnLogout" CssClass="btn-logout" runat="server" CausesValidation="false" Text="Logout" OnClick="btnLogout_Click" />
                     </div>
 
                 </div>

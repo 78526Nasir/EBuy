@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="Partnership.aspx.cs" Inherits="E_Commerce_Site.admin.Partnership" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="middle" runat="server">
-    <h1 class="np-title">Add New Partnership</h1>
+    <h1 class="np-title">Add New Partner</h1>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">

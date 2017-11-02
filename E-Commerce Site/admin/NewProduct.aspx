@@ -21,7 +21,7 @@
             function invalidImage() {
                 var ele = document.getElementById("ev-info");
                 ele.style.visibility = "visible";
-                ele.innerText = "<%=this.errorMessage%>";
+                ele.innerText = "<%=this.errorMessage%>"; 
             }
         </script>
 

@@ -29,6 +29,7 @@
     background:#bbb !important;
     color:black;
 }
+
 .cu-left-control-panel{
     position:relative;
     width:20%;
@@ -36,8 +37,8 @@
     margin-left:1%;
     float:left;
     background:white;
-    border-radius:5px;
-    box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+    border-radius:2px;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3);
 }
 
 .cu-left-control-panel ul{
@@ -57,11 +58,12 @@ cu-left-control-panel-first{
 .cu-left-control-panel ul li a{
     display:block;
     color: #434343;
+    transition:all 0.33s ease;
 }
 
 .cu-left-control-panel ul li a:hover{
     color:black;
-    background:#ddd;
+    background:#4caf50 !important;
 }
 
 .cu-main-content{
@@ -71,8 +73,12 @@ cu-left-control-panel-first{
     width:77%;
     height:auto;
     text-align:center;
-    box-shadow:0px 0px 5px rgba(0,0,0,0.3);
-    border-radius:5px;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3);
+    border-radius:2px;
+}
+
+.cu-main-content:hover{
+    box-shadow:0px 1px 8px rgba(0,0,0,0.3);
 }
 
 .cu-new-user{
@@ -81,7 +87,7 @@ cu-left-control-panel-first{
     background:#fafafa;
     border:1px solid #f9f9f9;
     box-shadow:0px 0px 2px rgba(0,0,0,0.3);
-    border-radius:5px;
+    border-radius:2px;
     
 }
 
@@ -221,7 +227,7 @@ hr{
     margin:0px auto;
     padding:5%;
     width:60%;
-    border-radius:5px;
+    border-radius: 2px;
     border:1px solid red;
     background:white;
     box-shadow:0px 0px 2px rgba(255,0,0,0.5);

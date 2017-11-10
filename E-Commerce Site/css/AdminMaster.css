@@ -99,17 +99,39 @@ h1, h2, h3, h4, h5, h6 {
     font: bold 20px garamond;
     margin-top: 30px;
     margin-bottom: 20px;
+    cursor:default;
+}
+
+.right-header-left h4:hover{
+    animation:name 5s;
+    -webkit-animation:name 5s
+}
+
+@keyframes name{
+    0%{color:#4caf50}
+    25%{color:green}
+    50%{color:orange}
+    75%{color:#226688}
+    100%{color:#434343}
 }
 
 
 .admin-name {
-    font-weight: bold;
     font-size: 12px;
     background: #eee;
     padding: 5px 15px;
     border-radius: 2px;
-    color: darkcyan;
     box-shadow: inset 0px 0px 2px rgba(0,0,0,0.2);
+}
+
+.admin-name a{
+    text-decoration:none;
+    color:#0072c3;
+}
+
+.admin-name a:hover{
+    text-decoration:underline;
+    font-weight:bold;
 }
 
 
@@ -127,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #ccc;
     color: black;
     background: white;
-    border-radius: 4px;
+    border-radius: 2px;
     outline: none;
     transition: all 0.33s ease-in-out;
 }

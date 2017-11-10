@@ -151,3 +151,24 @@ p a:hover{
     font-weight:bold;
     visibility:hidden;
 }
+
+@media screen and (max-width:1100px){
+    .container{
+        width:35%;
+    }
+}
+
+@media screen and (max-width:800px){
+    .container{
+        width:60%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .container{
+        width:90%;
+    }
+}
+
+
+

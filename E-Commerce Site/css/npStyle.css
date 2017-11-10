@@ -17,14 +17,14 @@
 
 #ev-info{
     position:absolute;
-    height:80px;
+    height:70px;
     width:20%;
     background:#ff8888;
     padding:10px 20px;
     margin-top:12%;
-    border-radius:5px;
+    border-radius:2px;
     color:black;
-    font:bold 14px consolas;
+    font:bold 12px consolas;
     box-shadow:0px 1px 5px rgba(0,0,0,0.3);
     visibility:hidden;
 }
@@ -34,8 +34,12 @@
     margin-top:50px;
     padding:30px;
     margin-left:28%;
-    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
-    border-radius:5px;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3);
+    border-radius:2px;
+}
+
+.np-form:hover{
+    box-shadow:0px 1px 8px rgba(0,0,0,0.3);
 }
 
 .np-table{

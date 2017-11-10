@@ -11,10 +11,10 @@ namespace E_Commerce_Site.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["AdminSession"] == null)
-            {
-                Response.Redirect("~/admin/Login.aspx");
-            }
+            //if (Session["AdminSession"] == null)
+            //{
+            //    Response.Redirect("~/admin/Login.aspx");
+            //}
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

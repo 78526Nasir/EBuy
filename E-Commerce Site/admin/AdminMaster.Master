@@ -36,8 +36,8 @@
 
                 <div class="right-header">
                     <div class="right-header-left">
-                        <h4>Admin</h4>
-                        <code class="admin-name">Nasir Islam Sujan</code>
+                        <h4>admin</h4>
+                        <code id="adminName" class="admin-name"><a href="#">Nasir Islam Sujan</a></code>
                     </div>
 
                     <div class="right-header-right">

@@ -37,6 +37,7 @@ create table [User](
 
 drop table [User]
 
+select * from admin
 select * from [user]
 
 

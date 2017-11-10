@@ -107,7 +107,9 @@
     <Content Include="admin\NewProduct.aspx" />
     <Content Include="admin\Order.aspx" />
     <Content Include="admin\Partnership.aspx" />
+    <Content Include="admin\Profile.aspx" />
     <Content Include="css\AdminMaster.css" />
+    <Content Include="css\adminProfile.css" />
     <Content Include="css\anc.css" />
     <Content Include="css\cu.css" />
     <Content Include="css\npStyle.css" />
@@ -185,6 +187,13 @@
     </Compile>
     <Compile Include="admin\Partnership.aspx.designer.cs">
       <DependentUpon>Partnership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Libraries\HashingAndSalting.cs" />
     <Compile Include="UI\Redirect.aspx.cs">

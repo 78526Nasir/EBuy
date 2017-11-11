@@ -14,5 +14,6 @@
   * `Add new category`
   * `Customer orders`
   * `User control`
+  * `Admin profile`
   
  * Other feature are coming soon..

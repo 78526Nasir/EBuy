@@ -1,20 +1,235 @@
-﻿body {
-    background:#fafafa;
+﻿*{
+    box-sizing:border-box;
+}
+
+body {
+    background:white;
+    margin:0px;
+    padding:0px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#container{
-    margin:0px auto;
-    width:70%;
-    height:800px;
+#header{
+    width:100%;
     background:white;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+    height:60px;
+    margin-bottom:50px;
+    box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#header h1{
+    margin:0px;
+    padding:0px;
+    line-height:60px;
+    margin-left:15%;
+    float:left;
+}
+
+.btn{
+    text-align:right;
+}
+
+#btnAdminPanel{
+    text-align:right;
+    height:35px;
+    margin:12px;
+    margin-right:15%;
+    padding:5px 15px;
+    border:1px solid #ccc;
+    background:white;
+    font:bold 16px calibri;
+    color:#555;
+    border-radius:3px;
+    cursor:pointer;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+}
+
+#btnAdminPanel:hover{
+    color:black;
+    border:1px solid #aaa;
+    background:#fafafa;
+    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
 }
 
 #title{
     font-family:garamond;
+    color:#434343;
+    cursor:default;
+}
+
+#title:hover{
+    animation:text 5s;
+}
+
+@keyframes text{
+    0%{color:black}
+    25%{color:#4caf50}
+    50%{color:green}
+    75%{color:#226688}
+    100%{color:orange}
+}
+
+
+#container{
+    margin:0px auto;
+    width:70%;
+    height:500px;
+    background:#fafafa;
+    border-radius:2px;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+}
+
+#container:hover{
+    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+}
+
+#left-container{
+    width:25%;
+    height:100%;
+    background:#eee;
+    float:left;
+}
+
+#img-container{
+    width:100%;
+}
+
+.admin-image{
+    width:90%;
+    padding:5px;
+    border:1px solid #aaa;
+    margin:5%;
+    background:white;
+    border-radius:3px;
+
+}
+
+#name-container{
+    width:90%;
+    margin:0px auto;
     text-align:center;
-    color:#4caf50;
+    border:1px solid #aaa;
+    padding:10px;
+    background:white;
+    border-radius:3px;
+    cursor:default;
+}
+
+#lblAdminName{
+    font:bold 16px calibri;
+}    
+
+#right-container{
+    width:70%;
+    margin-left:25%;
+    padding:5% 0% 5% 5%;
+}
+
+#right-top h1{
+    margin:0px;
+    text-align:center;
+    font-family:garamond;
+    color:#336699;
     text-decoration:underline;
 }
 
+
+.copyright{
+    width:100%;
+    text-align:center;
+    padding:10px;
+}
+
+.copyright a{
+    text-decoration:none;
+    color:#333;
+}
+
+.copyright a:hover{
+    text-decoration:underline;
+    color:#111;
+}
+
+#main-content{
+    width:90%;
+    margin:0px auto;
+    margin-top:50px;
+    padding:20px;
+    background:white;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.3);
+    border-radius:3px;
+    text-align:center;
+}
+
+.label{
+    font:bold 20px garamond;
+    padding-right:40px;
+}
+
+.text-field{
+    width:220px;
+    height:35px;
+    margin-left:20px;
+    border-radius:3px;
+    border:1px solid #aaa;
+    font:bold 16px garamond;
+    padding:5px;
+    padding-left:15px;
+    color:#434343;
+    outline:none;
+}
+
+.text-field:active, .text-field:focus{
+    box-shadow:0px 0px 10px rgba(41, 145, 234, 0.3);
+    border:1px solid #4ab3f7;
+}
+
+.text-field:hover{
+    cursor:not-allowed;
+}
+
+#tblAdminProfile{
+    margin:0px auto;
+
+}
+
+td{
+    height:30px;
+    padding:10px;
+}
+
+#btnUpdate{
+    height:35px;
+    width:120px;
+    margin:20px;
+    font:bold 16px calibri;
+    border:1px solid #aaa;
+    background:white;
+    border-radius:3px;
+    cursor:not-allowed;
+    outline:none;
+}
+
+#btnUpdate:hover{
+    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+    background:#fafafa;
+}
+
+.btn-edit{
+    height:30px;
+    width:50px;
+    border:1px solid #aaa;
+    background:white;
+    border-radius:3px;
+    cursor:pointer;
+    color:#555;
+    font:bold 12px calibri;
+    outline:none;
+}
+
+.btn-edit:hover{
+    border:1px solid #555;
+    color:black;
+    background:#fafafa;
+}

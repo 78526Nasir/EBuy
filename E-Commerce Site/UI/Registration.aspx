@@ -35,6 +35,9 @@
                         </td>
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Username required" ControlToValidate="txtUsername">&nbsp;</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="rev3" runat="server" ControlToValidate="txtUsername" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{3,}"
+                                ErrorMessage="Username must contain: <br/> Atleast 3 character <br/> 1 uppercase letter<br/> 1 lowercase letter">
+                                &nbsp;</asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>

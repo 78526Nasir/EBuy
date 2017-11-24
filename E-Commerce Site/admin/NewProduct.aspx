@@ -27,6 +27,18 @@
 
         <div class="np-form">
             <table class="np-table">
+                 <tr>
+                    <td>
+                        <label class="anc-label" id="lblProductCode" runat="server">Product Code</label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtProductCode" runat="server" placeholder="Enter product code" CssClass="anc-textbox"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfv7" runat="server" ErrorMessage="Product code required" ControlToValidate="txtProductName">&nbsp;
+                        </asp:RequiredFieldValidator>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label class="anc-label" id="lblProductName" runat="server">Product Name</label>

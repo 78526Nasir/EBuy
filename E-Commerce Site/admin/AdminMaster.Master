@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
     <link rel="stylesheet" type="text/css" href="~/css/cu.css" />
     <link rel="stylesheet" type="text/css" href="~/css/partnership.css" />
-
+    
     <style>
         * {
             box-sizing: border-box;
@@ -26,7 +26,7 @@
             <div class="header">
                 
                 <div class="left-header">
-                    <asp:Label ID="lblWebsiteName" runat="server" CssClass="website-name">E-Shopping</asp:Label>
+                    <asp:Label ID="lblWebsiteName" runat="server" CssClass="website-name">E-Buy</asp:Label>
                     <h2>Admin Panel</h2>
                 </div>
                 
@@ -36,7 +36,7 @@
 
                 <div class="right-header">
                     <div class="right-header-left">
-                        <h4>admin</h4>
+                        <h4>Admin</h4>
                         <code id="adminName" class="admin-name"><a href="#">Nasir Islam Sujan</a></code>
                     </div>
 
@@ -61,7 +61,7 @@
                     <li><a href="Partnership.aspx">Partnership</a></li>
                     <li><a href="#">Customer Oders</a></li>
                     <li><a href="AddNewCategory.aspx">New Category</a></li>
-                    <li><a href="NewProduct.aspx">New Product</a></li>
+                    <li><a class="active" href="NewProduct.aspx">New Product</a></li>
                 </ul>
             </div>
             <!-- content place holder for individual page content -->
@@ -81,3 +81,4 @@
 
 </body>
 </html>
+

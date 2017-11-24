@@ -42,6 +42,7 @@ namespace E_Commerce_Site.admin
                 {
                     Product product = new Product
                     {
+                        ProductCode = txtProductCode.Text,
                         ProductName = txtProductName.Text,
                         ProductCategory = ddlProductCategory.SelectedIndex,
                         ProductDescription = taProductDesc.InnerText,

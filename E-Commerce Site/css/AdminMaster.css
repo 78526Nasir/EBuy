@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0px 3px 5px rgba(0,0,0,0.2);
     color: #434343;
     cursor:default;
+    padding-left: 40px;
 }
 
 .website-name:hover{
@@ -48,11 +49,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes colorize{
-    0% {color: black}
-    25%{color:#226688}
-    50% {color: orange} 
-    75% {color: #4caf50}
-    100% {color: purple}
+    0% {color: #7952b3}
+    25%{color:#4caf50}
+    50% {color: green} 
+    75% {color: orangered}
+    100% {color:brown}
 }
 
 .left-header h2 {
@@ -96,9 +97,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .right-header-left h4 {
-    font: bold 20px garamond;
+    font:bold 30px Chiller;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor:default;
 }
 
@@ -125,13 +126,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .admin-name a{
-    text-decoration:none;
-    color:#0072c3;
+    text-decoration: none;
+    color:#006677;
+    font-weight: bold;
 }
 
 .admin-name a:hover{
     text-decoration:underline;
-    font-weight:bold;
 }
 
 
@@ -226,4 +227,3 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration:underline;
     color:#111;
 }
-

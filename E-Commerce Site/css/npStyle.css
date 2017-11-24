@@ -1,7 +1,7 @@
 ﻿.np-title{
     margin-top:50px;
     font:bold 35px Calibri;
-    color:cadetblue;
+    color: #7952b3;
 }
 
 .np-title:hover{
@@ -12,7 +12,7 @@
     width:80%;
     margin:0px auto;
     margin-top:20px;
-    height:570px;
+    height: 600px;
 }
 
 #ev-info{

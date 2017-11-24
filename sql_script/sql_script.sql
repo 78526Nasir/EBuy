@@ -3,20 +3,6 @@ create database E_Commerce
 use E_Commerce
 
 
--- Acount TABLE --
-create table Account(
-	username	varchar(50) not null,
-	password	varchar(50) not null,
-	
-	constraint pk_un primary key (username)
-)
-
-
-
-insert into Account values('Nasir','78526');
-insert into Account values('Sujan','2544');
-
-
 -- User TABLE --
 
 create table [User](
@@ -96,21 +82,30 @@ select * from [user]
 create table Product
 (
 	Product_ID			int primary key identity,
-	Product_Name		varchar(50),
-	[Description]		varchar(500),
-	Price				varchar(20),
-	Category_ID			int,
-	Company_ID			int,
+	ProductCode			varchar(50) NOT NULL,
+	Product_Name		varchar(50) NOT NULL,
+	[Description]		varchar(500) NOT NULL,
+	Price				varchar(20) NOT NULL,
+	Category_ID			INT NOT NULL,
+	Company_ID			int NOT NULL,
 	ImageUrl			varchar(500),
+	
+	CONSTRAINT FK_P_CAID FOREIGN KEY(Category_ID)
+	REFERENCES Category(Category_ID) ON DELETE CASCADE,
+	
+	CONSTRAINT FK_P_COID FOREIGN KEY(Company_ID)
+	REFERENCES Company(Company_ID) ON DELETE CASCADE
 )
 
-drop table Product
+DROP TABLE Product
+
 select * from Product
 
 
 
 -- STORE PROCEDURE for add new product --
 create proc sp_addNewProduct
+@productCode		varchar(50),
 @productName		varchar(50),
 @description		varchar(500),
 @price				varchar(20),
@@ -119,7 +114,7 @@ create proc sp_addNewProduct
 @imageUrl			varchar(500)
 as 
 begin
-	insert into Product values(@productName,@description,@price,@categoryID,@companyID,@imageUrl)
+	insert into Product values(@productCode,@productName,@description,@price,@categoryID,@companyID,@imageUrl)
 end
 
 drop proc sp_addNewProduct
@@ -196,7 +191,7 @@ end
 
 
 
--- Create admin TABLE --
+-- CREATE admin TABLE --
 
 create table [admin]
 (
@@ -210,10 +205,12 @@ create table [admin]
 drop table admin
 
 
--- Store Prcocedures for Admin Table --
+-- STORE PROCEDURE FOR Admin TABLE --
 
+select * from admin
 
--- Store procedure for select all Admin --
+-- STORE PROCEDURE FOR SELECT ADMIN --
+
 create proc sp_selectAdmin 
 @username varchar(50),
 @password varchar(50)
@@ -226,4 +223,118 @@ insert into [admin] (username,fullname,password) values('sujan','Nasir Islam Suj
 
 
 drop proc sp_selectAdmin
+
+
+-- CART TABLE --
+
+CREATE TABLE Cart(
+	CartID INT PRIMARY KEY IDENTITY,
+	Product_ID INT NOT NULL,
+	Quantity  INT NOT NULL,
+	
+	CONSTRAINT FK_C_PID FOREIGN KEY(Product_ID) REFERENCES Product(Product_ID) ON DELETE CASCADE
+	
+)
+
+DROP TABLE CART
+
+
+-- ORDER TABLE --
+
+CREATE TABLE [Order](
+	Order_ID			INT PRIMARY KEY IDENTITY,
+	[User_ID]			INT NOT NULL,
+	Order_Date			DATETIME NOT NULL,
+	Order_Amount		INT NOT NULL,
+	
+	CONSTRAINT FK_O_CID FOREIGN KEY([User_ID]) 
+	REFERENCES [User]([User_ID]) ON DELETE CASCADE
+
+)
+
+
+DROP TABLE [Order] 
+
+CREATE TABLE Product_O_D(
+	Product_O_D_ID	INT PRIMARY KEY IDENTITY,
+	Order_ID					INT NOT NULL,
+	Product_ID					INT NOT NULL,
+	Quantity					INT NOT NULL,
+	Total_Price					FLOAT NOT NULL,
+	
+	CONSTRAINT FK_POD_OID FOREIGN KEY(Order_ID) 
+	REFERENCES [Order]([Order_ID]) ON DELETE CASCADE,
+	
+	CONSTRAINT FK_POD_PID FOREIGN KEY(Product_ID) 
+	REFERENCES Product(Product_ID) ON DELETE CASCADE
+
+)
+
+
+DROP TABLE Product_O_D 
+
+
+-- ResetPasswordRequest TABLE FOR RESETTING PASSWORD --
+
+CREATE TABLE ResetPasswordRequest(
+	ID			UNIQUEIDENTIFIER PRIMARY KEY,
+	[User_ID]	INT NOT NULL,
+	[DateTime]	DATETIME,
+	
+	CONSTRAINT FK_RPR_UID FOREIGN KEY ([User_ID]) 
+	REFERENCES [User]([User_ID]) ON DELETE CASCADE  
+)
+
+drop table ResetPasswordRequest 
+select * from ResetPasswordRequest
+
+
+-- STORE PROCEDURE FOR RESETTING PASSWORD PROCESS --
+
+CREATE PROC SP_RESET_PASSWORD 
+@email varchar(100)
+AS
+BEGIN
+	DECLARE @User_ID INT
+	DECLARE @R_Email VARCHAR(100)
+	DECLARE @Username VARCHAR(50)
+	SELECT @User_ID=[user_id], @R_Email= email, @Username=username
+	FROM [User]
+	WHERE email=@email
+	
+	
+	IF(@User_ID IS NOT NULL)
+		BEGIN
+			DECLARE @GUID UNIQUEIDENTIFIER
+			SET @GUID=NEWID()
+			
+			INSERT INTO ResetPasswordRequest VALUES
+			(@GUID,@User_ID,GETDATE())
+			
+			SELECT 1 AS ReturnCode, @GUID AS UniqueID, @R_Email AS Email, @Username as Username
+		END
+	ELSE 
+		BEGIN
+			SELECT 0 AS ReturnCode, NULL AS UniqueID, NULL AS Email, @Username as Username
+		END
+	
+END
+
+DROP PROC SP_RESET_PASSWORD
+
+-- STORE PROCEDURE FOR CHECKING LINK VALIDATION --
+
+CREATE PROC SP_IS_PASSWORD_RESET_LINK_VALID
+@GUID UNIQUEIDENTIFIER
+AS
+BEGIN
+	IF(EXISTS(SELECT [USER_ID] FROM ResetPasswordRequest WHERE ID=@GUID))
+		BEGIN
+			SELECT 1 AS IsValidPasswordResetLink
+		END
+	ELSE
+		BEGIN
+			SELECT 0 AS IsValidPasswordResetLink
+		END
+END
 

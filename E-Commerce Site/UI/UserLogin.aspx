@@ -30,7 +30,7 @@
             <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password required">&nbsp;</asp:RequiredFieldValidator>
             <span id="pAlert" class="alert-2">&#9888;</span>
             
-            <p>Forget <a href="#">password?</a></p>
+            <p>Forget <a href="ForgetPasswordRedirect.aspx" target="_blank">password?</a></p>
             <br />
 
             <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-login" OnClick="LoginButtonClickPerformed" />

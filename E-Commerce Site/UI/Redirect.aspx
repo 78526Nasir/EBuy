@@ -9,7 +9,7 @@
 
     <style>
         p{
-            font:20px consolas;
+            font:14px consolas;
             color:#434343;
         }
         p a{
@@ -18,8 +18,10 @@
         }
         p a:hover{
             text-decoration:underline;
+            font-weight:bold;
         }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">

@@ -34,13 +34,14 @@ namespace BusinessAccessLayer
 
         public void addNewProduct()
         {
-            SqlParameter[] parameters = new SqlParameter[6];
-            parameters[0] = DataAccess.addParameter("@productName", ProductObj.ProductName);
-            parameters[1] = DataAccess.addParameter("@description", ProductObj.ProductDescription);
-            parameters[2] = DataAccess.addParameter("@price", ProductObj.ProductPrice);
-            parameters[3] = DataAccess.addParameter("@categoryID", ProductObj.ProductCategory);
-            parameters[4] = DataAccess.addParameter("@companyID", ProductObj.ProductCompany);
-            parameters[5] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = DataAccess.addParameter("@productCode", ProductObj.ProductCode);
+            parameters[1] = DataAccess.addParameter("@productName", ProductObj.ProductName);
+            parameters[2] = DataAccess.addParameter("@description", ProductObj.ProductDescription);
+            parameters[3] = DataAccess.addParameter("@price", ProductObj.ProductPrice);
+            parameters[4] = DataAccess.addParameter("@categoryID", ProductObj.ProductCategory);
+            parameters[5] = DataAccess.addParameter("@companyID", ProductObj.ProductCompany);
+            parameters[6] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
             DataAccess.executeDTByProcedure("sp_addNewProduct", parameters);
         }
 
@@ -87,6 +88,13 @@ namespace BusinessAccessLayer
                 salt = null;
             }
             return salt;
+        }
+
+        public DataTable resetPassword()
+        {
+            SqlParameter[] parameter = new SqlParameter[1];
+            parameter[0] = DataAccess.addParameter("@email", UserObj.getEmail());
+            return DataAccess.executeDTByProcedure("SP_RESET_PASSWORD", parameter);
         }
 
         public void addNewUser()

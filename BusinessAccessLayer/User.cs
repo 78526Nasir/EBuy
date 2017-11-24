@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DataAccessLayer;
-
+using System.Text;
 
 namespace BusinessAccessLayer
 {
@@ -26,13 +26,23 @@ namespace BusinessAccessLayer
         private string _hash;
 
         /// <summary>
+        /// Constructor for resetting password through email
+        /// </summary>
+        public User(StringBuilder email)
+        {
+            _email = email.ToString();
+        }
+
+        /// <summary>
         /// Constructor for retrive record against username
+        /// for Password Hashing and Salting purpose
         /// </summary>
         /// <param name="username"></param>
         public User(string username)
         {
             _username = username;
         }
+
         /// <summary>
         /// Constructor for Login purpose
         /// </summary>

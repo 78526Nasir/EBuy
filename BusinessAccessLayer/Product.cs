@@ -8,6 +8,7 @@ namespace BusinessAccessLayer
 {
     public class Product
     {
+        public string ProductCode { get; set; }
         public string ProductName { get; set; }
         public int ProductCategory { get; set; }
         public string ProductDescription { get; set; }

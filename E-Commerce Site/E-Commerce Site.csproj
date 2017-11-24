@@ -111,15 +111,21 @@
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\adminProfile.css" />
     <Content Include="css\anc.css" />
+    <Content Include="css\changePassword.css" />
     <Content Include="css\cu.css" />
+    <Content Include="css\f_p_r.css" />
     <Content Include="css\npStyle.css" />
     <Content Include="css\partnership.css" />
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
+    <Content Include="images\admin.jpg" />
     <Content Include="images\Calendar-icon.png" />
     <Content Include="images\user1.png" />
+    <Content Include="script\editButton.js" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
+    <Content Include="UI\ChangePassword.aspx" />
+    <Content Include="UI\ForgetPasswordRedirect.aspx" />
     <Content Include="UI\UserLogin.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -196,6 +202,20 @@
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Libraries\HashingAndSalting.cs" />
+    <Compile Include="UI\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ForgetPasswordRedirect.aspx.cs">
+      <DependentUpon>ForgetPasswordRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ForgetPasswordRedirect.aspx.designer.cs">
+      <DependentUpon>ForgetPasswordRedirect.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Redirect.aspx.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

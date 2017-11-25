@@ -77,6 +77,7 @@ namespace E_Commerce_Site.admin
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
             DataTable dt = ecb.getAllCategories();
+
             if (dt.Rows.Count > 0)
             {
                 ListItem item = new ListItem("Select Category", "-1");

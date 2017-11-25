@@ -119,9 +119,11 @@
                         </td>
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="Password required" ControlToValidate="txtPassword">&nbsp;</asp:RequiredFieldValidator>
+                            
                             <asp:RegularExpressionValidator ID="rev2" runat="server" ControlToValidate="txtPassword"
                                 ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}"
-                                ErrorMessage="Password must contain:<br/> Minimum 8 characters <br/> atleast 1 UpperCase Alphabet <br/> 1 LowerCase Alphabet and 1 Number <br/> 1 Special Character" Display="Dynamic" >&nbsp;</asp:RegularExpressionValidator>
+                                ErrorMessage="Password must contain:<br/> Minimum 8 characters <br/> atleast 1 UpperCase Alphabet <br/> 1 LowerCase Alphabet <br/> 1 Number <br/> 1 Special Character" Display="Dynamic" >&nbsp;
+                            </asp:RegularExpressionValidator>
                             
                         </td>
                     </tr>

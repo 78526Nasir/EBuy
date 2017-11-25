@@ -24,8 +24,8 @@ namespace E_Commerce_Site
             user.setHashAndSalt(hash, salt);
             user.registration();
             resetForm();
-            Response.Redirect("~/UI/Redirect.aspx");
             Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
+            Response.Redirect("~/UI/Redirect.aspx");
         }
 
         private string selectedGender()

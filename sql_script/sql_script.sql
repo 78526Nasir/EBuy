@@ -255,12 +255,12 @@ CREATE TABLE [Order](
 
 DROP TABLE [Order] 
 
-CREATE TABLE Product_O_D(
+CREATE TABLE ProductOrderDetails(
 	Product_O_D_ID	INT PRIMARY KEY IDENTITY,
-	Order_ID					INT NOT NULL,
-	Product_ID					INT NOT NULL,
-	Quantity					INT NOT NULL,
-	Total_Price					FLOAT NOT NULL,
+	Order_ID		INT NOT NULL,
+	Product_ID		INT NOT NULL,
+	Quantity		INT NOT NULL,
+	Total_Price		FLOAT NOT NULL,
 	
 	CONSTRAINT FK_POD_OID FOREIGN KEY(Order_ID) 
 	REFERENCES [Order]([Order_ID]) ON DELETE CASCADE,
@@ -271,7 +271,7 @@ CREATE TABLE Product_O_D(
 )
 
 
-DROP TABLE Product_O_D 
+Select * from ProductOrderDetails
 
 
 -- ResetPasswordRequest TABLE FOR RESETTING PASSWORD --
@@ -286,8 +286,12 @@ CREATE TABLE ResetPasswordRequest(
 )
 
 drop table ResetPasswordRequest 
+
+delete from ResetPasswordRequest
+
 select * from ResetPasswordRequest
 
+select * from [user]
 
 -- STORE PROCEDURE FOR RESETTING PASSWORD PROCESS --
 
@@ -322,19 +326,65 @@ END
 
 DROP PROC SP_RESET_PASSWORD
 
--- STORE PROCEDURE FOR CHECKING LINK VALIDATION --
 
-CREATE PROC SP_IS_PASSWORD_RESET_LINK_VALID
+-- STORE PROCEDURE FOR CHECKING LINK VALIDATION --
+-- RESET LINK IS VALID FOR ONLY ONE TIME --
+
+select * from ResetPasswordRequest
+
+CREATE PROC SP_IS_PASSWORD_RESET_LINK_VALID '20D7DA02-1EC9-4417-B3DF-9BE959B8EF56'
 @GUID UNIQUEIDENTIFIER
 AS
 BEGIN
 	IF(EXISTS(SELECT [USER_ID] FROM ResetPasswordRequest WHERE ID=@GUID))
 		BEGIN
-			SELECT 1 AS IsValidPasswordResetLink
+			SELECT 1 AS returnCode
 		END
 	ELSE
 		BEGIN
-			SELECT 0 AS IsValidPasswordResetLink
+			SELECT 0 AS returnCode
 		END
 END
 
+
+SELECT * FROM ResetPasswordRequest
+
+
+CREATE PROC SP_CHANGE_PASSWORD
+@GUID UNIQUEIDENTIFIER,
+@password VARCHAR(100),
+@salt VARCHAR(MAX),
+@hash VARCHAR(MAX)
+AS
+BEGIN
+	DECLARE @UserID INT
+	
+	SELECT @UserID = [User_ID] 
+	FROM ResetPasswordRequest
+	WHERE ID=@GUID
+	
+	IF(@UserID IS NULL)
+		BEGIN
+			-- IF USER DOES NOT EXISTS
+			SELECT 0 AS returnCode	
+		END
+	ELSE
+		BEGIN
+			-- IF USER EXISTS, UPDATE WITH NEW PASSWORD,SALT AND HASH
+			
+			UPDATE [User] SET 
+			[password]=@password, salt=@salt, [hash]=@hash
+			WHERE [user_id] = @UserID
+			
+			-- DELETE THE RESET_PASSWORD_REQUEST RECORD 
+			DELETE FROM ResetPasswordRequest
+			WHERE ID=@GUID
+			
+			SELECT 1 AS returnCode
+		END
+END
+
+
+select * from ResetPasswordRequest
+
+delete from ResetPasswordRequest

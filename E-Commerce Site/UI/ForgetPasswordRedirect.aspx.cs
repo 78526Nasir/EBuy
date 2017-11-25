@@ -25,6 +25,7 @@ namespace E_Commerce_Site.UI
             sbEmail.Append(txtEmail.Text);
 
             User user = new User(sbEmail);
+
             ECommerceBusiness ecb = new ECommerceBusiness
             {
                 UserObj = user
@@ -45,10 +46,12 @@ namespace E_Commerce_Site.UI
                     {
                         SendPasswordResetMail(toEmail, username, uniqueID);
                         lblStatus.Text = "An email with instructions to reset your password is sent to your email address";
+                        lblStatus.ForeColor = System.Drawing.Color.Green;
                     }
                     catch(Exception ex)
                     {
                         lblStatus.Text = "An unknown error occured!";
+                        lblStatus.ForeColor = System.Drawing.Color.Red;
                     }
                     
                 }else
@@ -73,7 +76,7 @@ namespace E_Commerce_Site.UI
             sbEmailBody.Append("Dear " + username + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to reset your password");
             sbEmailBody.Append("<br/>");
-            sbEmailBody.Append("http://localhost:18523/UI/ResetPassword.aspx?uid="+uniqueID);
+            sbEmailBody.Append("http://localhost:18523/UI/ChangePassword.aspx?uid="+uniqueID);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>E-Buy</b>");
 
@@ -89,6 +92,7 @@ namespace E_Commerce_Site.UI
              * port => 587
              */
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+
             smtpClient.Credentials = new NetworkCredential()
             {
                 UserName = "nasirislam1996@gmail.com",

@@ -18,7 +18,7 @@ namespace BusinessAccessLayer
 {
     public class ECommerceBusiness
     {
-        public Category CategoryObj { get; set;}
+        public Category CategoryObj { get; set; }
         public Product ProductObj { get; set; }
         public Company CompanyObj { get; set; }
         public Admin AdminObj { get; set; }
@@ -31,7 +31,6 @@ namespace BusinessAccessLayer
             parameters[1] = DataAccess.addParameter("@categoryDesc", CategoryObj.CategoryDescription);
             DataAccess.executeDTByProcedure("sp_addNewCategory", parameters);
         }
-
         public void addNewProduct()
         {
             SqlParameter[] parameters = new SqlParameter[7];
@@ -44,7 +43,6 @@ namespace BusinessAccessLayer
             parameters[6] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
             DataAccess.executeDTByProcedure("sp_addNewProduct", parameters);
         }
-
         public void addNewCompany()
         {
             SqlParameter[] parameters = new SqlParameter[3];
@@ -53,50 +51,6 @@ namespace BusinessAccessLayer
             parameters[2] = DataAccess.addParameter("@PartnershipDate", CompanyObj.PartnershipDate);
             DataAccess.executeDTByProcedure("sp_addNewCompany", parameters);
         }
-
-        public bool selectAdmin()
-        {
-            SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@username",AdminObj.UserName);
-            parameters[1] = DataAccess.addParameter("@password", AdminObj.getPassword());
-            DataTable dt = DataAccess.executeDTByProcedure("sp_selectAdmin", parameters);
-            return dt.Rows.Count > 0 ? true : false;
-        }
-
-        public bool selectUser()
-        {
-            SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@username", UserObj.getUsername());
-            parameters[1] = DataAccess.addParameter("@hash", UserObj.getHash()); 
-            DataTable dt = DataAccess.executeDTByProcedure("sp_selectUser", parameters);
-            return dt.Rows.Count > 0 ? true : false;
-        }
-
-        public string retriveSaltAgainstUser()
-        {
-            SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.addParameter("@username", UserObj.getUsername());
-            DataTable dt=DataAccess.executeDTByProcedure("sp_retriveSaltAgainstUser", parameter);
-            string salt;
-            
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0];
-                salt = row["salt"].ToString();
-            }else
-            {
-                salt = null;
-            }
-            return salt;
-        }
-
-        public DataTable resetPassword()
-        {
-            SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.addParameter("@email", UserObj.getEmail());
-            return DataAccess.executeDTByProcedure("SP_RESET_PASSWORD", parameter);
-        }
-
         public void addNewUser()
         {
             SqlParameter[] parameters = new SqlParameter[10];
@@ -112,16 +66,153 @@ namespace BusinessAccessLayer
             parameters[9] = DataAccess.addParameter("@hash", UserObj.getHash());
             DataAccess.executeDTByProcedure("sp_addNewUser", parameters);
         }
+        public bool selectAdmin()
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataAccess.addParameter("@username", AdminObj.UserName);
+            parameters[1] = DataAccess.addParameter("@password", AdminObj.getPassword());
+            DataTable dt = DataAccess.executeDTByProcedure("sp_selectAdmin", parameters);
 
-        // second parameter is set to be null because of it is select query
+            if (dt == null)
+            {
+                return false;
+            }
+            else
+            {
+                return dt.Rows.Count > 0 ? true : false;
+            }
+        }
+        public bool selectUser()
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataAccess.addParameter("@username", UserObj.getUsername());
+            parameters[1] = DataAccess.addParameter("@hash", UserObj.getHash());
+            DataTable dt = DataAccess.executeDTByProcedure("sp_selectUser", parameters);
+
+            if (dt == null)
+            {
+                return false;
+            }
+            else
+            {
+                return dt.Rows.Count > 0 ? true : false;
+            }
+        }
+        public string retriveSaltAgainstUser()
+        {
+            string salt;
+            SqlParameter[] parameter = new SqlParameter[1];
+            parameter[0] = DataAccess.addParameter("@username", UserObj.getUsername());
+            DataTable dt = DataAccess.executeDTByProcedure("sp_retriveSaltAgainstUser", parameter);
+
+            if (dt == null)
+            {
+                salt = null;
+            }
+            else
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    salt = dt.Rows[0]["salt"].ToString();
+                }
+                else
+                {
+                    salt = null;
+                }
+            }
+            return salt;
+        }
+        public DataTable resetPassword()
+        {
+            SqlParameter[] parameter = new SqlParameter[1];
+            parameter[0] = DataAccess.addParameter("@email", UserObj.getEmail());
+            DataTable dt = DataAccess.executeDTByProcedure("SP_RESET_PASSWORD", parameter);
+
+            if (dt == null)
+            {
+                return new DataTable();
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public DataTable getAllCategories()
         {
-            return DataAccess.executeDTByProcedure("sp_getAllCategory", null); 
-        }
+            // second parameter is set to be null because of it is select query
+            DataTable dt = DataAccess.executeDTByProcedure("sp_getAllCategory", null);
 
+            if (dt == null)
+            {
+                return new DataTable();
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public DataTable getAllCompanies()
         {
-            return DataAccess.executeDTByProcedure("sp_getAllCompanies", null); 
+            // second parameter is set to be null because of it is select query
+            DataTable dt = DataAccess.executeDTByProcedure("sp_getAllCompanies", null);
+
+            if (dt == null)
+            {
+                return new DataTable();
+            }
+            else
+            {
+                return dt;
+            }
+        }
+        public bool IsPasswordResetLinkValid()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.addParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
+
+            DataTable dt = DataAccess.executeDTByProcedure("SP_IS_PASSWORD_RESET_LINK_VALID", parameters);
+
+            if (dt == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0]["returnCode"].ToString().Equals("1");
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public bool IsPasswordChanged()
+        {
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = DataAccess.addParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
+            parameters[1] = DataAccess.addParameter("@password", UserObj.getPassword());
+            parameters[2] = DataAccess.addParameter("@salt", UserObj.getSalt());
+            parameters[3] = DataAccess.addParameter("@hash", UserObj.getHash());
+
+            DataTable dt = DataAccess.executeDTByProcedure("SP_CHANGE_PASSWORD", parameters);
+
+            if (dt == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0]["returnCode"].ToString().Equals("1");
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
     }

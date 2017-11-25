@@ -46,15 +46,24 @@ namespace DataAccessLayer
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 cmd.CommandText = procedureName;
+
                 if (parameters != null)
                 {
                     cmd.Parameters.AddRange(parameters);
                 }
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+
+                try
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }catch(Exception e)
+                {
+                    return null;
+                }
+
                 return dt;
             }
         }

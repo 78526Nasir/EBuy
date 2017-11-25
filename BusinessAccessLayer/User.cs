@@ -25,12 +25,37 @@ namespace BusinessAccessLayer
         private string _salt;
         private string _hash;
 
+        public string GlobalUniqueIDForResetPassword { get; set; }
+
+        /// <summary>
+        /// Constructor for initialize property "on the fly";
+        /// </summary>
+        public User()
+        {
+
+        }
+
         /// <summary>
         /// Constructor for resetting password through email
         /// </summary>
         public User(StringBuilder email)
         {
             _email = email.ToString();
+        }
+
+        /// <summary>
+        /// Constructor for Change Password
+        /// </summary>
+        /// <param name="gUID">Global Unique Identifier</param>
+        /// <param name="password">New password</param>
+        /// <param name="salt">Salt for new password</param>
+        /// <param name="hash">hash for new password</param>
+        public User(string gUID,string password,string salt, string hash)
+        {
+            GlobalUniqueIDForResetPassword = gUID;
+            _password = password;
+            _salt = salt;
+            _hash = hash;
         }
 
         /// <summary>
@@ -81,7 +106,6 @@ namespace BusinessAccessLayer
             _hash = hash;
             _salt = salt;
         }
-
         public void setUsername(string username)
         {
             _username = username;
@@ -98,13 +122,6 @@ namespace BusinessAccessLayer
         {
             return _fullName;
         }
-
-        // To Do
-        //public void setPassword(string password)
-        //{
-        //    _password = password;
-        //}
-
         public string getPassword()
         {
             return _password;

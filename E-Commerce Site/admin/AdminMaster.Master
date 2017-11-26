@@ -19,6 +19,22 @@
         }
     </style>
 
+    <script type="text/javascript">
+        var bool=<%=flag%>;
+
+        function IsValidImage() {
+            var imgEle = document.getElementById("imgAdmin");
+            if (bool === 1) {
+                imgEle.onerror = errorHandler(imgEle);
+                bool = 0;
+            }
+        }
+
+        function errorHandler(img) {
+            img.src = "../images/error.png";
+        }
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -37,12 +53,13 @@
                 <div class="right-header">
                     <div class="right-header-left">
                         <h4>Admin</h4>
-                        <code id="adminName" class="admin-name"><a href="#">Nasir Islam Sujan</a></code>
+                        <code id="adminName" class="admin-name"><a runat="server" id="adminNameLink" href="Profile.aspx" target="_blank"></a></code>
                     </div>
 
                     <div class="right-header-right">
                         <div class="img-container">
-                            <img src="../images/user.png" alt="Admin Image" class="img-responsive" />
+                            <%--<img id="" src="" alt="Admin Image" class="img-responsive" runat="server"/>--%>
+                            <asp:Image ID="imgAdmin" ImageUrl="" AlternateText="Admin Image" CssClass="img-responsive" runat="server"/>
                         </div>
                         <asp:Button ID="btnLogout" CssClass="btn-logout" runat="server" CausesValidation="false" Text="Logout" OnClick="btnLogout_Click" />
                     </div>
@@ -76,9 +93,11 @@
                 <code>This project is designed and developed by <strong><a href="https://github.com/78526Nasir">Nasir islam Sujan</a> &copy;</strong>2017</code>
             </div>
         </div>
-
     </form>
-
+    
+    <script>
+        IsValidImage();
+    </script>
 </body>
 </html>
 

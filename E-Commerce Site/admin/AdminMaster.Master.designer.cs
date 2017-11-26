@@ -40,6 +40,24 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder middle;
         
         /// <summary>
+        /// adminNameLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminNameLink;
+        
+        /// <summary>
+        /// imgAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgAdmin;
+        
+        /// <summary>
         /// btnLogout control.
         /// </summary>
         /// <remarks>

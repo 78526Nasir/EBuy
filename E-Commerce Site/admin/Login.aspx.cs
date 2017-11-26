@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessAccessLayer;
+using System.Data;
 
 namespace E_Commerce_Site
 {
@@ -12,7 +13,7 @@ namespace E_Commerce_Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void LoginButtonClickPerformed(object sender, EventArgs e)
@@ -20,7 +21,7 @@ namespace E_Commerce_Site
             Admin admin = new Admin
             {
                 UserName = txtUsername.Text,
-                password=txtPassword.Text
+                password = txtPassword.Text
             };
 
             ECommerceBusiness ecb = new ECommerceBusiness
@@ -28,9 +29,16 @@ namespace E_Commerce_Site
                 AdminObj = admin
             };
 
-            if (ecb.selectAdmin())
+            DataTable dt = ecb.selectAdmin();
+
+            if (dt.Rows.Count > 0)
             {
-                Session["AdminSession"] = "EC_Admin";
+                Session["Fullname"] = dt.Rows[0]["FullName"].ToString();
+                Session["Username"] = dt.Rows[0]["username"].ToString();
+                Session["Password"] = dt.Rows[0]["Password"].ToString();
+                Session["Image"] = dt.Rows[0]["ImageUrl"].ToString();
+                Session["AdminSession"] = "Admin";
+
                 Response.Redirect("~/admin/ControlUser.aspx");
             }
             else

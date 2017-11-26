@@ -1,11 +1,11 @@
-create database E_Commerce
+CREATE DATABASE E_Commerce
 
-use E_Commerce
+USE E_Commerce
 
 
 -- User TABLE --
 
-create table [User](
+CREATE TABLE [User](
 	 [user_id]		int identity,	
      username		varchar(50) not null,
      fullname		varchar(100) not null,
@@ -76,6 +76,9 @@ drop proc sp_retriveSaltAgainstUser
 
 select * from [user]
 
+drop table [user]
+
+select *  from CATEGORY
 
 -- Product TABLE --
 
@@ -99,7 +102,7 @@ create table Product
 
 DROP TABLE Product
 
-select * from Product
+select * from admin
 
 
 
@@ -168,6 +171,7 @@ create table Company
 
 drop table company
 
+select * from company
 -- STORE PROCEDURE for select all Company --
 create proc sp_getAllCompanies
 as 
@@ -219,10 +223,19 @@ begin
 	select * from [admin] where username=@username and [Password]=@password
 end
 
-insert into [admin] (username,fullname,password) values('sujan','Nasir Islam Sujan','78526')
 
+drop table admin
+
+insert into [admin] values
+('sujan','Nasir Islam Sujan','78526','../images/admin.jpg'),
+('Nasir','Islam Nasir Sujan','12345','../images/admin2.jpg');
+
+
+select * from admin
 
 drop proc sp_selectAdmin
+select * from category
+select * from company
 
 
 -- CART TABLE --
@@ -270,8 +283,11 @@ CREATE TABLE ProductOrderDetails(
 
 )
 
+drop table ProductOrderDetails 
+drop table cart
+drop table product
 
-Select * from ProductOrderDetails
+Select * from product
 
 
 -- ResetPasswordRequest TABLE FOR RESETTING PASSWORD --
@@ -285,11 +301,21 @@ CREATE TABLE ResetPasswordRequest(
 	REFERENCES [User]([User_ID]) ON DELETE CASCADE  
 )
 
+-- DROP USER NEEEDS TO DROP --
+drop table [order]
+drop table ProductOrderDetails
 drop table ResetPasswordRequest 
+drop table [user]
+
 
 delete from ResetPasswordRequest
 
-select * from ResetPasswordRequest
+select * from category
+select *from product
+delete  from product
+
+insert into CATEGORY values('Computer','All types of computer')
+delete from CATEGORY where CATegory_ID=4
 
 select * from [user]
 
@@ -327,12 +353,13 @@ END
 DROP PROC SP_RESET_PASSWORD
 
 
+
 -- STORE PROCEDURE FOR CHECKING LINK VALIDATION --
 -- RESET LINK IS VALID FOR ONLY ONE TIME --
 
 select * from ResetPasswordRequest
 
-CREATE PROC SP_IS_PASSWORD_RESET_LINK_VALID '20D7DA02-1EC9-4417-B3DF-9BE959B8EF56'
+CREATE PROC SP_IS_PASSWORD_RESET_LINK_VALID 
 @GUID UNIQUEIDENTIFIER
 AS
 BEGIN
@@ -348,6 +375,7 @@ END
 
 
 SELECT * FROM ResetPasswordRequest
+
 
 
 CREATE PROC SP_CHANGE_PASSWORD
@@ -388,3 +416,4 @@ END
 select * from ResetPasswordRequest
 
 delete from ResetPasswordRequest
+

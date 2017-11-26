@@ -24,6 +24,7 @@ namespace E_Commerce_Site.admin
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+
             string report = isValidImage();
             
             if (!report.Equals("valid"))
@@ -44,11 +45,11 @@ namespace E_Commerce_Site.admin
                     {
                         ProductCode = txtProductCode.Text,
                         ProductName = txtProductName.Text,
-                        ProductCategory = ddlProductCategory.SelectedIndex,
+                        ProductCategory = Convert.ToInt32(ddlProductCategory.SelectedValue),
                         ProductDescription = taProductDesc.InnerText,
                         ProductPrice = txtProductPrice.Text,
                         ProductImage = path,
-                        ProductCompany = ddlProductCompany.SelectedIndex
+                        ProductCompany =Convert.ToInt32(ddlProductCompany.SelectedValue)
                     };
 
                     ECommerceBusiness ecb = new ECommerceBusiness

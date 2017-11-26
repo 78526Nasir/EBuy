@@ -31,6 +31,7 @@ namespace BusinessAccessLayer
             parameters[1] = DataAccess.addParameter("@categoryDesc", CategoryObj.CategoryDescription);
             DataAccess.executeDTByProcedure("sp_addNewCategory", parameters);
         }
+
         public void addNewProduct()
         {
             SqlParameter[] parameters = new SqlParameter[7];
@@ -43,6 +44,7 @@ namespace BusinessAccessLayer
             parameters[6] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
             DataAccess.executeDTByProcedure("sp_addNewProduct", parameters);
         }
+
         public void addNewCompany()
         {
             SqlParameter[] parameters = new SqlParameter[3];
@@ -51,6 +53,7 @@ namespace BusinessAccessLayer
             parameters[2] = DataAccess.addParameter("@PartnershipDate", CompanyObj.PartnershipDate);
             DataAccess.executeDTByProcedure("sp_addNewCompany", parameters);
         }
+
         public void addNewUser()
         {
             SqlParameter[] parameters = new SqlParameter[10];
@@ -66,7 +69,8 @@ namespace BusinessAccessLayer
             parameters[9] = DataAccess.addParameter("@hash", UserObj.getHash());
             DataAccess.executeDTByProcedure("sp_addNewUser", parameters);
         }
-        public bool selectAdmin()
+
+        public DataTable selectAdmin()
         {
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = DataAccess.addParameter("@username", AdminObj.UserName);
@@ -75,13 +79,14 @@ namespace BusinessAccessLayer
 
             if (dt == null)
             {
-                return false;
+                return new DataTable();
             }
             else
             {
-                return dt.Rows.Count > 0 ? true : false;
+                return dt;
             }
         }
+
         public bool selectUser()
         {
             SqlParameter[] parameters = new SqlParameter[2];
@@ -98,6 +103,7 @@ namespace BusinessAccessLayer
                 return dt.Rows.Count > 0 ? true : false;
             }
         }
+
         public string retriveSaltAgainstUser()
         {
             string salt;
@@ -122,6 +128,7 @@ namespace BusinessAccessLayer
             }
             return salt;
         }
+
         public DataTable resetPassword()
         {
             SqlParameter[] parameter = new SqlParameter[1];
@@ -137,6 +144,7 @@ namespace BusinessAccessLayer
                 return dt;
             }
         }
+
         public DataTable getAllCategories()
         {
             // second parameter is set to be null because of it is select query
@@ -151,6 +159,7 @@ namespace BusinessAccessLayer
                 return dt;
             }
         }
+
         public DataTable getAllCompanies()
         {
             // second parameter is set to be null because of it is select query
@@ -165,6 +174,7 @@ namespace BusinessAccessLayer
                 return dt;
             }
         }
+
         public bool IsPasswordResetLinkValid()
         {
             SqlParameter[] parameters = new SqlParameter[1];
@@ -188,6 +198,7 @@ namespace BusinessAccessLayer
                 }
             }
         }
+
         public bool IsPasswordChanged()
         {
             SqlParameter[] parameters = new SqlParameter[4];

@@ -13,7 +13,10 @@ namespace E_Commerce_Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            /*
+                string myScriptValue = "function callMe() {alert('You pressed Me!'); }";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "myScriptName", myScriptValue, true);
+            */
         }
 
         protected void registerButtonClickPerformed(object sender, EventArgs e)

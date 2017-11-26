@@ -15,10 +15,10 @@
         p a{
             text-decoration:none;
             color:blue;
+            font-weight:bold;
         }
         p a:hover{
             text-decoration:underline;
-            font-weight:bold;
         }
     </style>
 

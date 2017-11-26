@@ -2,6 +2,7 @@
     margin-top:50px;
     font:bold 35px Calibri;
     color: #7952b3;
+    text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 }
 
 .anc-body-content{
@@ -29,12 +30,12 @@
     margin-top:50px;
     padding:30px;
     margin-left:28%;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.3);
+    box-shadow:0px 0px 2px rgba(0,0,0,0.3);
     border-radius:2px;
 }
 
 .anc-form:hover{
-    box-shadow:0px 1px 8px rgba(0,0,0,0.3);
+    box-shadow:0 1px 5px -1px rgba(0,0,0,0.3);
 }
 
 .anc-table{

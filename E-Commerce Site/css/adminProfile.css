@@ -12,7 +12,7 @@ body {
 #header{
     width:100%;
     background:white;
-    height:60px;
+    height: 80px;
     margin-bottom:50px;
     box-shadow:0px 0px 5px rgba(0,0,0,0.3);
 }
@@ -20,40 +20,12 @@ body {
 #header h1{
     margin:0px;
     padding:0px;
-    line-height:60px;
+    line-height: 80px;
     margin-left:15%;
-    float:left;
-}
-
-.btn{
-    text-align:right;
-}
-
-#btnAdminPanel{
-    text-align:right;
-    height:35px;
-    margin:12px;
-    margin-right:15%;
-    padding:5px 15px;
-    border:1px solid #ccc;
-    background:white;
-    font:bold 16px calibri;
-    color:#555;
-    border-radius:3px;
-    cursor:pointer;
-    outline:none;
-    transition:all 0.33s ease-in-out;
-}
-
-#btnAdminPanel:hover{
-    color:black;
-    border:1px solid #aaa;
-    background:#fafafa;
-    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
 }
 
 #title{
-    font-family:garamond;
+    font-family: calibri;
     color:#434343;
     cursor:default;
 }
@@ -77,11 +49,12 @@ body {
     height:500px;
     background:#fafafa;
     border-radius:2px;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+    box-shadow:0 1px 3px rgba(0,0,0,0.2),
+               0 3px 2px -2px rgba(0,0,0,0.14);
 }
 
 #container:hover{
-    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+    box-shadow:0px 2px 5px -1px rgba(0,0,0,0.2);
 }
 
 #left-container{
@@ -97,6 +70,7 @@ body {
 
 .admin-image{
     width:90%;
+    height:auto;
     padding:5px;
     border:1px solid #aaa;
     margin:5%;
@@ -107,12 +81,12 @@ body {
 
 #name-container{
     width:90%;
+    height:40px;
     margin:0px auto;
     text-align:center;
-    border:1px solid #aaa;
+    border:none;
     padding:10px;
     background:white;
-    border-radius:3px;
     cursor:default;
 }
 
@@ -211,7 +185,7 @@ td{
     outline:none;
 }
 
-#btnUpdate:hover{
+#btnUpdate:hover:not(:disabled){
     box-shadow:0px 1px 2px rgba(0,0,0,0.2);
     background:#fafafa;
 }

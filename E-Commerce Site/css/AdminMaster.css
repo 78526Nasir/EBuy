@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .img-responsive {
     width: 100px;
-    height: auto;
+    height: 100px;
     padding: 4px;
     border: 1px solid #ccc;
 }
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .right-header-left h4 {
-    font:bold 30px Chiller;
+    font:bold 24px monospace;
     margin-top: 30px;
     margin-bottom: 10px;
     cursor:default;

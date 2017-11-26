@@ -47,6 +47,7 @@ namespace E_Commerce_Site.UI
                         SendPasswordResetMail(toEmail, username, uniqueID);
                         lblStatus.Text = "An email with instructions to reset your password is sent to your email address";
                         lblStatus.ForeColor = System.Drawing.Color.Green;
+                        txtEmail.Text = string.Empty;
                     }
                     catch(Exception ex)
                     {

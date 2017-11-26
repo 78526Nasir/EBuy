@@ -119,7 +119,9 @@
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
     <Content Include="images\admin.jpg" />
+    <Content Include="images\admin2.jpg" />
     <Content Include="images\Calendar-icon.png" />
+    <Content Include="images\error.png" />
     <Content Include="images\user1.png" />
     <Content Include="script\editButton.js" />
     <Content Include="script\loginValidation.js" />

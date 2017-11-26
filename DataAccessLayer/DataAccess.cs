@@ -14,9 +14,16 @@ namespace DataAccessLayer
         static string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
         public static SqlConnection connectDB()
         {
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            return con;
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                return con;
+            }
+            catch(Exception ex)
+            {
+                return new SqlConnection();
+            }
         }
 
         /// <summary>

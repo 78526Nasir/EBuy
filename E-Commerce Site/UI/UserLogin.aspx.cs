@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessAccessLayer;
 using E_Commerce_Site.Libraries;
+using System.Data;
 
 namespace E_Commerce_Site
 {
@@ -24,10 +25,14 @@ namespace E_Commerce_Site
             {
                 User user = new User(txtUsername.Text, saltedHashedPassword);
 
-                if (user.login())
+                DataTable dt = user.login();
+
+                if (dt.Rows.Count>0)
                 {
+                    Session["User"] = dt.Rows[0]["fullname"].ToString();
+                    Session["UserImage"] = dt.Rows[0]["Image"].ToString();
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully logged in!')", true);
-                    Response.Redirect("~/UI/Welcome.aspx");
+                    Response.Redirect("~/UI/HomePage.aspx");
                 }
                 else
                 {
@@ -49,7 +54,7 @@ namespace E_Commerce_Site
                 UserObj = user
             };
 
-            string takeSalt = ecb.retriveSaltAgainstUser();
+            string takeSalt = ecb.RetriveSaltAgainstUser();
             string takeHash;
 
             if (takeSalt != null)

@@ -31,7 +31,7 @@ namespace E_Commerce_Site.UI
                 UserObj = user
             };
 
-            DataTable dt = ecb.resetPassword();
+            DataTable dt = ecb.ResetPassword();
 
             if (dt.Rows.Count > 0)
             {

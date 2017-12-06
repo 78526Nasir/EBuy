@@ -6,7 +6,7 @@
     <title>Registration</title>
     <meta name="author" content="Nasir Islam Sujan" />
     <link rel="stylesheet" type="text/css" href="~/css/registration.css" />
-    
+
     <script type="text/javascript" src="../script/validation.js">
     </script>
 
@@ -107,9 +107,26 @@
                     </tr>
                     <tr>
                         <td class="left">
+                            <label class="label" id="lblImage" runat="server">Image</label>
+                        </td>
+                        <td class="right">
+                            <label class="select-image">
+                                Select image
+                                <asp:FileUpload ID="fuImage" CssClass="file-upload" runat="server" />
+                            </label>
+                        </td>
+                        <td class="alert">
+                            <span id="iAlert" class="alert-span">&#9888;</span>
+                        </td>
+                        <td class="required">
+                            <asp:RequiredFieldValidator ID="fUrvf" runat="server" ErrorMessage="Image required" ControlToValidate="fuImage">&nbsp;</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="left">
                             <label class="label" id="lblPassword" runat="server">Password</label>
                         </td>
-
                         <td class="right">
                             <asp:TextBox class="text-field" TextMode="password" ID="txtPassword" runat="server" placeholder="Enter password" onblur="passwordValidation();">
                             </asp:TextBox>
@@ -119,12 +136,12 @@
                         </td>
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="Password required" ControlToValidate="txtPassword">&nbsp;</asp:RequiredFieldValidator>
-                            
+
                             <asp:RegularExpressionValidator ID="rev2" runat="server" ControlToValidate="txtPassword"
                                 ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}"
-                                ErrorMessage="Password must contain:<br/> Minimum 8 characters <br/> atleast 1 UpperCase Alphabet <br/> 1 LowerCase Alphabet <br/> 1 Number <br/> 1 Special Character" Display="Dynamic" >&nbsp;
+                                ErrorMessage="Password must contain:<br/> Minimum 8 characters <br/> atleast 1 UpperCase Alphabet <br/> 1 LowerCase Alphabet <br/> 1 Number <br/> 1 Special Character" Display="Dynamic">&nbsp;
                             </asp:RegularExpressionValidator>
-                            
+
                         </td>
                     </tr>
                     <tr>
@@ -175,7 +192,7 @@
                 <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" onchange="isChecked();" />
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
-            
+
             <!-- Registration Button Control-->
 
             <div class="button">
@@ -185,7 +202,8 @@
 
         <!--Validation summary div-->
 
-        <div class="notify">
+        <div id="validation" class="notify" runat="server">
+            <asp:Label ID="lblValidationMessage" runat="server"></asp:Label>
             <asp:ValidationSummary CssClass="validation-summary" ID="ValidationSummary1" runat="server" />
         </div>
     </form>

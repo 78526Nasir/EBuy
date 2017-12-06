@@ -29,7 +29,7 @@
             <asp:TextBox ID="txtPassword" placeholder="Enter password" TextMode="Password" CssClass="text-field" runat="server" onblur="passwordValidation()"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password required">&nbsp;</asp:RequiredFieldValidator>
             <span id="pAlert" class="alert-2">&#9888;</span>
-            
+
             <p>Forget <a href="ForgetPasswordRedirect.aspx" target="_blank">password?</a></p>
             <br />
 
@@ -40,14 +40,14 @@
             <div class="bottom">
                 <asp:Label ID="redirectToReg" CssClass="redirect-to-reg" runat="server">Don't have an account? <a href="Registration.aspx">click here</a></asp:Label>
             </div>
-            
+
             <!-- Validation summary control -->
             <div class="validation-summary">
                 <asp:ValidationSummary ID="vs" runat="server" />
             </div>
         </form>
 
-        
+
     </div>
 </body>
 </html>

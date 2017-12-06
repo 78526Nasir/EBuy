@@ -32,7 +32,7 @@ namespace DataAccessLayer
         /// <param name="parameterName"></param>
         /// <param name="value"></param>
         /// <returns>return SqlParameter object</returns>
-        public static SqlParameter addParameter(string parameterName, object value)
+        public static SqlParameter AddParameter(string parameterName, object value)
         {
             SqlParameter parameter = new SqlParameter(parameterName, value);
             return parameter;
@@ -46,7 +46,7 @@ namespace DataAccessLayer
         /// <param name="procedureName"></param>
         /// <param name="parameters"></param>
         /// <returns>return DataTable object</returns>
-        public static DataTable executeDTByProcedure(string procedureName, SqlParameter[] parameters)
+        public static DataTable ExecuteDTByProcedure(string procedureName, SqlParameter[] parameters)
         {
             using (SqlConnection con = connectDB())
             {

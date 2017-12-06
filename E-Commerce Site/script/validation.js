@@ -118,6 +118,19 @@ function confirmPasswordValidation() {
     }
 }
 
+
+function imageValidation(flag) {
+    var element = document.getElementById("fuImage");
+    var alertEle = document.getElementById("iAlert");
+
+    if (!element.value) {
+        alertEle.style.visibility = "visible";
+
+    } else {
+        alertEle.style.visibility = "hidden";
+    }
+}
+
 //function genderValidation() {
 //    var element = document.getElementById("rMale");
 //    var element2 = document.getElementById("rFemale");
@@ -149,6 +162,7 @@ function button1_Click() {
     passwordValidation();
     confirmPasswordValidation();
     //genderValidation();
+    imageValidation();
 }
 
 

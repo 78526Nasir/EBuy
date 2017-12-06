@@ -12,6 +12,7 @@ CREATE TABLE [User](
      email			varchar(100) not null,
      dob			datetime not null,
      age			int not null,
+     [image]		varchar(max) not null,
      religion		varchar(20) not null,
      [password]		varchar(100) not null,
      gender			varchar(10) not null,
@@ -27,6 +28,9 @@ select * from admin
 select * from [user]
 
 
+select * from product
+select * from category
+select * from company
 -- STORE PROCEDURE for INSERT data into USER TABLE--
 
 create proc sp_addNewUser
@@ -35,6 +39,7 @@ create proc sp_addNewUser
 @email			varchar(100),
 @dob			datetime,
 @age			int,
+@image			varchar(max),
 @religion		varchar(20),
 @password		varchar(100),
 @gender			varchar(10),
@@ -43,25 +48,25 @@ create proc sp_addNewUser
 
 as
 begin 
-	insert into [User](username,fullname,email,dob,age,religion,[password],gender,salt,[hash]) values
-				(@username,@fullname,@email,@dob,@age,@religion,@password,@gender,@salt,@hash)
+	insert into [User](username,fullname,email,dob,age,[image],religion,[password],gender,salt,[hash]) values
+				(@username,@fullname,@email,@dob,@age,@image,@religion,@password,@gender,@salt,@hash)
 end
+
+drop proc sp_addNewUser
 select * from [User]
 
 
 -- STORE PROCEDURE for SELECT USER --
 
-create proc sp_selectUser
+create proc sp_selectUser 
 @username varchar(50),
 @hash varchar(100)
 as 
 begin
-	select username,[Hash] from [User] where username=@username and [Hash]=@hash
+	select * from [User] where username=@username and [Hash]=@hash
 end
 
 
-
-drop proc sp_selectUser
 
 -- STORE PROCEDURE for SELECT USER by Username--
 
@@ -131,7 +136,7 @@ create table Category
 	Category_Description	varchar(500)
 )
 
-drop table Category
+
 
 select * from Category
 
@@ -249,7 +254,8 @@ CREATE TABLE Cart(
 	
 )
 
-DROP TABLE CART
+DROP TABLE CART 
+drop table product 
 
 
 -- ORDER TABLE --
@@ -302,17 +308,22 @@ CREATE TABLE ResetPasswordRequest(
 )
 
 -- DROP USER NEEEDS TO DROP --
+drop table [user]
 drop table [order]
 drop table ProductOrderDetails
 drop table ResetPasswordRequest 
-drop table [user]
+
+
+---
+
+select * from [product]
 
 
 delete from ResetPasswordRequest
 
 select * from category
 select *from product
-delete  from product
+drop table CATEGORY
 
 insert into CATEGORY values('Computer','All types of computer')
 delete from CATEGORY where CATegory_ID=4
@@ -413,7 +424,70 @@ BEGIN
 END
 
 
-select * from ResetPasswordRequest
+select * from [user]
+
+SELECT * FROM PRODUCT
 
 delete from ResetPasswordRequest
+
+-- STORE PROCEDURE FOR SEARCH USER --
+CREATE PROC SP_SELECT_ALL_USER
+AS
+BEGIN
+	SELECT [user_id],[username],fullname,email,age,religion,gender
+	FROM [User]
+END
+
+
+-- STORE PROCEDURE FOR SELECT ALL COMPANY --
+
+select * from company
+CREATE PROC SP_SELECT_ALL_PARTNER
+AS
+BEGIN
+	SELECT * FROM Company
+END
+
+select * from [user]
+
+-- STORE PROCEDURE FOR SELECT ALL COMPANY --
+
+CREATE PROC SP_SELECT_ALL_PRODUCT
+AS
+BEGIN
+	SELECT Product_ID, ProductCode, Category_ID, Company_ID, [Description], Price FROM Product
+END
+
+
+
+-- STORE PROCEDURE FOR DELETE USER --
+
+CREATE PROC SP_DELETE_USER
+@userid int
+AS
+BEGIN
+	DELETE FROM [User] WHERE [user_id] =@userid
+END
+
+-- STORE PROCEDURE FOR DELETE PARTNER --
+
+CREATE PROC SP_DELETE_PARTNER
+@partnerid int
+AS
+BEGIN
+	DELETE FROM Company WHERE Company_ID = @partnerid
+END
+
+
+
+
+-- STORE PROCEDURE FOR DELETE PRODUCT --
+
+CREATE PROC SP_DELETE_PRODUCT
+@productid int
+AS
+BEGIN
+	DELETE FROM Product WHERE Product_ID = @productid
+END
+
 

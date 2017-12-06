@@ -103,17 +103,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\AddNewCategory.aspx" />
-    <Content Include="admin\ControlUser.aspx" />
+    <Content Include="admin\ControlBusiness.aspx" />
     <Content Include="admin\NewProduct.aspx" />
     <Content Include="admin\Order.aspx" />
     <Content Include="admin\Partnership.aspx" />
     <Content Include="admin\Profile.aspx" />
+    <Content Include="css\about.css" />
     <Content Include="css\AdminMaster.css" />
     <Content Include="css\adminProfile.css" />
     <Content Include="css\anc.css" />
     <Content Include="css\changePassword.css" />
+    <Content Include="css\contact.css" />
     <Content Include="css\cu.css" />
     <Content Include="css\f_p_r.css" />
+    <Content Include="css\homePage.css" />
     <Content Include="css\npStyle.css" />
     <Content Include="css\partnership.css" />
     <Content Include="css\registration.css" />
@@ -122,12 +125,18 @@
     <Content Include="images\admin2.jpg" />
     <Content Include="images\Calendar-icon.png" />
     <Content Include="images\error.png" />
+    <Content Include="images\searchicon.png" />
     <Content Include="images\user1.png" />
     <Content Include="script\editButton.js" />
+    <Content Include="script\jQuery-3.2.1.js" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
+    <Content Include="UI\About.aspx" />
     <Content Include="UI\ChangePassword.aspx" />
+    <Content Include="UI\Contact.aspx" />
     <Content Include="UI\ForgetPasswordRedirect.aspx" />
+    <Content Include="UI\HomePage.aspx" />
+    <Content Include="UI\Profile.aspx" />
     <Content Include="UI\UserLogin.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -168,12 +177,12 @@
     <Compile Include="admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="admin\ControlUser.aspx.cs">
-      <DependentUpon>ControlUser.aspx</DependentUpon>
+    <Compile Include="admin\ControlBusiness.aspx.cs">
+      <DependentUpon>ControlBusiness.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\ControlUser.aspx.designer.cs">
-      <DependentUpon>ControlUser.aspx</DependentUpon>
+    <Compile Include="admin\ControlBusiness.aspx.designer.cs">
+      <DependentUpon>ControlBusiness.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\NewProduct.aspx.cs">
       <DependentUpon>NewProduct.aspx</DependentUpon>
@@ -204,6 +213,13 @@
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Libraries\HashingAndSalting.cs" />
+    <Compile Include="UI\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,12 +227,33 @@
     <Compile Include="UI\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ForgetPasswordRedirect.aspx.cs">
       <DependentUpon>ForgetPasswordRedirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\ForgetPasswordRedirect.aspx.designer.cs">
       <DependentUpon>ForgetPasswordRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Redirect.aspx.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>

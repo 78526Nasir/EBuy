@@ -74,7 +74,7 @@
         <div class="main-content">
             <div class="menu-bar">
                 <ul class="ul">
-                    <li><a href="ControlUser.aspx">Control User</a></li>
+                    <li><a href="ControlBusiness.aspx">Control Business</a></li>
                     <li><a href="Partnership.aspx">Partnership</a></li>
                     <li><a href="#">Customer Oders</a></li>
                     <li><a href="AddNewCategory.aspx">New Category</a></li>

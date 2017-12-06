@@ -57,15 +57,19 @@ namespace E_Commerce_Site.admin
                         ProductObj = product
                     };
 
-                    ecb.addNewProduct();
+                    ecb.AddNewProduct();
                     resetForm();
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully added a new product into database!')", true);
+                }else
+                {
+                    Validation.InnerText = "Please fill up all the necessary fields";
                 }
             }
         }
 
         private void resetForm()
         {
+            txtProductCode.Text = string.Empty;
             txtProductName.Text = string.Empty;
             txtProductPrice.Text = string.Empty;
             taProductDesc.InnerText = string.Empty;
@@ -77,7 +81,7 @@ namespace E_Commerce_Site.admin
         private void getAllCategories()
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
-            DataTable dt = ecb.getAllCategories();
+            DataTable dt = ecb.GetAllCategories();
 
             if (dt.Rows.Count > 0)
             {

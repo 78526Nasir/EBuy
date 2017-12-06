@@ -24,6 +24,7 @@
             img.src = "../images/error.png";
         }
     </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -36,6 +37,12 @@
                 <div id="img-container">
                     <asp:Image ID="imgAdmin" ImageUrl="" runat="server" CssClass="admin-image" AlternateText="Admin Image" />
                 </div>
+                <%--<div id="changeImg">
+                    <label class="choose-file">
+                        Choose File
+                        <asp:FileUpload CssClass="file-upload" ID="imageUpload" runat="server" />
+                    </label>
+                </div>--%>
                 <div id="name-container">
                     <asp:Label ID="lblAdminName" runat="server">Name</asp:Label>
                 </div>
@@ -52,10 +59,10 @@
                                 <asp:Label ID="lblUsername" runat="server" CssClass="label">Username</asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtUsername" runat="server" CssClass="text-field" disabled="true" ></asp:TextBox>
+                                <asp:TextBox ID="txtUsername" runat="server" CssClass="text-field" disabled="true"></asp:TextBox>
                             </td>
                             <td>
-                                <input type="button" runat="server" value="Edit" id="btnUEdit" class="btn-edit" onclick="btnUEditClick()"/>
+                                <input type="button" runat="server" value="Edit" id="btnUEdit" class="btn-edit" onclick="btnUEditClick()" />
                             </td>
                         </tr>
                         <tr>
@@ -66,7 +73,7 @@
                                 <asp:TextBox ID="txtFullName" runat="server" CssClass="text-field" disabled="true"></asp:TextBox>
                             </td>
                             <td>
-                                <input type="button" runat="server" value="Edit" id="btnFNEdit" class="btn-edit" onclick="btnFNEditClick()"/>
+                                <input type="button" runat="server" value="Edit" id="btnFNEdit" class="btn-edit" onclick="btnFNEditClick()" />
                             </td>
                         </tr>
                         <tr>
@@ -77,11 +84,11 @@
                                 <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="text-field" disabled="true"></asp:TextBox>
                             </td>
                             <td>
-                                <input type="button" runat="server" value="Edit" id="btnPEdit" class="btn-edit" onclick="btnPEditClick()"/>
+                                <input type="button" runat="server" value="Edit" id="btnPEdit" class="btn-edit" onclick="btnPEditClick()" />
                             </td>
                         </tr>
                     </table>
-                    <asp:Button ID="btnUpdate" Text="Update" disabled="true" runat="server"/>
+                    <asp:Button ID="btnUpdate" Text="Update" disabled="true" runat="server" />
                 </div>
             </div>
 

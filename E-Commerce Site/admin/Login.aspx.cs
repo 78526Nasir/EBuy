@@ -29,7 +29,7 @@ namespace E_Commerce_Site
                 AdminObj = admin
             };
 
-            DataTable dt = ecb.selectAdmin();
+            DataTable dt = ecb.SelectAdmin();
 
             if (dt.Rows.Count > 0)
             {
@@ -39,7 +39,7 @@ namespace E_Commerce_Site
                 Session["Image"] = dt.Rows[0]["ImageUrl"].ToString();
                 Session["AdminSession"] = "Admin";
 
-                Response.Redirect("~/admin/ControlUser.aspx");
+                Response.Redirect("~/admin/ControlBusiness.aspx");
             }
             else
             {

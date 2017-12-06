@@ -36,7 +36,7 @@ namespace E_Commerce_Site.admin
                     CompanyObj = company
                 };
 
-                ecb.addNewCompany();
+                ecb.AddNewCompany();
                 resetForm();
 
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Confirmation", "alert('Successfully added a new patnered company into database')", true);

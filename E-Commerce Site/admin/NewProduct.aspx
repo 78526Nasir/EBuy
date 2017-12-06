@@ -10,7 +10,7 @@
 
     <div class="np-body-content">
 
-        <div class="validation">
+        <div id="Validation" runat="server" class="validation">
             <asp:ValidationSummary ID="vs3" runat="server" />
         </div>
 
@@ -97,7 +97,7 @@
                         <label class="anc-label" id="lblProuctPrice" runat="server">Product Price</label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtProductPrice" runat="server" placeholder="Enter product price" CssClass="anc-textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtProductPrice"  TextMode="Number" runat="server" placeholder="Enter product price" CssClass="anc-textbox"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="rvf5" runat="server" ErrorMessage="Product price required" ControlToValidate="txtProductPrice">&nbsp;

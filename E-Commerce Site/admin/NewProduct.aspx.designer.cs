@@ -13,6 +13,15 @@ namespace E_Commerce_Site.admin {
     public partial class NewProduct {
         
         /// <summary>
+        /// Validation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Validation;
+        
+        /// <summary>
         /// vs3 control.
         /// </summary>
         /// <remarks>

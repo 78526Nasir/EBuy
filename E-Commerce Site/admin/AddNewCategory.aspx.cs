@@ -34,7 +34,7 @@ namespace E_Commerce_Site.admin
                     CategoryObj = category
                 };
                 
-                ecb.addNewCategory();
+                ecb.AddNewCategory();
                 resetForm();
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Confirmation", "alert('Successfully added a new category into database')", true);
             }

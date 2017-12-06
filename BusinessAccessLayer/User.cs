@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using DataAccessLayer;
 using System.Text;
+using System.Data;
 
 namespace BusinessAccessLayer
 {
@@ -17,6 +18,7 @@ namespace BusinessAccessLayer
         private string _email;
         private string _dob;
         private int _age;
+        private string _image;
         private string _addressLineOne;
         private string _addressLineTwo;
         private string _country;
@@ -89,7 +91,7 @@ namespace BusinessAccessLayer
         /// <param name="religion"></param>
         /// <param name="email"></param>
         /// <param name="dob"></param>
-        public User(string username, string fullName, string password, string gender, string religion, string email, string dob)
+        public User(string username, string fullName, string password, string gender, string religion, string email, string dob,string image)
         {
             _username = username;
             _fullName = fullName;
@@ -99,6 +101,7 @@ namespace BusinessAccessLayer
             _religion = religion;
             _password = password;
             _gender = gender;
+            _image = image;
         }
 
         public void setHashAndSalt(string hash, string salt)
@@ -133,6 +136,14 @@ namespace BusinessAccessLayer
         public string getGender()
         {
             return _gender;
+        }
+        public void setImage(string image)
+        {
+            _image = image;
+        }
+        public string getImage()
+        {
+            return _image;
         }
         public void setreligion(string religion)
         {
@@ -227,17 +238,15 @@ namespace BusinessAccessLayer
             int Years = new DateTime(DateTime.Now.Subtract(dateOfBirth).Ticks).Year - 1;
             return Years;
         }
-
-        public bool login()
+        public DataTable login()
         {
             ECommerceBusiness ecb = new ECommerceBusiness
             {
                 UserObj = this
             };
 
-            return ecb.selectUser();
+            return ecb.SelectUser();
         }
-
         public bool registration()
         {
             ECommerceBusiness ecb = new ECommerceBusiness
@@ -245,7 +254,7 @@ namespace BusinessAccessLayer
                 UserObj = this
             };
 
-            ecb.addNewUser();
+            ecb.AddNewUser();
 
             return true;
         }

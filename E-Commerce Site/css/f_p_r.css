@@ -5,8 +5,8 @@
 }
 
 .container{
-    width:40%;
-    height:330px;
+    width: 41%;
+    height:300px;
     margin:0px auto;
     text-align:center;
     margin-top:150px;
@@ -22,13 +22,13 @@
 .text-box{
     height:40px;
     width:70%;
-    margin-top:40px;
+    margin-top:30px;
     margin-bottom:20px;
     outline:none;
     padding-left:20px;
     font:bold 16px garamond;
     border:1px solid #ccc;
-    border-radius:2px;
+    border-radius:3px;
     transition:all 0.33s ease-in-out;
 }
 
@@ -40,7 +40,6 @@
 .button{
     height:40px;
     width:150px;
-    margin-top:10px;
     margin-bottom:20px;
     border:1px solid #bbb;
     background:white;

@@ -154,7 +154,7 @@ body {
     outline:none;
 }
 
-.text-field:active, .text-field:focus{
+.text-field:focus{
     box-shadow:0px 0px 10px rgba(41, 145, 234, 0.3);
     border:1px solid #4ab3f7;
 }

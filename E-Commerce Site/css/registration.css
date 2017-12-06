@@ -13,9 +13,9 @@ h1,h2,h3,h4,h5,h6{
 
 .container{
     width:40%;
-    height:600px;
+    height:630px;
     margin:0px auto;
-    margin-top:30px;
+    margin-top:15px;
     background:white;
     border-radius:4px;
     box-shadow:0px 2px 3px rgba(0,0,0,0.3);
@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .body{
-    margin-top:30px;
+    margin-top:20px;
     width: 100%;
 }
 
@@ -72,7 +72,7 @@ tr,td{
 
 .label{
     padding: 0px 20px;
-    font: bold 20px garamond;
+    font: bold 18px garamond;
     color: #448822;
 }
 
@@ -109,7 +109,6 @@ hr{
     
 }
 
-
 .hr2{
     border-style:dashed;
     margin: 0px 55px 0px 60px;
@@ -117,7 +116,7 @@ hr{
 
 .button{
     text-align:center;
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
 .button input{
@@ -146,9 +145,8 @@ hr{
     cursor: not-allowed;
 }
 
-
 .agreement{
-    margin: 10px 0px 5px 46px;
+    margin: 5px 0px 5px 46px;
     color:#119922;
     font: bold 18px garamond;
 }
@@ -179,11 +177,43 @@ hr{
     right:20px;
     background:rgba(255,0,0,0.1);
     color:#ff4444;
-    border-radius:4px;
+    border-radius:2px;
     box-shadow:0px 2px 5px rgba(0,0,0,0.4);
+    font-weight:bold;
+    font-family:monospace;
 }
 
 .validation-summary{
     font-weight:bold;
     font-family:monospace;
+}
+
+.select-image{
+    border:1px solid #77dd66;
+    padding:8px 16px;
+    border-radius:3px;
+    background:white;
+    font:bold 16px garamond;
+    position:relative;
+    color:#4caf50;
+    z-index:1;
+    cursor:pointer;
+    transition:all 0.33s ease-in-out;
+}
+
+.select-image:hover{
+    background:lightgreen;
+    cursor:pointer;
+    color:black;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+}
+
+.file-upload{
+    width: 215px;
+    position:absolute;
+    left:15px;
+    outline:none;
+    font:bold 16px garamond;
+    color:#666;
+    z-index:-1;
 }

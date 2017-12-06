@@ -24,58 +24,59 @@ namespace BusinessAccessLayer
         public Admin AdminObj { get; set; }
         public User UserObj { get; set; }
 
-        public void addNewCategory()
+        public void AddNewCategory()
         {
             SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@categoryName", CategoryObj.CategoryName);
-            parameters[1] = DataAccess.addParameter("@categoryDesc", CategoryObj.CategoryDescription);
-            DataAccess.executeDTByProcedure("sp_addNewCategory", parameters);
+            parameters[0] = DataAccess.AddParameter("@categoryName", CategoryObj.CategoryName);
+            parameters[1] = DataAccess.AddParameter("@categoryDesc", CategoryObj.CategoryDescription);
+            DataAccess.ExecuteDTByProcedure("sp_addNewCategory", parameters);
         }
 
-        public void addNewProduct()
+        public void AddNewProduct()
         {
             SqlParameter[] parameters = new SqlParameter[7];
-            parameters[0] = DataAccess.addParameter("@productCode", ProductObj.ProductCode);
-            parameters[1] = DataAccess.addParameter("@productName", ProductObj.ProductName);
-            parameters[2] = DataAccess.addParameter("@description", ProductObj.ProductDescription);
-            parameters[3] = DataAccess.addParameter("@price", ProductObj.ProductPrice);
-            parameters[4] = DataAccess.addParameter("@categoryID", ProductObj.ProductCategory);
-            parameters[5] = DataAccess.addParameter("@companyID", ProductObj.ProductCompany);
-            parameters[6] = DataAccess.addParameter("@imageUrl", ProductObj.ProductImage);
-            DataAccess.executeDTByProcedure("sp_addNewProduct", parameters);
+            parameters[0] = DataAccess.AddParameter("@productCode", ProductObj.ProductCode);
+            parameters[1] = DataAccess.AddParameter("@productName", ProductObj.ProductName);
+            parameters[2] = DataAccess.AddParameter("@description", ProductObj.ProductDescription);
+            parameters[3] = DataAccess.AddParameter("@price", ProductObj.ProductPrice);
+            parameters[4] = DataAccess.AddParameter("@categoryID", ProductObj.ProductCategory);
+            parameters[5] = DataAccess.AddParameter("@companyID", ProductObj.ProductCompany);
+            parameters[6] = DataAccess.AddParameter("@imageUrl", ProductObj.ProductImage);
+            DataAccess.ExecuteDTByProcedure("sp_addNewProduct", parameters);
         }
 
-        public void addNewCompany()
+        public void AddNewCompany()
         {
             SqlParameter[] parameters = new SqlParameter[3];
-            parameters[0] = DataAccess.addParameter("@CompanyName", CompanyObj.CompanyName);
-            parameters[1] = DataAccess.addParameter("@CompanyDesc", CompanyObj.CompanyDescription);
-            parameters[2] = DataAccess.addParameter("@PartnershipDate", CompanyObj.PartnershipDate);
-            DataAccess.executeDTByProcedure("sp_addNewCompany", parameters);
+            parameters[0] = DataAccess.AddParameter("@CompanyName", CompanyObj.CompanyName);
+            parameters[1] = DataAccess.AddParameter("@CompanyDesc", CompanyObj.CompanyDescription);
+            parameters[2] = DataAccess.AddParameter("@PartnershipDate", CompanyObj.PartnershipDate);
+            DataAccess.ExecuteDTByProcedure("sp_addNewCompany", parameters);
         }
 
-        public void addNewUser()
+        public void AddNewUser()
         {
-            SqlParameter[] parameters = new SqlParameter[10];
-            parameters[0] = DataAccess.addParameter("@username", UserObj.getUsername());
-            parameters[1] = DataAccess.addParameter("@fullname", UserObj.getFullName());
-            parameters[2] = DataAccess.addParameter("@email", UserObj.getEmail());
-            parameters[3] = DataAccess.addParameter("@dob", UserObj.getDateOfBirth());
-            parameters[4] = DataAccess.addParameter("@age", UserObj.getAge());
-            parameters[5] = DataAccess.addParameter("@religion", UserObj.getReligion());
-            parameters[6] = DataAccess.addParameter("@password", UserObj.getPassword());
-            parameters[7] = DataAccess.addParameter("@gender", UserObj.getGender());
-            parameters[8] = DataAccess.addParameter("@salt", UserObj.getSalt());
-            parameters[9] = DataAccess.addParameter("@hash", UserObj.getHash());
-            DataAccess.executeDTByProcedure("sp_addNewUser", parameters);
+            SqlParameter[] parameters = new SqlParameter[11];
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameters[1] = DataAccess.AddParameter("@fullname", UserObj.getFullName());
+            parameters[2] = DataAccess.AddParameter("@email", UserObj.getEmail());
+            parameters[3] = DataAccess.AddParameter("@dob", UserObj.getDateOfBirth());
+            parameters[4] = DataAccess.AddParameter("@age", UserObj.getAge());
+            parameters[5] = DataAccess.AddParameter("@image", UserObj.getImage());
+            parameters[6] = DataAccess.AddParameter("@religion", UserObj.getReligion());
+            parameters[7] = DataAccess.AddParameter("@password", UserObj.getPassword());
+            parameters[8] = DataAccess.AddParameter("@gender", UserObj.getGender());
+            parameters[9] = DataAccess.AddParameter("@salt", UserObj.getSalt());
+            parameters[10] = DataAccess.AddParameter("@hash", UserObj.getHash());
+            DataAccess.ExecuteDTByProcedure("sp_addNewUser", parameters);
         }
 
-        public DataTable selectAdmin()
+        public DataTable SelectAdmin()
         {
             SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@username", AdminObj.UserName);
-            parameters[1] = DataAccess.addParameter("@password", AdminObj.getPassword());
-            DataTable dt = DataAccess.executeDTByProcedure("sp_selectAdmin", parameters);
+            parameters[0] = DataAccess.AddParameter("@username", AdminObj.UserName);
+            parameters[1] = DataAccess.AddParameter("@password", AdminObj.getPassword());
+            DataTable dt = DataAccess.ExecuteDTByProcedure("sp_selectAdmin", parameters);
 
             if (dt == null)
             {
@@ -87,29 +88,23 @@ namespace BusinessAccessLayer
             }
         }
 
-        public bool selectUser()
+        public DataTable SelectUser()
         {
             SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.addParameter("@username", UserObj.getUsername());
-            parameters[1] = DataAccess.addParameter("@hash", UserObj.getHash());
-            DataTable dt = DataAccess.executeDTByProcedure("sp_selectUser", parameters);
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameters[1] = DataAccess.AddParameter("@hash", UserObj.getHash());
+            DataTable dt = DataAccess.ExecuteDTByProcedure("sp_selectUser", parameters);
 
-            if (dt == null)
-            {
-                return false;
-            }
-            else
-            {
-                return dt.Rows.Count > 0 ? true : false;
-            }
+            return dt == null ? new DataTable() : dt;
+            
         }
 
-        public string retriveSaltAgainstUser()
+        public string RetriveSaltAgainstUser()
         {
             string salt;
             SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.addParameter("@username", UserObj.getUsername());
-            DataTable dt = DataAccess.executeDTByProcedure("sp_retriveSaltAgainstUser", parameter);
+            parameter[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            DataTable dt = DataAccess.ExecuteDTByProcedure("sp_retriveSaltAgainstUser", parameter);
 
             if (dt == null)
             {
@@ -129,11 +124,11 @@ namespace BusinessAccessLayer
             return salt;
         }
 
-        public DataTable resetPassword()
+        public DataTable ResetPassword()
         {
             SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.addParameter("@email", UserObj.getEmail());
-            DataTable dt = DataAccess.executeDTByProcedure("SP_RESET_PASSWORD", parameter);
+            parameter[0] = DataAccess.AddParameter("@email", UserObj.getEmail());
+            DataTable dt = DataAccess.ExecuteDTByProcedure("SP_RESET_PASSWORD", parameter);
 
             if (dt == null)
             {
@@ -145,42 +140,26 @@ namespace BusinessAccessLayer
             }
         }
 
-        public DataTable getAllCategories()
+        public DataTable GetAllCategories()
         {
             // second parameter is set to be null because of it is select query
-            DataTable dt = DataAccess.executeDTByProcedure("sp_getAllCategory", null);
-
-            if (dt == null)
-            {
-                return new DataTable();
-            }
-            else
-            {
-                return dt;
-            }
+            DataTable dt = DataAccess.ExecuteDTByProcedure("sp_getAllCategory", null);
+            return dt == null ? new DataTable() : dt;
         }
 
         public DataTable getAllCompanies()
         {
             // second parameter is set to be null because of it is select query
-            DataTable dt = DataAccess.executeDTByProcedure("sp_getAllCompanies", null);
-
-            if (dt == null)
-            {
-                return new DataTable();
-            }
-            else
-            {
-                return dt;
-            }
+            DataTable dt = DataAccess.ExecuteDTByProcedure("sp_getAllCompanies", null);
+            return dt == null ? new DataTable() : dt;
         }
 
         public bool IsPasswordResetLinkValid()
         {
             SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = DataAccess.addParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
+            parameters[0] = DataAccess.AddParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
 
-            DataTable dt = DataAccess.executeDTByProcedure("SP_IS_PASSWORD_RESET_LINK_VALID", parameters);
+            DataTable dt = DataAccess.ExecuteDTByProcedure("SP_IS_PASSWORD_RESET_LINK_VALID", parameters);
 
             if (dt == null)
             {
@@ -202,12 +181,12 @@ namespace BusinessAccessLayer
         public bool IsPasswordChanged()
         {
             SqlParameter[] parameters = new SqlParameter[4];
-            parameters[0] = DataAccess.addParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
-            parameters[1] = DataAccess.addParameter("@password", UserObj.getPassword());
-            parameters[2] = DataAccess.addParameter("@salt", UserObj.getSalt());
-            parameters[3] = DataAccess.addParameter("@hash", UserObj.getHash());
+            parameters[0] = DataAccess.AddParameter("@GUID", UserObj.GlobalUniqueIDForResetPassword);
+            parameters[1] = DataAccess.AddParameter("@password", UserObj.getPassword());
+            parameters[2] = DataAccess.AddParameter("@salt", UserObj.getSalt());
+            parameters[3] = DataAccess.AddParameter("@hash", UserObj.getHash());
 
-            DataTable dt = DataAccess.executeDTByProcedure("SP_CHANGE_PASSWORD", parameters);
+            DataTable dt = DataAccess.ExecuteDTByProcedure("SP_CHANGE_PASSWORD", parameters);
 
             if (dt == null)
             {
@@ -224,6 +203,45 @@ namespace BusinessAccessLayer
                     return false;
                 }
             }
+        }
+
+        public DataTable SelectAllUser()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_USER", null);
+        }
+
+        public DataTable SelectAllPartner()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_PARTNER", null);
+        }
+
+        public DataTable SelectAllProduct()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_PRODUCT", null);
+        }
+
+        public void DeleteUser(string userID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@userid", userID);
+
+            DataAccess.ExecuteDTByProcedure("SP_DELETE_USER", parameters);
+        }
+
+        public void DeletePartner(string partnerID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@partnerid", partnerID);
+
+            DataAccess.ExecuteDTByProcedure("SP_DELETE_PARTNER", parameters);
+        }
+
+        public void DeleteProduct(string productID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@productid", productID);
+
+            DataAccess.ExecuteDTByProcedure("SP_DELETE_PRODUCT", parameters);
         }
 
     }

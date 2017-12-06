@@ -1,0 +1,62 @@
+﻿body {
+    margin:0px;
+        background:#fafafa;
+}
+
+.container{
+    margin:100px auto;
+    width:80%;
+    padding:20px 0px 20px 0px;
+    text-align:center;
+    box-shadow:inset 0px 0px 5px rgba(0,0,0,0.2);
+    background:white;
+    border-radius:5px;
+}
+
+h1{
+    font:bold 60px 'Old English Text MT';
+    color:#226688;
+    margin-bottom:50px;
+}
+
+.container a{
+    text-decoration:none;
+    font:bold 30px 'Old English Text MT';
+    color:#226688;
+}
+
+.container a:hover{
+    text-decoration:underline;
+}
+
+.content{
+    margin:0px auto;
+    width:80%;
+    text-align:left;
+    margin-bottom:80px;
+    font: 12px consolas;
+    
+}
+
+.copyright{
+    width:80%;
+    margin:0px auto;
+}
+
+.copyright p{
+    text-align:center;
+    font:12px consolas;
+    margin-bottom:40px;
+}
+
+.copyright p a{
+    font:bold 12px consolas;
+    text-decoration:none;
+    color:black;
+
+}
+
+.copyright p a:hover{
+    text-decoration:underline;
+    color:blue;
+}

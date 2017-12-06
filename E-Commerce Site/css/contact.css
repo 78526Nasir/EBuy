@@ -1,0 +1,33 @@
+﻿body {
+    margin:0px;
+}
+
+.container{
+    width:75%;
+    height:300px;
+    background:#fafafa;
+    margin:0px auto;
+    text-align:left;
+    padding:20px;
+    margin-top:80px;
+    border-radius:5px;
+    box-shadow:0 2px 3px 0 rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.15),0 2px 3px -2px rgba(0,0,0,0.12);
+}
+
+.container h1{
+    padding:20px 0px 10px 5px;
+    text-decoration:underline;
+    color:#226688;
+    font:bold 50px serif;
+}
+
+address{
+    text-align:left;
+    font-style:normal;
+    padding-left:10px;
+    font:bold 13px consolas;
+}
+
+b{
+    color:darkcyan;
+}

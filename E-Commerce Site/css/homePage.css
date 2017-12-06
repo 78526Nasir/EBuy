@@ -1,0 +1,199 @@
+﻿body {
+    margin:0px;
+}
+
+.header{
+    height:70px;
+    width:100%;
+    border-bottom:4px solid #ddd;
+}
+
+.header a{
+    text-decoration:none;
+}
+
+.header a:link, .header a:visited, .header a:hover, .header a:active
+{
+    color:#7952b3;
+} 
+
+.header h1{
+    margin:0px;
+    margin-left:100px;
+    font-family:'Old English Text MT';
+    background-color: white;
+    display: inline-block;
+    line-height: 70px;
+}
+
+.left-header{
+    width:80%;
+    float:left;
+    /* line-height:70px; */
+    color:#7852b3;
+}
+
+.header h1:hover{
+    animation: name 5s;
+}
+
+@keyframes name{
+    25%{color:#007bff}
+    50%{color:#4caf50}
+    75%{color:orange}
+    100%{color:chocolate}
+    
+}
+
+.right-header{
+    position:relative;
+    width:20%;
+    margin-left:80%;
+    text-align:right;
+}
+
+.middle-header{
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    line-height: 70px;
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-section{
+    float:left;
+    width:60%;
+}
+
+.user-img-section{
+    margin-left:60%;
+    width:40%;
+    text-align:left;
+}
+
+.user-img-section img{
+    height:60px;
+    width:60px;  
+    border-radius:50%;
+    padding:5px; 
+}
+
+.btn-login{
+    height:35px;
+    width:100px;
+    margin:17px;
+    border-radius:3px;
+    border:1px solid #aaa;
+    background:white;
+    outline:none;
+    font:bold 16px calibri;
+    transition:all 0.33s ease-in-out;
+    cursor:pointer;
+}
+
+.btn-login:hover{
+    background:#f5f5f5;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.2);
+}
+
+.user-details{
+    position:absolute;
+    width:300px;
+    height:205px;
+    right:30px;
+    text-align:center;
+    background:rgba(0,0,0,0.2);
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+.user-section img{
+    height:100px;
+    width:100px;
+    margin:10px 0px;
+    border-radius:50%;
+    
+}
+
+.user-section #lblUserName{
+    font:bold 16px garamond;
+}
+
+.user-details .btn-section{
+    height:50px;
+    width:100%;
+    margin-top:7px;
+}
+
+.user-details .btn-section .profile,.user-details .btn-section .logout{
+    height:32px;
+    width:100px;
+    border-radius:3px;
+    margin:10px;
+    margin-top:5px;
+    border:1px solid #555;
+    font:bold 16px garamond;
+    outline:none;
+    background:rgba(0,0,0,0.2);
+    transition:all 0.33s ease-in-out;
+}
+
+.profile:hover, .logout:hover{
+    background:#f9f9f9 !important;
+    cursor:pointer;
+}
+
+.menu{
+    height:40px;
+    width:100%;
+    background:#fafafa;
+    text-align:right;
+    box-sizing:border-box;
+}
+
+.menu ul{
+    margin:0px;
+    list-style-type:none;    
+    margin-right:9%;
+}
+
+.menu ul li a{
+    text-decoration:none;
+    color:black;
+    float:right;
+    padding:0px 25px;
+    display:block;
+    cursor:pointer;
+    font-size:16px;
+    line-height:40px;
+    transition:all 0.33s ease-in-out;
+}
+
+.menu ul li a:hover{
+    background:#4caf50;
+}
+
+.txt-search {
+    width:10%;
+    position: absolute;
+    top: 15px;
+    margin-left: 100px;
+    padding: 10px 20px 10px 40px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font:bold 16px garamond;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    outline:none;
+    transition:width 0.33s ease-in-out;
+}
+
+.txt-search:focus {
+    width: 45%;
+    border:1px solid #44cbef;
+    box-shadow:0px 0px 5px rgba(40,140,240,0.2);
+}

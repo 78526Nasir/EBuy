@@ -30,10 +30,5 @@ namespace E_Commerce_Site.admin
                 }
             }
         }
-
-        protected void btnAdminPanel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/admin/" + Session["laspage"] + ".aspx");
-        }
     }
 }

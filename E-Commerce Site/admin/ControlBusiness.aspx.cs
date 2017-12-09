@@ -1,4 +1,5 @@
 ﻿using BusinessAccessLayer;
+using E_Commerce_Site.Libraries;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,8 +22,21 @@ namespace E_Commerce_Site.admin
             }
         }
 
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            User user = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.Value, string.Empty);
+
+            string salt;
+            string hash = HashingAndSalting.createSaltedHash(user.getPassword(), out salt);
+
+            user.setHashAndSalt(hash, salt);
+
+            if (user.registration())
+            {
+                Response.Write("<script>alert('Successfully new user added')</script>");
+            }
+            resetForm();
 
         }
 
@@ -53,14 +67,14 @@ namespace E_Commerce_Site.admin
                 ECommerceBusiness ecb = new ECommerceBusiness();
                 ecb.DeleteUser(Session["userID"].ToString());
 
-                SelectAllUser();
+                SelectAllUser();              
                 Response.Write("<script>alert('User Deleted Successfully')</script>");
             }
         }
 
         protected void btnDeletePartner_Click(object sender, EventArgs e)
         {
-            if (Session["partnerID"]==null)
+            if (Session["partnerID"] == null)
             {
                 lblDeletePartnerStatus.Text = "Please select a partner's row in order to delete the user!";
                 lblDeletePartnerStatus.ForeColor = System.Drawing.Color.Red;
@@ -78,7 +92,7 @@ namespace E_Commerce_Site.admin
 
         protected void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            if (Session["productID"]==null)
+            if (Session["productID"] == null)
             {
                 lblDeleteProductStatus.Text = "Please select a product's row in order to delete the user!";
                 lblDeleteProductStatus.ForeColor = System.Drawing.Color.Red;
@@ -136,6 +150,22 @@ namespace E_Commerce_Site.admin
             }
         }
 
+        private string selectedGender()
+        {
+            return rMale.Checked ? "male" : "female";
+        }
 
+        private void resetForm()
+        {
+            txtUsername.Text = string.Empty;
+            txtFullName.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtDOB.Value = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtReligion.Text = string.Empty;
+            txtConfirmPassword.Text = string.Empty;
+            rMale.Checked = false;
+            rFemale.Checked = false;
+        }
     }
 }

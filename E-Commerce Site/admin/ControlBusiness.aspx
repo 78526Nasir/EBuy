@@ -170,7 +170,7 @@
             <hr />
 
             <h1 id="deleteUser" class="cu-danger-h1">Delete User</h1>
-            <div class="delete-user">
+            <div class="delete-user" id="deleteUserDiv" runat="server">
                 <asp:GridView ID="gvDeleteUser" CssClass="cu-delete-user" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvDeleteUser_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />

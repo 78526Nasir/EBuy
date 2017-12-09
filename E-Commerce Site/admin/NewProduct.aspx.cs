@@ -34,7 +34,7 @@ namespace E_Commerce_Site.admin
             }
             else
             {
-                string path = "Uploads/" + imageUpload.FileName;
+                string path = "../Uploads/" + imageUpload.FileName;
                 /*
                  * check whether user fill all the required field or not 
                  * server-site validation

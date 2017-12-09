@@ -220,6 +220,11 @@ namespace BusinessAccessLayer
             return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_PRODUCT", null);
         }
 
+        public DataTable GetAllProducts()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_GET_ALL_PRODUCT", null);
+        }
+
         public void DeleteUser(string userID)
         {
             SqlParameter[] parameters = new SqlParameter[1];
@@ -244,5 +249,12 @@ namespace BusinessAccessLayer
             DataAccess.ExecuteDTByProcedure("SP_DELETE_PRODUCT", parameters);
         }
 
+        public DataTable GetProducts(string categoryID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@categoryname", categoryID);
+
+            return DataAccess.ExecuteDTByProcedure("SP_GET_PRODUCT_BY_CATEGORY", parameters);
+        }
     }
 }

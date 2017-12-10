@@ -1,0 +1,30 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 2%;
+    overflow: hidden;
+    width: 50%;
+    padding: 5px 5px 1px 5px;
+    border-radius: 3px;
+    float:left;
+}
+
+.item img {
+    max-width: 100%;
+    /* padding: 5px; */
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.item:hover img {
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    cursor: pointer;
+}

@@ -81,7 +81,7 @@
                                 <asp:Label ID="lblPassword" runat="server" CssClass="label">Password</asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="text-field" disabled="true"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" CssClass="text-field" disabled="true"></asp:TextBox>
                             </td>
                             <td>
                                 <input type="button" runat="server" value="Edit" id="btnPEdit" class="btn-edit" onclick="btnPEditClick()" />

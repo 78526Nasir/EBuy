@@ -115,12 +115,17 @@
     <Content Include="css\changePassword.css" />
     <Content Include="css\contact.css" />
     <Content Include="css\cu.css" />
+    <Content Include="css\cards.css" />
     <Content Include="css\f_p_r.css" />
     <Content Include="css\homePage.css" />
-    <Content Include="css\npStyle.css" />
+    <Content Include="css\normalize.css" />
     <Content Include="css\partnership.css" />
+    <Content Include="css\product.css" />
     <Content Include="css\registration.css" />
     <Content Include="css\userlogin.css" />
+    <Content Include="css\userProfile.css" />
+    <Content Include="css\zoom.css" />
+    <Content Include="fonts\LICENSE.txt" />
     <Content Include="images\admin.jpg" />
     <Content Include="images\admin2.jpg" />
     <Content Include="images\Calendar-icon.png" />
@@ -131,11 +136,26 @@
     <Content Include="script\jQuery-3.2.1.js" />
     <Content Include="script\loginValidation.js" />
     <Content Include="script\validation.js" />
+    <Content Include="slider_images\computer_desk.png" />
+    <Content Include="slider_images\ferrari.jpg" />
+    <Content Include="slider_images\hero honda.jpg" />
+    <Content Include="slider_images\hero_large copy.jpg" />
+    <Content Include="slider_images\iphone 8.jpg" />
+    <Content Include="slider_images\iphone-X.jpg" />
+    <Content Include="slider_images\LG-G2-black.jpg" />
+    <Content Include="slider_images\macbook.jpg" />
+    <Content Include="slider_images\nokia_6.jpg" />
+    <Content Include="slider_images\note 4.jpg" />
+    <Content Include="slider_images\samsung_j5_c.jpg" />
+    <Content Include="slider_images\yamaha_fz.jpg" />
     <Content Include="UI\About.aspx" />
+    <Content Include="UI\Cart.aspx" />
     <Content Include="UI\ChangePassword.aspx" />
     <Content Include="UI\Contact.aspx" />
     <Content Include="UI\ForgetPasswordRedirect.aspx" />
     <Content Include="UI\HomePage.aspx" />
+    <Content Include="UI\Order.aspx" />
+    <Content Include="UI\Product.aspx" />
     <Content Include="UI\Profile.aspx" />
     <Content Include="UI\UserLogin.aspx" />
     <Content Include="packages.config" />
@@ -143,6 +163,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="admin\AdminMaster.Master" />
+    <Content Include="fonts\OpenSans-Bold.ttf" />
+    <Content Include="fonts\OpenSans-BoldItalic.ttf" />
+    <Content Include="fonts\OpenSans-ExtraBold.ttf" />
+    <Content Include="fonts\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\OpenSans-Italic.ttf" />
+    <Content Include="fonts\OpenSans-Light.ttf" />
+    <Content Include="fonts\OpenSans-LightItalic.ttf" />
+    <Content Include="fonts\OpenSans-Regular.ttf" />
+    <Content Include="fonts\OpenSans-SemiBold.ttf" />
+    <Content Include="fonts\OpenSans-SemiBoldItalic.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -220,6 +250,13 @@
     <Compile Include="UI\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,6 +284,20 @@
     </Compile>
     <Compile Include="UI\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

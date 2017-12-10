@@ -30,7 +30,8 @@ namespace E_Commerce_Site
                 if (dt.Rows.Count>0)
                 {
                     Session["User"] = dt.Rows[0]["fullname"].ToString();
-                    Session["UserImage"] = dt.Rows[0]["Image"].ToString();
+                    Session["UserImage"] = dt.Rows[0]["image"].ToString();
+                    Session["UserWholeRecord"] = dt;
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully logged in!')", true);
                     Response.Redirect("~/UI/HomePage.aspx");
                 }

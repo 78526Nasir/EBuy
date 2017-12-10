@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Cart.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="ECommerceBusiness.cs" />

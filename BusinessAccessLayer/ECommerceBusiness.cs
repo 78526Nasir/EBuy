@@ -23,6 +23,7 @@ namespace BusinessAccessLayer
         public Company CompanyObj { get; set; }
         public Admin AdminObj { get; set; }
         public User UserObj { get; set; }
+        public Cart CartObj { get; set; }
 
         public void AddNewCategory()
         {
@@ -255,6 +256,28 @@ namespace BusinessAccessLayer
             parameters[0] = DataAccess.AddParameter("@categoryname", categoryID);
 
             return DataAccess.ExecuteDTByProcedure("SP_GET_PRODUCT_BY_CATEGORY", parameters);
+        }
+
+        public void AddToCart()
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataAccess.AddParameter("@productid", CartObj.ProductID);
+            parameters[1] = DataAccess.AddParameter("@userid", CartObj.UserID);
+
+            DataAccess.ExecuteDTByProcedure("SP_ADD_TO_CART", parameters);
+        }
+
+        public DataTable GetDefaultOneProduct()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_DEFAULT_PRODUCT", null);
+        }
+
+        public DataTable GetProductsByProductID(int productID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@productid", productID);
+
+            return DataAccess.ExecuteDTByProcedure("SP_GET_PRODUCT_BY_PRODUCT_ID", parameters);
         }
     }
 }

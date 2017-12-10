@@ -35,7 +35,6 @@ body {
     background: #222;
     height: 70px;
     margin-bottom:50px;
-/*     box-shadow:0px 0px 5px rgba(0,0,0,0.3); */
 }
 
 .header h1{
@@ -64,7 +63,7 @@ body {
     width:120px;
     border:1px solid #ccc;
     border-radius: 3px;
-    background:#333;
+    background: #222;
     font:bold 16px calibri;
     outline:none;
     color:#aaa;
@@ -85,14 +84,14 @@ body {
     margin:0px auto;
     width: 80%;
     height: 670px;
-    background:rgba(255,255,255,0.1);
     border-radius:2px;
+    border: 1px solid #222;
 }
 
 .left-container{
     width: 25%;
     height:100%;
-    background:rgba(255,255,255,0.03);
+    /* background:rgba(255,255,255,0.02); */
     float:left;
 }
 
@@ -133,6 +132,7 @@ body {
     width: 75%;
     margin-left:25%;
     padding: 3% 0% 5% 5%;
+    background: rgba(255,255,255,0.025);
 }
 
 .right-top h1{
@@ -211,6 +211,275 @@ td{
     width:120px;
     margin:20px;
     background:#333;
+    font:bold 16px calibri;
+    border:1px solid #aaa;
+    border-radius:3px;
+    color:#aaa;
+    cursor:not-allowed;
+    outline:none;
+
+}
+
+.btnUpdate:hover:not(:disabled){
+    background:black;
+    color:white;
+
+}
+
+.btn-edit{
+    height:30px;
+    width:50px;
+    border:1px solid #aaa;
+    background:#333;
+    border-radius:3px;
+    cursor:pointer;
+    color:#aaa;
+    font:bold 12px calibri;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+}
+
+.btn-edit:hover{
+    color:white;
+    background:black;
+}
+
+.ddl{
+    height:35px;
+    width:220px;
+    border-radius:3px;
+    padding-left:15px;
+    margin-left:20px;
+    border:1px solid #333;
+    font:bold 16px garamond;
+    background: #333;
+    color:#555;
+    outline:none;
+}
+
+.dob::-webkit-inner-spin-button {
+    height:20px;
+    
+}
+
+.dob::-webkit-calendar-picker-indicator{
+    font-size:14px;
+    padding:20px 10px;
+}@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background:black;
+    margin:0px;
+    padding:0px;
+    font-family:'OpenSans-light','OpenSans-SemiBold', 'OpenSans-Regular' sans-serif;
+}
+
+.header{
+    width:100%;
+    background: #222;
+    height: 70px;
+    margin-bottom:50px;
+}
+
+.header h1{
+    margin:0px;
+    padding:0px;
+    line-height: 70px;
+    margin-left: 20%;
+    color: #aaa;
+    font-size:35px;
+}
+
+.left-header{
+    width:50%;
+    float:left;
+}
+
+.right-header{
+    margin-left:50%;
+    text-align:right;
+    line-height:70px;
+    margin-right: 10%;
+}
+
+.btn{
+    height:35px;
+    width:120px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    background: #222;
+    font:bold 16px calibri;
+    outline:none;
+    color:#aaa;
+    transition:all 0.33s ease-in-out;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:black;
+    color:white;
+}
+
+.title{
+    cursor:default;
+}
+
+.container{
+    margin:0px auto;
+    width: 80%;
+    height: 620px;
+    border-radius:2px;
+    border: 1px solid #222;
+}
+
+.left-container{
+    width: 25%;
+    /* height:100%; */
+    margin-top: 20px;
+    /* background:rgba(255,255,255,0.02); */
+    float:left;
+}
+
+.img-container{
+    width:100%;
+}
+
+.user-image{
+    width:90%;
+    height:auto;
+    padding:5px;
+    border: 1px solid black;
+    margin:5%;
+    background:white;
+    border-radius:3px;
+}
+
+.name-container{
+    width:90%;
+    height:40px;
+    margin:0px auto;
+    text-align:center;
+    border:none;
+    padding:10px;
+    background: #434343;
+    cursor:default;
+    border-radius:2px;
+    font:bold 16px calibri;
+    color:black;
+}
+
+.lblAdminName{
+    font:bold 16px calibri;
+
+}    
+
+.right-container{
+    width: 75%;
+    height: 100%;
+    margin-left:25%;
+    padding: 2% 0% 5% 5%;
+    background: rgba(255,255,255,0.025);
+}
+
+.right-top h1{
+    margin:0px;
+    text-align:center;
+    font-family:garamond;
+    color: #777;
+    text-decoration:underline;
+}
+
+
+.copyright{
+    width:100%;
+    text-align:center;
+    padding:10px;
+    margin-top: 20px;
+    color:#777;
+}
+
+.copyright a{
+    text-decoration:none;
+    color:#888;
+}
+
+.copyright a:hover{
+    text-decoration:underline;
+    color:#aaa;
+}
+
+.main-content{
+    width:90%;
+    margin:0px auto;
+    margin-top: 20px;
+    padding: 20px;
+    background:rgba(255,255,255,0.04);
+    border-radius:3px;
+    text-align:center;
+}
+
+.label{
+    font: bold 18px garamond;
+    padding-right: 30px;
+    color:#aaa;
+}
+
+.text-field{
+    width:220px;
+    height:35px;
+    margin-left:20px;
+    border-radius:3px;
+    border: 1px solid #333;
+    background:#333;
+    font:bold 16px garamond;
+    padding:5px;
+    padding-left:15px;
+    color:#555;
+    outline:none;
+}
+
+.text-field:hover,.ddl:hover{
+    cursor:not-allowed;
+}
+
+.tblAdminProfile{
+    margin:0px auto;
+    text-align: left;
+}
+
+td{
+    height:30px;
+    padding:10px;
+}
+
+.btnUpdate{
+    height:35px;
+    width:120px;
+    margin:20px;
+    background:#222;
     font:bold 16px calibri;
     border:1px solid #aaa;
     border-radius:3px;

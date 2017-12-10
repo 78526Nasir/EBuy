@@ -1,6 +1,5 @@
 ﻿body {
     margin:0px;
-        background:#fafafa;
 }
 
 .container{
@@ -8,7 +7,7 @@
     width:80%;
     padding:20px 0px 20px 0px;
     text-align:center;
-    box-shadow:inset 0px 0px 5px rgba(0,0,0,0.2);
+    box-shadow:inset 0px 0px 5px rgba(0,0,0,0.3);
     background:white;
     border-radius:5px;
 }

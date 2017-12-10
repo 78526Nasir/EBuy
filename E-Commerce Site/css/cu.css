@@ -21,8 +21,7 @@
 .left-menu-ul li a{
     padding:12px 0px 12px 25px;
     text-decoration:none;
-    font:bold 18px garamond;
-    color:#434343;
+    font:bold 16px calibri;
     display:block;
 }
 
@@ -186,7 +185,7 @@ tr,td{
     width: 245px;
     background:#ff8888;
     position:absolute;
-    top: 13%;
+    top: 5%;
     margin-left: 25px;
     box-shadow:0px 0px 5px rgba(0,0,0,0.3);
     border-radius:5px;

@@ -1,4 +1,25 @@
-﻿* {
+﻿@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+
+* {
     box-sizing: border-box;
 }
 
@@ -201,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ul li a:hover {
-    background:#4caf50;
+    background: #479dc7;
     color:black;
 }
 

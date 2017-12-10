@@ -21,19 +21,19 @@
 .col-md-3{
     width: 31%;
     float:left;
-    margin:2% 1%;
+    margin: 3% 1%;
 }
 
 .card{
-    height: 400px;
+    height: 435px;
     background:white;
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.1),0 2px 2px 0 rgba(0,0,0,0.12),0px 2px 2px -2px rgba(0,0,0,0.3);
 }
 
 .title{
-    font:24px 'OpenSans-Light';
+    font: 24px 'OpenSans-regular';
     text-align:center;
-    margin-top: 25px;
+    margin-top: 20px;
     color:#212121;
 }
 
@@ -64,20 +64,60 @@
 }
 
 .info{
-    margin:10px;
+    margin: 10px;
     height:80px;
 }
 
 .price-tag{
-    padding-top: 10px;
-    font: 15px 'OpenSans-semibold';
+    padding-top: 15px;
+    font: 14px 'OpenSans-semibold';
 }
 
 .desc{
-    font: 12px consolas;
+    font: 12px 'OpenSans-regular';
     text-align: left;
-    height: 43px;
+    height: 54px;
     overflow: hidden;
+}
+
+.event-section{
+    padding-top: 25px;
+    height: 60px;
+}
+
+.event-section .btn{
+    height:35px;
+    width:130px;
+    margin:0% 3%;
+    border:1px solid #bbb;
+    border-radius: 2px;
+    background:white;
+    font:12px 'OpenSans-Regular';
+    cursor:pointer;
+    outline:none;
+    transition:all 0.33s ease-in-out;
+}
+
+.event-section .btn:hover:not(:disabled),.btn-view-product:hover{
+    background:#fafafa;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.2);
+}
+
+.btn-view-product{
+    text-decoration:none;
+    height:35px;
+    width:130px;
+    margin:0% 4%;
+    color:black;
+    font:12px 'OpenSans-Regular';
+    border:1px solid #bbb;
+    display:block;
+    line-height:35px;
+    box-sizing:border-box;
+    text-align:center;
+    float:left;
+    border-radius:2px;
+    transition:all 0.33s ease-in-out;
 }
 
 .link a{
@@ -96,5 +136,15 @@
 
 .link:hover a{
     opacity:1;
+}
+
+.cart{
+    text-align:center;
+    display:block;
+    font:bold 11px consolas;
+    padding:2px;
+    background: #212121;
+    color:white;
+    visibility:hidden;
 }
 

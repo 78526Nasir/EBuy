@@ -12,7 +12,7 @@ CREATE TABLE [User](
      email			varchar(100) not null,
      dob			datetime not null,
      age			int not null,
-     [image]		varchar(max) not null,
+     [image]		varchar(max),
      religion		varchar(20) not null,
      [password]		varchar(100) not null,
      gender			varchar(10) not null,
@@ -22,11 +22,14 @@ CREATE TABLE [User](
      constraint pk_U_id primary key ([user_id])
 )
 
+alter table [user] alter column [image] varchar(max)
+
 drop table [User]
 
 select * from admin
 select * from [user]
 
+update [User] set [image]='../images/admin2.jpg' where [USER_ID] =3
 
 select * from product
 select * from category
@@ -216,7 +219,7 @@ drop table admin
 
 -- STORE PROCEDURE FOR Admin TABLE --
 
-select * from admin
+select * from product
 
 -- STORE PROCEDURE FOR SELECT ADMIN --
 
@@ -246,12 +249,12 @@ select * from company
 -- CART TABLE --
 
 CREATE TABLE Cart(
-	CartID INT PRIMARY KEY IDENTITY,
-	Product_ID INT NOT NULL,
-	Quantity  INT NOT NULL,
+	CartID		INT PRIMARY KEY IDENTITY,
+	Product_ID	INT NOT NULL,
+	UserID		INT	NOT NULL,
 	
-	CONSTRAINT FK_C_PID FOREIGN KEY(Product_ID) REFERENCES Product(Product_ID) ON DELETE CASCADE
-	
+	CONSTRAINT FK_C_PID FOREIGN KEY(Product_ID) REFERENCES Product(Product_ID) ON DELETE CASCADE,
+	CONSTRAINT FK_C_UID FOREIGN KEY(UserID) REFERENCES [User]([user_id]) ON DELETE CASCADE
 )
 
 DROP TABLE CART 
@@ -293,6 +296,7 @@ drop table ProductOrderDetails
 drop table cart
 drop table product
 
+delete from CATEGORY where CATegory_ID=5
 Select * from product
 
 
@@ -451,12 +455,13 @@ END
 select * from [user]
 
 -- STORE PROCEDURE FOR SELECT ALL COMPANY --
-
+select * from product
 CREATE PROC SP_SELECT_ALL_PRODUCT
 AS
 BEGIN
-	SELECT Product_ID, ProductCode, Category_ID, Company_ID, [Description], Price FROM Product
+	SELECT Product_ID, ProductCode, Product_Name, Company_ID, [Description], Price FROM Product
 END
+
 
 
 
@@ -490,4 +495,73 @@ BEGIN
 	DELETE FROM Product WHERE Product_ID = @productid
 END
 
+
+-- STORE PROCEDURE FOR GET PRODUCTS BY CATEGORY --
+
+CREATE PROC SP_GET_PRODUCT_BY_CATEGORY 'bed'
+@categoryname VARCHAR(50)
+AS
+BEGIN
+	select product_id, ProductCode, Product_Name, [Description],Price, ImageUrl
+	from product join CATEGORY
+	on product.CATEGORY_ID= CATEGORY.category_ID
+	where CATEGORY_Name =@categoryname
+END
+
+DROP PROC SP_GET_PRODUCT_BY_CATEGORY
+
+
+
+-- CREATE STORE PROCEDURE FOR GET ALL PRODUCTS --
+CREATE PROC SP_GET_ALL_PRODUCT
+AS
+BEGIN
+	select * from Product
+END
+
+
+
+-- RESEED the TO START IDENTITY FROM 0
+
+DBCC CHECKIDENT(product,RESEED,0)
+DBCC CHECKIDENT([User],RESEED,0)
+DBCC CHECKIDENT(Cart,RESEED,0)
+
+select * from cart
+
+select * from Product 
+	
+
+select * from [user]
+
+
+update product set product_Name='Apple Macbook Air 3' where product_ID=6
+
+-- STORE PROCEDURE FOR ADDING PRODUCT TO CART --
+CREATE PROC SP_ADD_TO_CART
+@productid		INT,
+@userid			INT			
+AS
+BEGIN
+	INSERT INTO Cart VALUES(@productid,@userid)
+END
+
+-- STORE PROCEDURE FOR GET PRODUCTS BY ProductID --
+
+CREATE PROC SP_GET_PRODUCT_BY_PRODUCT_ID
+@productid int
+AS
+BEGIN
+	select * from product 
+	where Product_ID =@productid
+END
+
+
+-- STORE PROCEDURE FOR GET DEFAULT ONE PRODUCTS  --
+
+CREATE PROC SP_SELECT_DEFAULT_PRODUCT
+AS
+BEGIN
+	select TOP(1) * from product 
+END
 

@@ -1,20 +1,37 @@
 # E-Buy
 
-    This is an E-commerce website. I made this website for my 3rd year project. This project is developing under 
-    ASP.NET framework.
+    An E-commerce site, developed in ASP.NET
     
-# Project Features
-* `Admin panel`
-  * `Admin login page`
-  * `Add new product`
-  * `Add new category`
-  * `Customer orders`
-  * `User control`
-  * `Admin profile`
-  
-* `User Login`
-* `Registration`
-* `Reset Password`
-* `Home Page`
+## Main Features
+* `Admin level`
+    * `Admin login`
+    * `Add new product`
+    * `Add new category`
+    * `Customer orders`
+    * `Control business`
+    * `Admin profile`
 
- * Other feature are coming soon..
+* `User level`
+    * `Login`
+    * `Registration`
+    * `Home Page`
+    * `Product`
+    * `Cart`
+    * `Order`
+    * `Checkout`
+    * `Profile`
+    * `About`
+    * `Contact`
+
+## Other Functionalities
+* `Input validation`
+    * `Both client and server side validation`
+* `Authentication`
+    * `User authentication`
+    * `admin authentication`
+* `Authorization`
+    * `Control user accessiablity`
+* `Cryptography`
+    * `Password hasing and salting`
+*  `Exception management`
+* `Reset password throgh gmail SMTP service`

@@ -23,19 +23,34 @@
     * `Contact`
 
 ## Other Functionalities
-* `Input validation`
-    * `Both client and server side validation`
-* `Authentication`
-    * `User authentication`
-    * `admin authentication`
-* `Authorization`
-    * `Control user accessiablity`
-* `Cryptography`
-    * `Password hashing and salting`
-*  `Exception management`
+`Input validation`
+* `Both client and server side validation`
+<br/>
+
+`Authentication`
+* `User authentication`
+* `admin authentication`
+<br/>
+
+`Authorization`
+* `Control user accessiablity`
+<br/>
+
+`Cryptography`
+* `Password hashing and salting`
+<br/>
+
+`Exception management`
 * `Reset password throgh gmail SMTP service`
 
+# Home Page
+![Home_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513867470/Homepage_im4ij8.jpg)
 
+# login
+![Login_page](http://res.cloudinary.com/nasir78526/image/upload/q_100,r_0/v1513865759/login_qswzbl.png)
+
+# Registration
+![Registration_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513866465/Registration_ucqkad.png)
 
 > **To know more, go to the <a href="#">Wiki</a> Section**
 

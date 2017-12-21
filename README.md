@@ -1,5 +1,4 @@
 # E-Buy
-
     An E-commerce site, developed in ASP.NET
     
 ## Main Features
@@ -32,6 +31,15 @@
 * `Authorization`
     * `Control user accessiablity`
 * `Cryptography`
-    * `Password hasing and salting`
+    * `Password hashing and salting`
 *  `Exception management`
 * `Reset password throgh gmail SMTP service`
+
+
+
+> **To know more, go to the <a href="#">Wiki</a> Section**
+
+## Licence & Copyright 
+This project is LICENCE under [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<a href="https://github.com/78526Nasir">Nasir Islam Sujan</a> &copy; 2017

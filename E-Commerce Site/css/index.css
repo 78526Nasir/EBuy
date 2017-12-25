@@ -1,0 +1,215 @@
+﻿@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+body {
+    margin:0px;
+}
+
+a{
+    font-family:'OpenSans-Light';
+}
+
+.header{
+    height:70px;
+    width:100%;
+    background:white;
+    position:fixed;
+    z-index: 3;
+    top: 0;
+}
+
+
+.header a{
+    text-decoration:none;
+}
+
+.header a:link, .header a:visited, .header a:hover, .header a:active
+{
+    color:#7952b3;
+} 
+
+.header h1{
+    margin:0px;
+    margin-left:100px;
+    font-family:'Old English Text MT';
+    background-color: white;
+    display: inline-block;
+    line-height: 70px;
+    font-size: 40px;
+}
+
+.left-header{
+    width: 75%;
+    float:left;
+    color:#7852b3;
+}
+
+.header h1:hover{
+    animation: name 5s;
+}
+
+@keyframes name{
+    25%{color:#007bff}
+    50%{color:#4caf50}
+    75%{color:orange}
+    100%{color:chocolate}
+    
+}
+
+.right-header{
+    position:relative;
+    width: 25%;
+    margin-left: 75%;
+    text-align:right;
+}
+
+.middle-header{
+    position: absolute;
+    right: 0;
+    margin-right: 11%;
+    line-height: 70px;
+    color: #0066bb;
+    font-size: 14px;
+    font-family: 'OpenSans-regular';
+}
+
+.btn-section{
+    float:left;
+    width:60%;
+}
+
+.user-img-section{
+    margin-left: 60%;
+    width:40%;
+    text-align:left;
+}
+
+.user-img-section img{
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+    padding: 5px;
+    cursor:pointer;
+}
+
+.btn-login{
+    height:35px;
+    width:100px;
+    margin: 17px 0px 17px 17px;
+    border-radius:3px;
+    border: 1px solid #aaa;
+    background:white;
+    outline:none;
+    font:bold 16px calibri;
+    transition:all 0.33s ease-in-out;
+    cursor:pointer;
+}
+
+.btn-login:hover{
+    background:#f5f5f5;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.2);
+}
+
+.user-details{
+    position: absolute;
+    width:300px;
+    height: 215px;
+    right: 65px;
+    border: 1px solid #ddd;
+    text-align:center;
+    background: #fcfcfc;
+    border-radius:3px;
+    box-shadow:0px 0px 3px rgba(0,0,0,0.1);
+}
+
+.user-section img{
+    height:100px;
+    width:100px;
+    margin:10px 0px;
+    border-radius:50%;
+}
+
+.user-section #lblUserName{
+    font:14px 'OpenSans-regular';
+    color: #212121;
+}
+
+.user-details .btn-section{
+    height:50px;
+    width:100%;
+    margin-top: 15px;
+}
+
+.user-details .btn-section .profile,.user-details .btn-section .logout{
+    height: 35px;
+    width: 105px;
+    border-radius:3px;
+    margin:10px;
+    margin-top:5px;
+    border: 1px solid #ccc;
+    font: 13px 'OpenSans-regular';
+    outline:none;
+    color: #212121;
+    background: white;
+    transition:all 0.33s ease-in-out;
+}
+
+.profile:hover, .logout:hover{
+    background: #f8f9fa !important;
+    cursor:pointer;
+    color:black;
+    box-shadow:0px 0px 3px rgba(0,0,0,0.2);
+}
+
+.menu{
+    height: 45px;
+    width:100%;
+    background: #fff;
+    text-align:right;
+    margin-top: 70px;
+    z-index: 1;
+    position: fixed;
+    box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+    border-top: 1px solid #ddd;
+}
+
+.menu ul{
+    margin:0px;
+    list-style-type:none;    
+    margin-right:10%;
+}
+
+.menu ul li a{
+    text-decoration:none;
+    color: #223344;
+    float:right;
+    padding:0px 25px;
+    display:block;
+    cursor:pointer;
+    font-size: 15px;
+    line-height:45px;
+    transition:all 0.33s ease-in-out;
+    font-family: 'OpenSans-regular';
+}
+
+.menu ul li a:hover{
+    background: #53a0c5;
+    color:black;
+}

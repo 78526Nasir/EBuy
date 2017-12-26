@@ -175,33 +175,6 @@ namespace E_Commerce_Site {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv5;
         
         /// <summary>
-        /// lblImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblImage;
-        
-        /// <summary>
-        /// fuImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuImage;
-        
-        /// <summary>
-        /// fUrvf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator fUrvf;
-        
-        /// <summary>
         /// lblPassword control.
         /// </summary>
         /// <remarks>
@@ -283,22 +256,22 @@ namespace E_Commerce_Site {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblGender;
         
         /// <summary>
-        /// rMale control.
+        /// rbl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rMale;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbl1;
         
         /// <summary>
-        /// rFemale control.
+        /// rfv8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rFemale;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv8;
         
         /// <summary>
         /// cbAgreement control.

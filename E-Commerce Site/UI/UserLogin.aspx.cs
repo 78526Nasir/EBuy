@@ -27,7 +27,7 @@ namespace E_Commerce_Site
 
                 DataTable dt = user.login();
 
-                if (dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
                 {
                     Session["User"] = dt.Rows[0]["fullname"].ToString();
                     Session["UserImage"] = dt.Rows[0]["image"].ToString();
@@ -61,7 +61,8 @@ namespace E_Commerce_Site
             if (takeSalt != null)
             {
                 takeHash = generateTempHashWithSalt(takeSalt);
-            }else
+            }
+            else
             {
                 takeHash = null;
             }

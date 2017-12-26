@@ -22,84 +22,45 @@ namespace E_Commerce_Site
         {
             if (Page.IsValid)
             {
-                string imagePath = string.Empty;
+                string imagePath = defaultImagePath();
 
-                string isValid = validateImage();
+                User user = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.Value, imagePath);
 
-                if (isValid.Equals("valid"))
-                {
-                    imagePath = "../images/" + fuImage.FileName;
+                string salt;
+                string hash = HashingAndSalting.createSaltedHash(user.getPassword(), out salt);
 
-                    User user = new User(txtUsername.Text, txtFullName.Text, txtPassword.Text, selectedGender(), txtReligion.Text, txtEmail.Text, txtDOB.Value, imagePath);
+                user.setHashAndSalt(hash, salt);
 
-                    string salt;
-                    string hash = HashingAndSalting.createSaltedHash(user.getPassword(), out salt);
+                // registration
+                user.registration();
 
-                    user.setHashAndSalt(hash, salt);
-                    
-                    // registration
-                    user.registration();
+                resetForm();
 
-                    resetForm();
-
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
-                    Response.Redirect("~/UI/Redirect.aspx");
-                }
-                else
-                {
-                    lblValidationMessage.Text = isValid;
-                }
-            }else
-            {
-               ValidationSummary1.HeaderText = "Please fill up all the necessary fields";
-            }
-        }
-
-        private string validateImage()
-        {
-            if (fuImage.HasFile)
-            {
-                string imageExtension = Path.GetExtension(fuImage.FileName);
-
-                if (imageExtension.ToLower() != ".jpg" && imageExtension.ToLower() != ".jpeg" &&
-                    imageExtension.ToLower() != ".png" && imageExtension.ToLower() != ".bmp")
-                {
-                    return "Only file with .jpg or .jpeg or .png or .bmp extension are allowed";
-                }
-                else
-                {
-                    //3145728 => 3MB
-                    int imageSize = fuImage.PostedFile.ContentLength;
-
-                    if (imageSize > 3145728)
-                    {
-                        return "Image size must less than 3MB";
-                    }
-                    else
-                    {
-                        imagePath();
-                        return "valid";
-                    }
-                }
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
+                Response.Redirect("~/UI/Redirect.aspx");
             }
             else
             {
-                return "Please select and image";
+                ValidationSummary1.HeaderText = "Please fill up all the necessary fields";
             }
-
-
         }
-        private void imagePath()
-        {
-            string serverPath = Server.MapPath("~/images/");
-            string physicalSavingPath = serverPath + fuImage.FileName;
 
-            fuImage.SaveAs(physicalSavingPath);
-
-        }
         private string selectedGender()
         {
-            return rMale.Checked ? "male" : "female";
+            return rbl1.SelectedIndex == 0 ? "male" : "female";
+        }
+
+        private string defaultImagePath()
+        {
+            if (selectedGender().Equals("male"))
+            {
+                return "../images/male_user.png";
+            }
+            else
+            {
+                return "../images/female_user.png";
+            }
+
         }
 
         private void resetForm()
@@ -111,8 +72,7 @@ namespace E_Commerce_Site
             txtPassword.Text = string.Empty;
             txtReligion.Text = string.Empty;
             txtConfirmPassword.Text = string.Empty;
-            rMale.Checked = false;
-            rFemale.Checked = false;
+            rbl1.ClearSelection();
             cbAgreement.Checked = false;
         }
 

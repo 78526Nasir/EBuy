@@ -25,20 +25,20 @@
 }
 
 .pro-desc{
-    color:#434343;
-    font-family:'OpenSans-SemiBold';
+    color: #000000;
+    font-family: 'OpenSans-Regular';
 }
 
 .pro-desc2{
-    font:14px 'OpenSans-Light';
+    font:13px 'OpenSans-Light';
 }
 .pro-code{
-    font-size: 22px;
+    font-size: 20px;
     font-family:'OpenSans-Regular';
 }
 
 .pro-code{
-    color: #212121;
+    color: #000000;
 }
 
 .pro-name{
@@ -49,7 +49,7 @@
 
 .pro-price{
     font: 18px 'OpenSans-regular';
-    color:#222;
+    color: #000;
 }
 
 

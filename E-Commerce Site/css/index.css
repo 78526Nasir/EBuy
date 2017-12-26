@@ -53,6 +53,7 @@ a{
     display: inline-block;
     line-height: 70px;
     font-size: 40px;
+    text-shadow:0px 2px 4px rgba(0,0,0,0.2);
 }
 
 .left-header{
@@ -66,11 +67,11 @@ a{
 }
 
 @keyframes name{
-    25%{color:#007bff}
-    50%{color:#4caf50}
-    75%{color:orange}
-    100%{color:chocolate}
-    
+    5%{color:#7952b3}
+    25%{color:#226688}
+    50%{color:#1f2f3f}
+    75%{color:#006600}
+    95%{color:#0ba211}
 }
 
 .right-header{
@@ -85,7 +86,7 @@ a{
     right: 0;
     margin-right: 11%;
     line-height: 70px;
-    color: #0066bb;
+    color: #003355;
     font-size: 14px;
     font-family: 'OpenSans-regular';
 }

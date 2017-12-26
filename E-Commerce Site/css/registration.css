@@ -49,10 +49,6 @@ table{
     margin: 0px auto;
 }
 
-tr,td{
-    height:50px;
-}
-
 .left{
     width: 45%;
 }
@@ -86,6 +82,7 @@ tr,td{
     transition:all 0.33s ease-in-out;
     font:bold 16px garamond;
     color:#4caf50;
+    margin:7px 0px;
 }
 
 .text-field:active, .text-field:focus{
@@ -106,7 +103,6 @@ hr{
     color:#119922;
     font:bold 16px garamond;
     cursor:pointer;
-    
 }
 
 .hr2{
@@ -146,7 +142,7 @@ hr{
 }
 
 .agreement{
-    margin: 5px 0px 5px 46px;
+    margin: 10px 0px 5px 46px;
     color:#119922;
     font: bold 18px garamond;
 }
@@ -188,32 +184,15 @@ hr{
     font-family:monospace;
 }
 
-.select-image{
-    border:1px solid #77dd66;
-    padding:8px 16px;
-    border-radius:3px;
-    background:white;
-    font:bold 16px garamond;
-    position:relative;
+#rbl1{
     color:#4caf50;
-    z-index:1;
-    cursor:pointer;
-    transition:all 0.33s ease-in-out;
-}
-
-.select-image:hover{
-    background:lightgreen;
-    cursor:pointer;
-    color:black;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
-}
-
-.file-upload{
-    width: 215px;
-    position:absolute;
-    left:15px;
-    outline:none;
     font:bold 16px garamond;
-    color:#666;
-    z-index:-1;
+    margin:7px 0px;
+    
+}
+
+.is-available{
+    text-align:right;
+    padding-right:40px;
+    font:bold 12px consolas;
 }

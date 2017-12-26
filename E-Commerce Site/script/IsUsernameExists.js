@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    $("#txtUsername").keyup(function () {
+    $("#txtUsername").blur(function () {
         var username = $(this).val();
         var label = $("#lblAvailablityMessage");
 
@@ -14,9 +14,6 @@
                     if (data.UserNameInUse) {
                         label.text(username + " is already in use");
                         label.css("color", "red");
-                    } else {
-                        label.text(username + " is available");
-                        label.css("color", "green");
                     }
                 },
                 error: function (err) {

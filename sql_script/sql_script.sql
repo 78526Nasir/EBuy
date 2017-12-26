@@ -31,7 +31,16 @@ select * from [user]
 
 update [User] set [image]='../images/admin2.jpg' where [USER_ID] =3
 
-select * from product
+select product.product_id from Product 
+join Cart on Product.Product_ID=Cart.Product_ID
+
+
+delete from cart
+
+DBCC CHECKIDENT(RESEED,Cart)
+select * from Product
+select * from cart
+
 select * from category
 select * from company
 -- STORE PROCEDURE for INSERT data into USER TABLE--
@@ -110,7 +119,9 @@ create table Product
 
 DROP TABLE Product
 
-select * from admin
+ALTER table PRODUCT add Quantity int
+
+select * from product
 
 
 
@@ -367,7 +378,7 @@ END
 
 DROP PROC SP_RESET_PASSWORD
 
-
+select * from admin
 
 -- STORE PROCEDURE FOR CHECKING LINK VALIDATION --
 -- RESET LINK IS VALID FOR ONLY ONE TIME --
@@ -522,7 +533,7 @@ END
 
 
 -- RESEED the TO START IDENTITY FROM 0
-
+DBCC CHECKIDENT(Cart,RESEED,0)
 DBCC CHECKIDENT(product,RESEED,0)
 DBCC CHECKIDENT([User],RESEED,0)
 DBCC CHECKIDENT(Cart,RESEED,0)
@@ -565,3 +576,29 @@ BEGIN
 	select TOP(1) * from product 
 END
 
+
+-- STORE PROCEDURE FOR CHECK WHETHER A GIVEN USERNAME WAS ALREADY EXISTS OR NOT --
+select * from [user]
+
+CREATE PROC SP_IS_USERNAME_EXISTS 
+@username VARCHAR(100)
+AS
+BEGIN
+	DECLARE @COUNT INT
+	
+	SELECT @COUNT = COUNT([user_id]) FROM [User] 
+	WHERE username=@username
+	
+	IF(@COUNT>0)
+		SELECT 1 AS UserNameExists
+	ELSE 
+		SELECT 0 AS UserNameExists
+END
+
+
+-- STORE PROCEDURE FOR SELECT ALL CART --
+CREATE PROC SP_SELECT_ALL_CART
+AS
+BEGIN
+	SELECT Product_ID FROM Cart
+END

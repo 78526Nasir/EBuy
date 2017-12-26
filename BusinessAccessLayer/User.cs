@@ -10,7 +10,6 @@ namespace BusinessAccessLayer
 {
     public class User
     {
-        private string _username;
         private string _fullName;
         private string _password;
         private string _gender;
@@ -27,7 +26,9 @@ namespace BusinessAccessLayer
         private string _salt;
         private string _hash;
 
+        public string Username { get; set; }
         public string GlobalUniqueIDForResetPassword { get; set; }
+        public bool UserNameInUse { get; set; }
 
         /// <summary>
         /// Constructor for initialize property "on the fly";
@@ -52,7 +53,7 @@ namespace BusinessAccessLayer
         /// <param name="password">New password</param>
         /// <param name="salt">Salt for new password</param>
         /// <param name="hash">hash for new password</param>
-        public User(string gUID,string password,string salt, string hash)
+        public User(string gUID, string password, string salt, string hash)
         {
             GlobalUniqueIDForResetPassword = gUID;
             _password = password;
@@ -67,7 +68,7 @@ namespace BusinessAccessLayer
         /// <param name="username"></param>
         public User(string username)
         {
-            _username = username;
+            Username = username;
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace BusinessAccessLayer
         /// <param name="password"></param>
         public User(string username, string saltedHash)
         {
-            _username = username;
+            Username = username;
             _hash = saltedHash;
         }
 
@@ -91,9 +92,9 @@ namespace BusinessAccessLayer
         /// <param name="religion"></param>
         /// <param name="email"></param>
         /// <param name="dob"></param>
-        public User(string username, string fullName, string password, string gender, string religion, string email, string dob,string image)
+        public User(string username, string fullName, string password, string gender, string religion, string email, string dob, string image)
         {
-            _username = username;
+            Username = username;
             _fullName = fullName;
             _email = email;
             _dob = dob;
@@ -111,11 +112,11 @@ namespace BusinessAccessLayer
         }
         public void setUsername(string username)
         {
-            _username = username;
+            Username = username;
         }
         public string getUsername()
         {
-            return _username;
+            return Username;
         }
         public void setFullName(string fullName)
         {

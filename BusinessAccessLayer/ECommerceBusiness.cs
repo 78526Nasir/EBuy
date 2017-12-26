@@ -279,5 +279,18 @@ namespace BusinessAccessLayer
 
             return DataAccess.ExecuteDTByProcedure("SP_GET_PRODUCT_BY_PRODUCT_ID", parameters);
         }
+
+        public DataTable IsUserNameExists()
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+
+            return DataAccess.ExecuteDTByProcedure("SP_IS_USERNAME_EXISTS", parameters);
+        }
+
+        public DataTable SelectAllCartedProduct()
+        {
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_CART", null);
+        }
     }
 }

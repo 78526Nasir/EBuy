@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="../css/cards.css" />
     <link rel="stylesheet" href="../css/product.css" />
     <link rel="stylesheet" href="../css/zoom.css" />
-    
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+
     <script src="../script/jQuery-3.2.1.js"></script>
     <%--<script src="../script/bootstrap.min.js"></script>--%>
 
@@ -84,11 +86,11 @@
                 <!--menu-->
                 <div class="menu">
                     <ul>
-                        <li><a href="Profile.aspx" target="_blank">Profile</a></li>
-                        <li><a href="Contact.aspx" target="_blank">Contact</a></li>
-                        <li><a href="About.aspx" target="_blank">About</a></li>
-                        <li><a href="Cart.aspx" target="_blank">Cart</a></li>
-                        <li><a href="Product.aspx" target="_blank">Product</a></li>
+                        <li><a href="Profile.aspx">Profile</a></li>
+                        <li><a href="Contact.aspx">Contact</a></li>
+                        <li><a href="About.aspx">About</a></li>
+                        <li><a href="Cart.aspx">Cart</a></li>
+                        <li><a href="Product.aspx">Product</a></li>
                         <li><a href="HomePage.aspx">Home</a></li>
                     </ul>
                 </div>

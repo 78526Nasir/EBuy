@@ -12,11 +12,13 @@ window.onload = function () {
 };
 
 
-/* Generic function for required field validation*/
+/* function for required field validation*/
 
 function usernameValidation() {
     var element = document.getElementById("txtUsername");
     var alertEle = document.getElementById("unAlert");
+    var labelEle = document.getElementById("lblAvailablityMessage");
+
     if (!element.value) {
         alertEle.style.visibility = "visible";
         element.style.border = "1px solid red";
@@ -26,6 +28,8 @@ function usernameValidation() {
         element.style.boxShadow = "none";
         alertEle.style.visibility = "hidden";
     }
+
+    labelEle.innerText = "";
 }
 
 function fullNameValidation() {

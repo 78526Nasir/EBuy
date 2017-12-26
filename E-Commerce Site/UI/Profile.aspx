@@ -1,6 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="E_Commerce_Site.UI.Profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="E_Commerce_Site.UI.Profile" MasterPageFile="~/UI/Index.Master" %>
 
-<!DOCTYPE html>
+
+
+<%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -50,7 +52,8 @@
                         Choose File
                         <asp:FileUpload CssClass="file-upload" ID="imageUpload" runat="server" />
                     </label>
-                </div>--%>
+                </div>-- %>
+
                 <div class="name-container">
                     <asp:Label ID="lblUsernamOnImage" runat="server">Name</asp:Label>
                 </div>
@@ -161,4 +164,4 @@
         IsValidImage();
     </script>
 </body>
-</html>
+</html>--%>

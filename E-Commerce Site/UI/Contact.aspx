@@ -1,6 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="E_Commerce_Site.UI.Contact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="E_Commerce_Site.UI.Contact" MasterPageFile="~/UI/Index.Master" %>
 
-<!DOCTYPE html>
+
+<asp:Content ID="ContactMiddle" ContentPlaceHolderID="cphMiddle" runat="server">
+</asp:Content>
+
+<asp:Content ID="ContactBody" ContentPlaceHolderID="cphBody" runat="server">
+    <div class="c-container">
+        <div class="c-body">
+            <h1>Contact</h1>
+            <address>
+                Name: <a href="https://www.github.com/78526Nasir" target="_blank">Nasir Islam Sujan</a>
+                <br />
+                Email: <a href="#">Sujans.bits@gmail.com</a>
+                <br />
+                Address: 81, k, n, shen road, Mahmud Nogor, Sonakanda, Bandar, Narayangonj.
+                <br />
+                Github Profile: <a href="https://www.github.com/78526Nasir" target="_blank">78526Nasir</a>
+            </address>
+        </div>
+    </div>
+</asp:Content>
+
+<%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -24,4 +45,4 @@
         </div>
     </form>
 </body>
-</html>
+</html>--%>

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BusinessAccessLayer;
 using E_Commerce_Site.Libraries;
 using System.IO;
+using System.Data;
 
 namespace E_Commerce_Site
 {
@@ -31,13 +32,19 @@ namespace E_Commerce_Site
 
                 user.setHashAndSalt(hash, salt);
 
-                // registration
-                user.registration();
+                if (!isAlreadyExists())
+                {
+                    user.registration();
+                    resetForm();
 
-                resetForm();
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
+                    Response.Redirect("~/UI/Redirect.aspx");
+                }
+                else
+                {
+                    lblStatus.Text = "Username or Email already exists!";
+                }
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully Registered!')", true);
-                Response.Redirect("~/UI/Redirect.aspx");
             }
             else
             {
@@ -45,6 +52,39 @@ namespace E_Commerce_Site
             }
         }
 
+        private bool isAlreadyExists()
+        {
+            bool uExists = false;
+            bool eExists = false;
+
+            User user = new User
+            {
+                Username = txtUsername.Text,
+                Email = txtEmail.Text
+            };
+
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                UserObj = user
+            };
+
+            DataTable dt = ecb.IsUserNameExists();
+
+            if (dt.Rows.Count > 0)
+            {
+                uExists = dt.Rows[0]["UserNameExists"].ToString().Equals("0") ? false : true;
+            }
+
+            dt = ecb.IsEmailExists();
+
+            if (dt.Rows.Count > 0)
+            {
+                eExists = dt.Rows[0]["EmailExists"].ToString().Equals("0") ? false : true;
+            }
+
+            return (uExists == false && eExists == false) ? false : true;
+
+        }
         private string selectedGender()
         {
             return rbl1.SelectedIndex == 0 ? "male" : "female";

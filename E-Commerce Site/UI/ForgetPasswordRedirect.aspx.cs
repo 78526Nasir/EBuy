@@ -21,10 +21,10 @@ namespace E_Commerce_Site.UI
 
         protected void btnResetPassword_Click(object sender, EventArgs e)
         {
-            StringBuilder sbEmail = new StringBuilder();
-            sbEmail.Append(txtEmail.Text);
-
-            User user = new User(sbEmail);
+            User user = new User
+            {
+                Email = txtEmail.Text
+            };
 
             ECommerceBusiness ecb = new ECommerceBusiness
             {

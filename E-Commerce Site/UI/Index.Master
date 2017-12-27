@@ -176,5 +176,11 @@
         //}
     </script>
 
+    <script type="text/javascript">
+        $(window).on("load", function(){
+            $(".right-side").css("min-height",$(".item").innerHeight());
+        });
+    </script>
+
 </body>
 </html>

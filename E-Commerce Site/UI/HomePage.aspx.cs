@@ -13,26 +13,33 @@ namespace E_Commerce_Site.UI
 {
     public partial class HomePage : System.Web.UI.Page
     {
-        public int t;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["User"] != null)
             {
-                CartedList();
-                GetProducts("all");
+                if (!IsPostBack)
+                {
+                    DataTable dt = (DataTable)Session["UserWholeRecord"];
+                    int userID =Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+
+                    CartedList(userID);
+                    GetProducts("all");
+                }
+            }else
+            {
+                if (!IsPostBack)
+                {
+                    CartedList(-1);
+                    GetProducts("all");
+                }
             }
+
         }
 
-        //protected void txtSearch_TextChanged(object sender, EventArgs e)
-        //{
-        //    Response.Write("<script>alert(" + txtSearch.Text + ")</script>");
-        //}
-
-
-        private void CartedList()
+        private void CartedList(int userID)
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
-            Application["CartList"] = ecb.SelectAllCartedProduct();
+            Application["CartList"] = ecb.SelectAllCartedProduct(userID);
         }
         private void GetProducts(string category)
         {
@@ -82,8 +89,8 @@ namespace E_Commerce_Site.UI
         private void IsCartedProduct(RepeaterItemEventArgs e, string productID)
         {
             DataTable dt = (DataTable)Application["CartList"];
-            
-            for(int i=0; i < dt.Rows.Count; i++)
+
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (dt.Rows[i]["Product_ID"].ToString().Equals(productID))
                 {
@@ -99,7 +106,7 @@ namespace E_Commerce_Site.UI
                     btn.Enabled = false;
                 }
             }
-            
+
         }
         protected void repeaterButtonClick(object sender, RepeaterCommandEventArgs e)
         {

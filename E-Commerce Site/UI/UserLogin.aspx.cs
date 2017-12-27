@@ -14,7 +14,7 @@ namespace E_Commerce_Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void LoginButtonClickPerformed(object sender, EventArgs e)
@@ -33,7 +33,14 @@ namespace E_Commerce_Site
                     Session["UserImage"] = dt.Rows[0]["image"].ToString();
                     Session["UserWholeRecord"] = dt;
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "Reg_Conf", "alert('Successfully logged in!')", true);
-                    Response.Redirect("~/UI/HomePage.aspx");
+
+                    if (Session["PageName"] == null)
+                    {
+                        Response.Redirect("~/UI/HomePage.aspx");
+                    }else
+                    {
+                        Response.Redirect(Session["PageName"].ToString());
+                    }
                 }
                 else
                 {

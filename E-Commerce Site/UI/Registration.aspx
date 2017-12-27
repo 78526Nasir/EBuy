@@ -9,6 +9,7 @@
     <script src="../script/jQuery-3.2.1.js"></script>
     <script type="text/javascript" src="../script/validation.js"></script>
     <script type="text/javascript" src="../script/IsUsernameExists.js"></script>
+    <script type="text/javascript" src="../script/IsEmailExists.js"></script>
 
 </head>
 <body>
@@ -84,6 +85,13 @@
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="Email required" ControlToValidate="txtEmail" Display="Dynamic">&nbsp;</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="rev1" runat="server" ErrorMessage="Enter valid email address" ControlToValidate="txtEmail" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">&nbsp;</asp:RegularExpressionValidator>
+                        </td>
+                    </tr>
+
+                     <!-- Is Email available -->
+                    <tr>
+                        <td colspan="4" class="is-available">
+                            <label id="lblAvailablityMessage2"></label>
                         </td>
                     </tr>
 
@@ -184,36 +192,12 @@
 
                 </table>
 
-                <!-- Table for gender -->
-
-                <%-- <table class="responsive-table">
-                    <tr>
-                        <td class="left">
-                            <label class="label" id="lblGender" runat="server">Gender</label>
-                        </td>
-
-                        <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rMale" value="Male" />Male</label>
-                        </td>
-                        <td class="radio-container">
-                            <label>
-                                <input type="radio" class="radio" name="rGender" runat="server" id="rFemale" value="Male" />Female</label>
-                        </td>
-                        <td class="alert">
-                            <span id="gAlert" class="alert-span">&#9888;</span>
-                        </td>
-                        <td class="required">
-                   
-                        </td>
-                    </tr>
-                </table>--%>
             </div>
 
             <!-- Terms and conditions agreement div-->
 
             <div class="agreement">
-                <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" onchange="isChecked();" />
+                <input type="checkbox" name="cbAgreement" runat="server" id="cbAgreement" onchange="isChecked()"/>
                 <label for="cbAgreement">I accept all the terms and conditions</label>
             </div>
 
@@ -222,6 +206,8 @@
             <div class="button">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="registerButtonClickPerformed" />
             </div>
+
+            <asp:Label ID="lblStatus" CssClass="status" runat="server"></asp:Label>
         </div>
 
         <!--Validation summary div-->

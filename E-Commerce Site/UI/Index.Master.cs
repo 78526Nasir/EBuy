@@ -35,6 +35,10 @@ namespace E_Commerce_Site.UI
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            if (Request.UrlReferrer != null)
+            {
+                Session["PageName"] = System.IO.Path.GetFileName(Request.UrlReferrer.AbsolutePath);
+            }
             Response.Redirect("UserLogin.aspx");
         }
 

@@ -26,7 +26,7 @@
 <body>
     <form id="form1" runat="server">
     <div class="container">
-        <p>Redirect to <a href="UserLogin.aspx" target="_blank">Login Page</a></p>
+        <p>Redirect to <a href="UserLogin.aspx">Login Page</a></p>
     </div>
     </form>
 </body>

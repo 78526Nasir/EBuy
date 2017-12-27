@@ -19,10 +19,7 @@ h1,h2,h3,h4,h5,h6{
     background:white;
     border-radius:4px;
     box-shadow:0px 2px 3px rgba(0,0,0,0.3);
-}
-
-.container:hover{
-    box-shadow:0px 3px 5px rgba(0,0,0,0.4);
+    text-align:  center;
 }
 
 .head{
@@ -47,6 +44,7 @@ table{
     border-collapse:collapse;
     width: 90%;
     margin: 0px auto;
+    text-align:left;
 }
 
 .left{
@@ -82,7 +80,7 @@ table{
     transition:all 0.33s ease-in-out;
     font:bold 16px garamond;
     color:#4caf50;
-    margin:7px 0px;
+    margin: 5px 0px;
 }
 
 .text-field:active, .text-field:focus{
@@ -142,6 +140,7 @@ hr{
 }
 
 .agreement{
+    text-align:left;
     margin: 10px 0px 5px 46px;
     color:#119922;
     font: bold 18px garamond;
@@ -196,3 +195,9 @@ hr{
     padding-right:40px;
     font:bold 12px consolas;
 }
+
+.status{
+    color:red;
+    font:bold 12px consolas;
+}
+

@@ -14,7 +14,6 @@ namespace BusinessAccessLayer
         private string _password;
         private string _gender;
         private string _religion;
-        private string _email;
         private string _dob;
         private int _age;
         private string _image;
@@ -27,8 +26,10 @@ namespace BusinessAccessLayer
         private string _hash;
 
         public string Username { get; set; }
+        public string Email { get; set; }
         public string GlobalUniqueIDForResetPassword { get; set; }
         public bool UserNameInUse { get; set; }
+        public bool EmailInUse { get; set; }
 
         /// <summary>
         /// Constructor for initialize property "on the fly";
@@ -36,14 +37,6 @@ namespace BusinessAccessLayer
         public User()
         {
 
-        }
-
-        /// <summary>
-        /// Constructor for resetting password through email
-        /// </summary>
-        public User(StringBuilder email)
-        {
-            _email = email.ToString();
         }
 
         /// <summary>
@@ -96,7 +89,7 @@ namespace BusinessAccessLayer
         {
             Username = username;
             _fullName = fullName;
-            _email = email;
+            Email = email;
             _dob = dob;
             _age = calculateAge(dob);
             _religion = religion;
@@ -109,14 +102,6 @@ namespace BusinessAccessLayer
         {
             _hash = hash;
             _salt = salt;
-        }
-        public void setUsername(string username)
-        {
-            Username = username;
-        }
-        public string getUsername()
-        {
-            return Username;
         }
         public void setFullName(string fullName)
         {
@@ -153,14 +138,6 @@ namespace BusinessAccessLayer
         public string getReligion()
         {
             return _religion;
-        }
-        public void setEmail(string email)
-        {
-            _email = email;
-        }
-        public string getEmail()
-        {
-            return _email;
         }
         public void setDateOfBirth(string dob)
         {

@@ -2,7 +2,7 @@ CREATE DATABASE E_Commerce
 
 USE E_Commerce
 
-
+select * from cart
 -- User TABLE --
 
 CREATE TABLE [User](
@@ -122,9 +122,9 @@ DROP TABLE Product
 ALTER table PRODUCT add Quantity int
 
 select * from product
+select * from Cart
 
-
-
+select * from [user]
 -- STORE PROCEDURE for add new product --
 create proc sp_addNewProduct
 @productCode		varchar(50),
@@ -578,7 +578,6 @@ END
 
 
 -- STORE PROCEDURE FOR CHECK WHETHER A GIVEN USERNAME WAS ALREADY EXISTS OR NOT --
-select * from [user]
 
 CREATE PROC SP_IS_USERNAME_EXISTS 
 @username VARCHAR(100)
@@ -596,9 +595,46 @@ BEGIN
 END
 
 
--- STORE PROCEDURE FOR SELECT ALL CART --
-CREATE PROC SP_SELECT_ALL_CART
+-- STORE PROCEDURE FOR CHECK WHETHER A GIVEN EMAIL WAS ALREADY EXISTS OR NOT
+CREATE PROC SP_IS_EMAIL_EXISTS
+@email VARCHAR(100)
 AS
 BEGIN
-	SELECT Product_ID FROM Cart
+	DECLARE @COUNT INT
+	
+	SELECT @COUNT= COUNT(email)
+	FROM [User] 
+	WHERE email=@email
+	
+	IF(@COUNT>0)
+		SELECT 1 AS EmailExists
+	ELSE
+		SELECT 0 AS EmailExists
 END
+
+
+
+-- STORE PROCEDURE FOR SELECT ALL CART --
+CREATE PROC SP_SELECT_ALL_CART
+@userid int
+AS
+BEGIN
+	SELECT Product_ID FROM Cart WHERE UserID = @userid
+END
+
+DROP PROC SP_SELECT_ALL_CART 
+
+-- STORE PROCEDURE FOR DELETE CARTED PRODUCT --
+CREATE PROC SP_DELETE_CARTED_PRODUCT 
+@productid int,
+@userid int
+AS
+BEGIN
+	DELETE FROM Cart WHERE [userID]=@userid AND Product_ID=@productid
+END
+
+
+select distinct(product_ID) from cart where UserID =2 
+
+
+select * from [user]

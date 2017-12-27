@@ -58,9 +58,9 @@ namespace BusinessAccessLayer
         public void AddNewUser()
         {
             SqlParameter[] parameters = new SqlParameter[11];
-            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.Username);
             parameters[1] = DataAccess.AddParameter("@fullname", UserObj.getFullName());
-            parameters[2] = DataAccess.AddParameter("@email", UserObj.getEmail());
+            parameters[2] = DataAccess.AddParameter("@email", UserObj.Email);
             parameters[3] = DataAccess.AddParameter("@dob", UserObj.getDateOfBirth());
             parameters[4] = DataAccess.AddParameter("@age", UserObj.getAge());
             parameters[5] = DataAccess.AddParameter("@image", UserObj.getImage());
@@ -92,19 +92,19 @@ namespace BusinessAccessLayer
         public DataTable SelectUser()
         {
             SqlParameter[] parameters = new SqlParameter[2];
-            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.Username);
             parameters[1] = DataAccess.AddParameter("@hash", UserObj.getHash());
             DataTable dt = DataAccess.ExecuteDTByProcedure("sp_selectUser", parameters);
 
             return dt == null ? new DataTable() : dt;
-            
+
         }
 
         public string RetriveSaltAgainstUser()
         {
             string salt;
             SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameter[0] = DataAccess.AddParameter("@username", UserObj.Username);
             DataTable dt = DataAccess.ExecuteDTByProcedure("sp_retriveSaltAgainstUser", parameter);
 
             if (dt == null)
@@ -128,7 +128,7 @@ namespace BusinessAccessLayer
         public DataTable ResetPassword()
         {
             SqlParameter[] parameter = new SqlParameter[1];
-            parameter[0] = DataAccess.AddParameter("@email", UserObj.getEmail());
+            parameter[0] = DataAccess.AddParameter("@email", UserObj.Email);
             DataTable dt = DataAccess.ExecuteDTByProcedure("SP_RESET_PASSWORD", parameter);
 
             if (dt == null)
@@ -283,14 +283,33 @@ namespace BusinessAccessLayer
         public DataTable IsUserNameExists()
         {
             SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = DataAccess.AddParameter("@username", UserObj.getUsername());
+            parameters[0] = DataAccess.AddParameter("@username", UserObj.Username);
 
             return DataAccess.ExecuteDTByProcedure("SP_IS_USERNAME_EXISTS", parameters);
         }
 
-        public DataTable SelectAllCartedProduct()
+        public DataTable IsEmailExists()
         {
-            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_CART", null);
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@email", UserObj.Email);
+
+            return DataAccess.ExecuteDTByProcedure("SP_IS_EMAIL_EXISTS", parameters);
+        }
+
+        public DataTable SelectAllCartedProduct(int userID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@userid", userID);
+            return DataAccess.ExecuteDTByProcedure("SP_SELECT_ALL_CART", parameters);
+        }
+
+        public void DeleteCartedProduct(int productID, int userID)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataAccess.AddParameter("@productid", productID);
+            parameters[1] = DataAccess.AddParameter("@userid", userID);
+
+            DataAccess.ExecuteDTByProcedure("SP_DELETE_CARTED_PRODUCT", parameters);
         }
     }
 }

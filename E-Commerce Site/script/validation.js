@@ -17,7 +17,6 @@ window.onload = function () {
 function usernameValidation() {
     var element = document.getElementById("txtUsername");
     var alertEle = document.getElementById("unAlert");
-    var labelEle = document.getElementById("lblAvailablityMessage");
 
     if (!element.value) {
         alertEle.style.visibility = "visible";
@@ -29,7 +28,6 @@ function usernameValidation() {
         alertEle.style.visibility = "hidden";
     }
 
-    labelEle.innerText = "";
 }
 
 function fullNameValidation() {
@@ -178,5 +176,3 @@ function isChecked() {
         document.getElementById("btnRegister").disabled = false;
     }
 }
-
-

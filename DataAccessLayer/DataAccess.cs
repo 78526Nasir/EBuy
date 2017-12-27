@@ -68,7 +68,7 @@ namespace DataAccessLayer
                     da.Fill(dt);
                 }catch(Exception e)
                 {
-                    return null;
+                    return new DataTable();
                 }
 
                 return dt;

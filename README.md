@@ -23,25 +23,28 @@
     * `Contact`
 
 ## Other Functionalities
-`Input validation`
+**`Input validation`**
 * `Both client and server side validation`
 <br/>
 
-`Authentication`
+**`Authentication`**
 * `User authentication`
 * `admin authentication`
 <br/>
 
-`Authorization`
+**`Authorization`**
 * `Control user accessiablity`
 <br/>
 
-`Cryptography`
+**`Cryptography`**
 * `Password hashing and salting`
 <br/>
 
-`Exception management`
+**`Exception management`**
 * `Reset password throgh gmail SMTP service`
+<br/>
+
+**` Auditing and Logging`**
 
 # Home Page
 ![Home_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513867470/Homepage_im4ij8.jpg)

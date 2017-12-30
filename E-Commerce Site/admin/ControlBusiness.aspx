@@ -13,12 +13,9 @@
         <div class="cu-left-control-panel">
             <ul class="left-menu-ul">
                 <li><a href="#addNewUser">Add new user</a></li>
-                <li><a href="#deleteUser">Delete user</a></li>
-                <li><a href="#userList">Users list</a></li>
-                <li><a href="#partnerList">Partners list</a></li>
-                <li><a href="#deletePartner">Delete Partner</a></li>
-                <li><a href="#productList">Product list</a></li>
-                <li><a href="#deleteProduct">Delete Product</a></li>
+                <li><a href="#userList">Control User</a></li>
+                <li><a href="#partnerList">Control Partner</a></li>
+                <li><a href="#productList">Product Control</a></li>
             </ul>
         </div>
 
@@ -148,128 +145,79 @@
 
             </div>
 
-            <hr />
+            <asp:UpdatePanel ID="upUser" runat="server">
+                <ContentTemplate>
+                    <h1 id="userList" class="cu-h1">Control User</h1>
+                    <div>
+                        <asp:GridView ID="gvUserList" CssClass="gv-user-list" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvUserList_SelectedIndexChanged">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
 
-            <h1 id="userList" class="cu-h1">User List</h1>
-            <div>
-                <asp:GridView ID="gvUserList" CssClass="gv-user-list" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-            </div>
-
-            <hr />
-
-            <h1 id="deleteUser" class="cu-danger-h1">Delete User</h1>
-            <div class="delete-user" id="deleteUserDiv" runat="server">
-                <asp:GridView ID="gvDeleteUser" CssClass="cu-delete-user" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvDeleteUser_SelectedIndexChanged">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                </asp:GridView>
-                <asp:Button ID="btnDeleteUser" CssClass="cu-btn-delete" runat="server" Text="Delete User" CausesValidation="false" OnClick="btnDeleteUser_Click" />
-                <br />
-                <asp:Label ID="lblStatus" CssClass="status-label" runat="server"></asp:Label>
-            </div>
+            <asp:Button ID="btnDeleteUser" CssClass="cu-btn-delete" runat="server" Text="Delete User" CausesValidation="false" OnClick="btnDeleteUser_Click" />
+            <asp:Label ID="lblDeleteUserStatus" CssClass="status-label" runat="server"></asp:Label>
 
             <hr />
+            <asp:UpdatePanel ID="upPartner" runat="server">
+                <ContentTemplate>
+                    <h1 id="partnerList" class="cu-h1">Control Partner</h1>
+                    <div class="partner-list">
+                        <asp:GridView ID="gvPartnerList" runat="server" CssClass="gvPartnerList" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvPartnerList_SelectedIndexChanged">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
+                        </asp:GridView>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
 
-            <h1 id="partnerList" class="cu-h1">Partner List</h1>
-            <div class="partner-list">
-                <asp:GridView ID="gvPartnerList" runat="server" CssClass="gvPartnerList" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#7C6F57" />
-                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#E3EAEB" />
-                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                    <SortedAscendingHeaderStyle BackColor="#246B61" />
-                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                    <SortedDescendingHeaderStyle BackColor="#15524A" />
-                </asp:GridView>
-            </div>
+            <asp:Button ID="btnDeletePartner" CssClass="cu-btn-delete" runat="server" Text="Delete Partner" CausesValidation="false" OnClick="btnDeletePartner_Click" />
+            <asp:Label ID="lblDeletePartnerStatus" CssClass="status-label" runat="server"></asp:Label>
 
             <hr />
 
-            <h1 id="deletePartner" class="cu-danger-h1">Delete Partner</h1>
+            <asp:UpdatePanel ID="upProduct" runat="server">
+                <ContentTemplate>
+                    <h1 id="productList" class="cu-h1">Control Product</h1>
+                    <div class="product-list">
+                        <asp:GridView ID="gvProductList" CssClass="gv-product-list" runat="server" CellPadding="5" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvProductList_SelectedIndexChanged">
+                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                            <EditRowStyle BackColor="#999999" />
+                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                        </asp:GridView>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
 
-            <div class="delete-partner">
-                <asp:GridView ID="gvDeletePartner" runat="server" CssClass="gv-delete-partner" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvDeletePartner_SelectedIndexChanged">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-                <asp:Button ID="btnDeletePartner" CssClass="cu-btn-delete" runat="server" Text="Delete Partner" CausesValidation="false" OnClick="btnDeletePartner_Click" />
-                <br />
-                <asp:Label ID="lblDeletePartnerStatus" CssClass="status-label" runat="server"></asp:Label>
-            </div>
-
-            <hr />
-
-            <h1 id="productList" class="cu-h1">Product List</h1>
-            <div class="product-list">
-                <asp:GridView ID="gvProductList" CssClass="gv-product-list" runat="server" CellPadding="5" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                </asp:GridView>
-            </div>
-
-            <hr />
-
-            <h1 id="deleteProduct" class="cu-danger-h1">Delete Product</h1>
-            <div class="delete-product">
-                <asp:GridView ID="gvDeleteProduct" CssClass="gv-delete-product" runat="server" CellPadding="5" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvDeleteProduct_SelectedIndexChanged">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                </asp:GridView>
-            </div>
             <asp:Button ID="btnDeleteProduct" CssClass="cu-btn-delete" runat="server" Text="Delete Product" CausesValidation="false" OnClick="btnDeleteProduct_Click" />
-            <br />
             <asp:Label ID="lblDeleteProductStatus" CssClass="status-label" runat="server"></asp:Label>
         </div>
 

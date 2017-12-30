@@ -7,7 +7,7 @@
     <title>Admin Panel</title>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="~/css/AdminMaster.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/adminMaster.css" />
     <link rel="stylesheet" type="text/css" href="~/css/anc.css" />
     <link rel="stylesheet" type="text/css" href="~/css/npStyle.css" />
     <link rel="stylesheet" type="text/css" href="~/css/cu.css" />

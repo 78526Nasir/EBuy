@@ -22,7 +22,7 @@
         <h1 style="text-align: center; color: #777; font-family: Garamond;">Login to admin panel</h1>
 
         <div class="container">
-            <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/user1.png" AlternateText="User Icon" runat="server" />
+            <asp:Image ID="usericon" CssClass="img-style" ImageUrl="~/images/male_user.png" AlternateText="User Icon" runat="server" />
             <br />
             <asp:TextBox ID="txtUsername" CssClass="username" runat="server" placeholder="Enter username"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Username required" ControlToValidate="txtUsername">&nbsp;</asp:RequiredFieldValidator>

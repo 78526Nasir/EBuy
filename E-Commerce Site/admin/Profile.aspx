@@ -7,7 +7,7 @@
     <title>Admin Profile</title>
     <meta name="author" content="Nasir Islam Sujan" />
     <link rel="stylesheet" href="../css/adminProfile.css" type="text/css" />
-    <script src="../script/editButton.js" type="text/javascript"></script>
+    <script src="../script/editButtonAdmin.js" type="text/javascript"></script>
 
     <script>
         var bool=<%=flag%>;

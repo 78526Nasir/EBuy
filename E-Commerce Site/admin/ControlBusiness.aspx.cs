@@ -40,27 +40,12 @@ namespace E_Commerce_Site.admin
 
         }
 
-        protected void gvDeleteUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["userID"] = gvDeleteUser.SelectedRow.Cells[1].Text;
-        }
-
-        protected void gvDeletePartner_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["partnerID"] = gvDeletePartner.SelectedRow.Cells[1].Text;
-        }
-
-        protected void gvDeleteProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["productID"] = gvDeleteProduct.SelectedRow.Cells[1].Text;
-        }
-
         protected void btnDeleteUser_Click(object sender, EventArgs e)
         {
             if (Session["userID"] == null)
             {
-                lblStatus.Text = "Please select a user's row in order to delete the user!";
-                lblStatus.ForeColor = System.Drawing.Color.Red;
+                lblDeleteUserStatus.Text = "Please select a user's row in order to delete the user!";
+                lblDeleteUserStatus.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
@@ -89,7 +74,6 @@ namespace E_Commerce_Site.admin
             }
         }
 
-
         protected void btnDeleteProduct_Click(object sender, EventArgs e)
         {
             if (Session["productID"] == null)
@@ -107,7 +91,6 @@ namespace E_Commerce_Site.admin
             }
         }
 
-
         private void SelectAllUser()
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
@@ -115,10 +98,8 @@ namespace E_Commerce_Site.admin
 
             if (dt.Rows.Count > 0)
             {
-                gvDeleteUser.DataSource = dt;
                 gvUserList.DataSource = dt;
                 gvUserList.DataBind();
-                gvDeleteUser.DataBind();
             }
         }
 
@@ -130,9 +111,7 @@ namespace E_Commerce_Site.admin
             if (dt.Rows.Count > 0)
             {
                 gvPartnerList.DataSource = dt;
-                gvDeletePartner.DataSource = dt;
                 gvPartnerList.DataBind();
-                gvDeletePartner.DataBind();
             }
         }
 
@@ -144,9 +123,7 @@ namespace E_Commerce_Site.admin
             if (dt.Rows.Count > 0)
             {
                 gvProductList.DataSource = dt;
-                gvDeleteProduct.DataSource = dt;
                 gvProductList.DataBind();
-                gvDeleteProduct.DataBind();
             }
         }
 
@@ -166,6 +143,21 @@ namespace E_Commerce_Site.admin
             txtConfirmPassword.Text = string.Empty;
             rMale.Checked = false;
             rFemale.Checked = false;
+        }
+
+        protected void gvUserList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["userID"] = gvUserList.SelectedRow.Cells[1].Text;
+        }
+
+        protected void gvPartnerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["partnerID"] = gvPartnerList.SelectedRow.Cells[1].Text;
+        }
+
+        protected void gvProductList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["productID"] = gvProductList.SelectedRow.Cells[1].Text;
         }
     }
 }

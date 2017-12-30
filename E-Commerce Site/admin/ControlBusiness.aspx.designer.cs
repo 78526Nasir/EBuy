@@ -256,6 +256,15 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.Button btnRegister;
         
         /// <summary>
+        /// upUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upUser;
+        
+        /// <summary>
         /// gvUserList control.
         /// </summary>
         /// <remarks>
@@ -263,24 +272,6 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvUserList;
-        
-        /// <summary>
-        /// deleteUserDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl deleteUserDiv;
-        
-        /// <summary>
-        /// gvDeleteUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDeleteUser;
         
         /// <summary>
         /// btnDeleteUser control.
@@ -292,13 +283,22 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.Button btnDeleteUser;
         
         /// <summary>
-        /// lblStatus control.
+        /// lblDeleteUserStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Label lblDeleteUserStatus;
+        
+        /// <summary>
+        /// upPartner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPartner;
         
         /// <summary>
         /// gvPartnerList control.
@@ -308,15 +308,6 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvPartnerList;
-        
-        /// <summary>
-        /// gvDeletePartner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDeletePartner;
         
         /// <summary>
         /// btnDeletePartner control.
@@ -337,6 +328,15 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.Label lblDeletePartnerStatus;
         
         /// <summary>
+        /// upProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upProduct;
+        
+        /// <summary>
         /// gvProductList control.
         /// </summary>
         /// <remarks>
@@ -344,15 +344,6 @@ namespace E_Commerce_Site.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvProductList;
-        
-        /// <summary>
-        /// gvDeleteProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDeleteProduct;
         
         /// <summary>
         /// btnDeleteProduct control.

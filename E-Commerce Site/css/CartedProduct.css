@@ -1,0 +1,117 @@
+﻿.c-title{
+    margin-right: 25%;
+}
+
+.c-p-container{
+    width:100%;
+    padding-top: 130px;
+    padding-left:15px;
+    box-sizing:border-box;
+}
+
+.cart-message-container{
+    position: relative;
+    top: 180px;
+    text-align:center;
+}
+
+.cart-label{
+    font: 40px 'OpenSans-Light';
+    color:#ff4444;
+    /* text-align:center; */
+}
+
+.c-p-body{
+    width:90%;
+    margin:0px auto;
+}
+
+.c-p-link{
+    position:relative;
+    width:100%;
+    height:200px;
+}
+
+.c-p-link img{
+    width:100%;
+    height: 200px;
+}
+
+.c-p-link:hover .overlay{
+    opacity:0.5;
+}
+
+.c-p-link a{
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    text-decoration:none;
+    color:white;
+    line-height: 180px;
+    text-align:center;
+    opacity:0;
+    transition:all 0.5s ease-in-out;
+}
+
+.c-p-link:hover a{
+    opacity:1;
+}
+
+.c-p-info{
+    width:90%;
+    margin:0px auto;
+    margin-top:20px;
+}
+
+.c-p-price-tag{
+    padding-top: 15px;
+    font: 15px 'OpenSans-semibold';
+}
+
+.c-p-card{
+    height: 470px;
+    width:31%;
+    margin: 3% 1%;
+}
+
+.c-p-event-section{
+    margin:5%;
+}
+
+.c-p-event-section .c-p-btn{
+    height:35px;
+    padding:0px 10px;
+    border:1px solid #bbb;
+    border-radius: 2px;
+    background:white;
+    font:12px 'OpenSans-Regular';
+    cursor:pointer;
+    outline:none;
+    margin:0px 5px 0px 0px;
+    transition:all 0.33s ease-in-out;
+
+}
+
+.c-p-event-section .c-p-btn:hover:not(:disabled),.c-p-btn-view-product:hover{
+    background:#fafafa;
+    box-shadow:0px 1px 5px rgba(0,0,0,0.2);
+}
+
+.c-p-btn-view-product{
+    text-decoration:none;
+    height:35px;
+    padding:0px 10px;
+    margin:0px 10px 0px 0px;
+    color:black;
+    font:12px 'OpenSans-Regular';
+    border:1px solid #bbb;
+    display:block;
+    line-height:35px;
+    box-sizing:border-box;
+    text-align:center;
+    float:left;
+    border-radius:2px;
+    transition:all 0.33s ease-in-out;
+}

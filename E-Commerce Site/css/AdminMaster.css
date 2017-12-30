@@ -70,18 +70,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes colorize{
-    0% {color: #7952b3}
-    25%{color:#4caf50}
+    25% {color: #7952b3}
     50% {color: green} 
-    75% {color: orangered}
-    100% {color:brown}
+    75% {color: #007bcc}
+    100% {color: #226688}
 }
 
 .left-header h2 {
     margin: 15px;
-    padding-left: 20px;
-    text-decoration: underline;
-    font-family: Candara;
+    padding-left: 32px;
+    font:18px 'OpenSans-Regular';
 }
 
 .middle-header {
@@ -108,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100px;
     padding: 4px;
     border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 .right-header-left {
@@ -118,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .right-header-left h4 {
-    font:bold 24px monospace;
+    font:20px 'OpenSans-Light';
     margin-top: 30px;
     margin-bottom: 10px;
     cursor:default;
@@ -148,8 +147,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .admin-name a{
     text-decoration: none;
-    color:#006677;
-    font-weight: bold;
+    color: #006baa;
+    font:12px 'OpenSans-semiBold';
 }
 
 .admin-name a:hover{
@@ -164,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-logout {
-    height:35px;
+    height:30px;
     float: right;
     margin-top: 20px;
     padding: 5px 20px;
@@ -215,10 +214,10 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     display: block;
     color: #434343;
-    padding: 14px 20px;
-    font: bold 20px calibri;
+    padding: 0px 20px;
+    font: 14px 'OpenSans-Regular';
     transition:all 0.33s ease-in-out;
-    
+    line-height:50px;
 }
 
 .ul li a:hover {

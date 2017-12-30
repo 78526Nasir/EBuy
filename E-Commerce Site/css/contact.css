@@ -3,12 +3,13 @@
 }
 
 .c-container address{
-    font-family:'OpenSans-Semibold';
+    font:bold 12px consolas;
 }
 
 .c-container address a{
-    font-family: consolas;
+    font:bold 12px consolas;
 }
+
 
 .c-body{
     width:85%;
@@ -30,10 +31,8 @@
 
 address{
     text-align:left;
-    font-style:normal;
     padding-left:10px;
     font-size:12px;
-    font-weight:normal !important;
     color:#1f2f3f;
 }
 

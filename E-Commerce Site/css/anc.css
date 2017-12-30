@@ -1,8 +1,7 @@
 ﻿.anc-title{
     margin-top:50px;
-    font:bold 35px Calibri;
-    color: #7952b3;
-    text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    font: 35px 'OpenSans-Light';
+    color:#01608e;
 }
 
 .anc-body-content{

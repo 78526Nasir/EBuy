@@ -92,12 +92,13 @@ namespace E_Commerce_Site.UI
              * Gmail SMTP Client host => smtp.gmail.com
              * port => 587
              */
+
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
 
             smtpClient.Credentials = new NetworkCredential()
             {
                 UserName = "nasirislam1996@gmail.com",
-                Password = "sujan@gmail4"
+                Password = "***"
             };
 
             smtpClient.EnableSsl = true;

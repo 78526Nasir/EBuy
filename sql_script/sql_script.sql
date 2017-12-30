@@ -29,7 +29,6 @@ drop table [User]
 select * from admin
 select * from [user]
 
-update [User] set [image]='../images/admin2.jpg' where [USER_ID] =3
 
 select product.product_id from Product 
 join Cart on Product.Product_ID=Cart.Product_ID
@@ -260,16 +259,19 @@ select * from company
 -- CART TABLE --
 
 CREATE TABLE Cart(
-	CartID		INT PRIMARY KEY IDENTITY,
+	CartID		INT IDENTITY,
 	Product_ID	INT NOT NULL,
 	UserID		INT	NOT NULL,
 	
+	CONSTRAINT COMP_PU_ID PRIMARY KEY(Product_ID,UserID),
 	CONSTRAINT FK_C_PID FOREIGN KEY(Product_ID) REFERENCES Product(Product_ID) ON DELETE CASCADE,
 	CONSTRAINT FK_C_UID FOREIGN KEY(UserID) REFERENCES [User]([user_id]) ON DELETE CASCADE
 )
 
-DROP TABLE CART 
-drop table product 
+select * from cart
+insert into Cart values(1,2)
+
+
 
 
 -- ORDER TABLE --
@@ -634,7 +636,36 @@ BEGIN
 END
 
 
-select distinct(product_ID) from cart where UserID =2 
+select * from product 
+join cart on product.product_id=cart.product_id
+
+select * from product
+select distinct(product_ID) from cart where UserID =2
 
 
 select * from [user]
+
+select * from [order]
+
+select * from cart
+
+update [User] set image='../images/admin2.jpg' where [USER_ID]=2
+
+DBCC CHECKIDENT([USER],RESEED,0)
+
+drop table cart
+
+select * from [user]
+
+-- STORE PROCEDURE FOR GET ALL CARTED PRODUCTS --
+CREATE PROC SP_GET_ALL_CARTED_PRODUCTS
+@userid int
+AS
+BEGIN
+	SELECT Product.Product_ID, ProductCode, Product_Name, [Description], Price, ImageUrl
+	FROM Product JOIN Cart on Product.Product_ID=Cart.Product_ID 
+	WHERE UserID = @userid
+END
+
+
+

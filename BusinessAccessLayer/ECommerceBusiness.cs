@@ -311,5 +311,13 @@ namespace BusinessAccessLayer
 
             DataAccess.ExecuteDTByProcedure("SP_DELETE_CARTED_PRODUCT", parameters);
         }
+
+        public DataTable GetAllCartedProducts(string userID)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = DataAccess.AddParameter("@userid", userID);
+
+            return DataAccess.ExecuteDTByProcedure("SP_GET_ALL_CARTED_PRODUCTS", parameters);
+        }
     }
 }

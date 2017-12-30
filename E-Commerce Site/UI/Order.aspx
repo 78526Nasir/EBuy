@@ -1,15 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="E_Commerce_Site.UI.Order" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="E_Commerce_Site.UI.Order" MasterPageFile="~/UI/Index.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="orderMiddle" runat="server" ContentPlaceHolderID="cphMiddle">
+    <p class="p-title">Ordered Product</p>
+</asp:Content>

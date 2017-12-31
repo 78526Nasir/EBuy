@@ -65,28 +65,39 @@
     margin-bottom:40px;
 }
 
-.event .btn, .event a{
+.event .btn, .event a, .btn-cart{
     height:35px;
     padding:0px 20px;
-    border:1px solid #aaa;
     background:white;
-    border-radius:3px;
+    border-radius:2px;
     font:bold 16px calibri;
-    color:black;
     cursor:pointer;
     outline:none;
     transition:all 0.33s ease-in-out;
 }
 
+.btn-cart{
+    border:1px solid #7952b3;
+    color:#7952b3;
+}
+
+.btn-cart:hover{
+    background:#7952b3;
+    color:white;
+}
+
 .event a{
+    border:1px solid #4caf50;
+    color:#4caf50;
     text-decoration:none;
     padding:7px;
     box-sizing:border-box;
 }
 
-.btn:hover , .event a:hover{
-    background:#fafafa;
-    box-shadow:0px 1px 4px rgba(0,0,0,0.2);
+.event a:hover{
+    box-shadow:none;
+    background:#4caf50;
+    color:white;
 }
 
 .p-footer{

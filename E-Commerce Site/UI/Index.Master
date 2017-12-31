@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/about.css" />
     <link rel="stylesheet" href="../css/userProfile.css" />
     <link rel="stylesheet" href="../css/cartedProduct.css" />
+    <link rel="stylesheet" href="../css/order.css" />
 
     <script src="../script/jQuery-3.2.1.js" type="text/javascript"></script>
     <script src="../script/editButton.js" type="text/javascript"></script>
@@ -91,7 +92,6 @@
                     <ul>
                         <li><a href="About.aspx">About</a></li>
                         <li><a href="Contact.aspx">Contact</a></li>
-                        <li><a href="Profile.aspx">Profile</a></li>
                         <li><a href="Order.aspx">Order</a></li>
                         <li><a href="Cart.aspx">Cart</a></li>
                         <li><a href="Product.aspx">Product</a></li>
@@ -126,6 +126,12 @@
             });
 
             $(".left-header").click(function () {
+                $(".user-details").animate({
+                    height: 'hide'
+                });
+            });
+
+            $(".product-details").click(function () {
                 $(".user-details").animate({
                     height: 'hide'
                 });

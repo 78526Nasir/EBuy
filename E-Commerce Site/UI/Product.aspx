@@ -29,14 +29,14 @@
                                 </div>
 
                                 <div class="event">
-                                    <a class="btn-view-product" href="Product.aspx?id=<%# Eval("Product_ID")%>" target="_blank">Order</a>
-                                    <asp:Button ID="btnCart" CommandName="btnAddToCart" CssClass="btn" runat="server" Text="Add To Cart" />
+                                    <asp:Button ID="btnOrderProduct" CommandName="OrderProduct" CssClass="btn btn-order" Text="Order" runat="server" />
+                                    <asp:Button ID="btnCart" CommandName="btnAddToCart" CssClass="btn btn-cart" runat="server" Text="Add To Cart" />
                                     <asp:Button ID="btnRemoveFromCart" CommandName="btnRemove" CssClass="btn btn-remove" runat="server" Text="Remove From Cart" />
                                 </div>
 
                                 <div id="footerDiv" runat="server" class="p-footer">
                                     <asp:Label ID="lblCart" CssClass="p-cart" runat="server">
-                                                        Added to cart
+                                                        Carted Product
                                     </asp:Label>
                                 </div>
                             </div>

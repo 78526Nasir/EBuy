@@ -40,13 +40,9 @@
 
                                 <div class="event-section c-p-event-section">
                                     <asp:Button ID="btnViewProduct" CommandName="ViewProduct" CssClass="c-p-btn btn-view" runat="server" Text="View Product" />
-                                    <asp:Button ID="btnRemoveFromCart" CommandName="RemoveFromCart" CssClass="c-p-btn btn-remove" runat="server" Text="Remove From Cart" />
+                                    <asp:Button ID="btnRemoveFromCart" CommandName="RemoveFromCart" CssClass="c-p-btn c-p-btn-remove" runat="server" Text="Remove From Cart" />
                                     <asp:Button ID="btnOrderProduct" CommandName="OrderProduct" CssClass="c-p-btn btn-full" runat="server" Text="Order" />
                                 </div>
-
-                                <asp:Label ID="lblCart" CssClass="cart cart-enable" runat="server">
-                                                        Carted Product
-                                </asp:Label>
                             </div>
 
                         </ItemTemplate>

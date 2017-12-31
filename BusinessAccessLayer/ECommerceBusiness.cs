@@ -24,6 +24,7 @@ namespace BusinessAccessLayer
         public Admin AdminObj { get; set; }
         public User UserObj { get; set; }
         public Cart CartObj { get; set; }
+        public CustomerOrderDetails CODObj { get; set; }
 
         public void AddNewCategory()
         {
@@ -312,12 +313,25 @@ namespace BusinessAccessLayer
             DataAccess.ExecuteDTByProcedure("SP_DELETE_CARTED_PRODUCT", parameters);
         }
 
-        public DataTable GetAllCartedProducts(string userID)
+        public DataTable GetAllCartedProducts(int userID)
         {
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = DataAccess.AddParameter("@userid", userID);
 
             return DataAccess.ExecuteDTByProcedure("SP_GET_ALL_CARTED_PRODUCTS", parameters);
+        }
+
+        public void AddNewCustomerOrderDetails()
+        {
+            SqlParameter[] parameters = new SqlParameter[6];
+            parameters[0] = DataAccess.AddParameter("@productid", CODObj.ProductID);
+            parameters[1] = DataAccess.AddParameter("@customerid", CODObj.CustomerID);
+            parameters[2] = DataAccess.AddParameter("@address", CODObj.Address);
+            parameters[3] = DataAccess.AddParameter("@phonenumber", CODObj.PhoneNumber);
+            parameters[4] = DataAccess.AddParameter("@quantity", CODObj.Quantity);
+            parameters[5] = DataAccess.AddParameter("@totalprice", CODObj.TotalPrice);
+
+            DataAccess.ExecuteDTByProcedure("SP_ADD_NEW_POD", parameters);
         }
     }
 }

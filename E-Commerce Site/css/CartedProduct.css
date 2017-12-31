@@ -27,7 +27,7 @@
 }
 
 .c-p-card{
-    height: 484px;
+    height: 470px;
     width: 29.5%;
     margin: 3% 1.5%;
 }
@@ -60,6 +60,16 @@
 .btn-full:hover{
     color:white;
     background:#4caf50;
+}
+
+.c-p-btn-remove{
+    border:1px solid red;
+    color:red;
+}
+
+.c-p-btn-remove:hover{
+    background:red;
+    color:white;
 }
 
 .btn-view{

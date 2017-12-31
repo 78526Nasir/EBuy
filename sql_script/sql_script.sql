@@ -291,14 +291,16 @@ CREATE TABLE [Order](
 DROP TABLE [Order] 
 
 CREATE TABLE ProductOrderDetails(
-	Product_O_D_ID	INT PRIMARY KEY IDENTITY,
-	Order_ID		INT NOT NULL,
+	POD_ID			INT PRIMARY KEY IDENTITY,
 	Product_ID		INT NOT NULL,
+	Customer_ID		INT NOT NULL,
+	[Address]		VARCHAR(MAX) NOT NULL,
+	PhoneNumber		VARCHAR(15) NOT NULL,
 	Quantity		INT NOT NULL,
-	Total_Price		FLOAT NOT NULL,
+	TotalPrice		FLOAT NOT NULL,
 	
-	CONSTRAINT FK_POD_OID FOREIGN KEY(Order_ID) 
-	REFERENCES [Order]([Order_ID]) ON DELETE CASCADE,
+	CONSTRAINT FK_POD_CID FOREIGN KEY(Customer_ID) 
+	REFERENCES [User]([User_id]) ON DELETE CASCADE,
 	
 	CONSTRAINT FK_POD_PID FOREIGN KEY(Product_ID) 
 	REFERENCES Product(Product_ID) ON DELETE CASCADE
@@ -569,6 +571,7 @@ BEGIN
 	where Product_ID =@productid
 END
 
+select * from product
 
 -- STORE PROCEDURE FOR GET DEFAULT ONE PRODUCTS  --
 
@@ -668,4 +671,24 @@ BEGIN
 END
 
 
+select * from product
+DBCC CHECKIDENT (CART,RESEED,0)
 
+select * from [user]
+
+-- STORE PROCEDURE FOR INSERT DATA INTO ProductOrderDetails --
+
+CREATE PROC SP_ADD_NEW_POD
+@productid		INT,
+@customerid		INT, 
+@address		VARCHAR(MAX),
+@phonenumber	VARCHAR(15),
+@quantity		INT,
+@totalprice		float
+AS
+BEGIN
+	INSERT INTO ProductOrderDetails VALUES
+	(@productid, @customerid, @address, @phonenumber, @quantity, @totalprice)
+END
+
+select * from ProductOrderDetails

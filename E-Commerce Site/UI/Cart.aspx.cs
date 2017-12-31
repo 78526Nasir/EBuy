@@ -18,7 +18,7 @@ namespace E_Commerce_Site.UI
                 if (Session["UserWholeRecord"] != null)
                 {
                     DataTable dt = (DataTable)Session["UserWholeRecord"];
-                    string userID = dt.Rows[0]["user_id"].ToString();
+                    int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
                     GetCartedProducts(userID);
                 }
                 else
@@ -28,13 +28,72 @@ namespace E_Commerce_Site.UI
             }
         }
 
-        private void GetCartedProducts(string userID)
+        private void GetCartedProducts(int userID)
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
             DataTable dt = ecb.GetAllCartedProducts(userID);
 
-            rpCartedProduct.DataSource = dt;
-            rpCartedProduct.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                rpCartedProduct.DataSource = dt;
+                rpCartedProduct.DataBind();
+
+            }else
+            {
+                rpCartedProduct.DataSource = dt;
+                rpCartedProduct.DataBind();
+                lblMessage.Text = "You do not have any carted product!";
+            }
+        }
+
+        protected void repeaterItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("RemoveFromCart"))
+            {
+                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
+                int productID = Convert.ToInt32(hf.Value);
+
+                ECommerceBusiness ecb = new ECommerceBusiness();
+                DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+                int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+
+                ecb.DeleteCartedProduct(productID, userID);
+                GetCartedProducts(userID);
+
+            }
+            else if (e.CommandName.Equals("ViewProduct"))
+            {
+                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
+                string productID = hf.Value;
+
+                Response.Redirect("Product.aspx?id=" + productID);
+
+            }else if (e.CommandName.Equals("OrderProduct"))
+            {
+                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
+                string productID = hf.Value;
+
+                Response.Redirect("Order.aspx?id=" + productID);
+            }
+        }
+
+        private void AddToCart(string productID)
+        {
+            DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+            BusinessAccessLayer.Cart cart = new BusinessAccessLayer.Cart
+            {
+                ProductID = Convert.ToInt32(productID),
+                UserID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString())
+            };
+
+            ECommerceBusiness ecb = new ECommerceBusiness
+            {
+                CartObj = cart
+            };
+
+            ecb.AddToCart();
         }
     }
 }

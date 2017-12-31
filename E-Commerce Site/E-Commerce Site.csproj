@@ -109,9 +109,10 @@
     <Content Include="admin\Partnership.aspx" />
     <Content Include="admin\Profile.aspx" />
     <Content Include="css\about.css" />
-    <Content Include="css\AdminMaster.css" />
+    <Content Include="css\adminMaster.css" />
     <Content Include="css\adminProfile.css" />
     <Content Include="css\anc.css" />
+    <Content Include="css\cartedProduct.css" />
     <Content Include="css\changePassword.css" />
     <Content Include="css\contact.css" />
     <Content Include="css\cu.css" />
@@ -120,6 +121,7 @@
     <Content Include="css\homePage.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\npStyle.css" />
+    <Content Include="css\order.css" />
     <Content Include="css\partnership.css" />
     <Content Include="css\product.css" />
     <Content Include="css\registration.css" />
@@ -136,6 +138,8 @@
     <Content Include="images\searchicon.png" />
     <Content Include="images\male_user.png" />
     <Content Include="script\editButton.js" />
+    <Content Include="script\editButtonAdmin.js" />
+    <Content Include="script\IsEmailExists.js" />
     <Content Include="script\IsUsernameExists.js" />
     <Content Include="script\jQuery-3.2.1.js" />
     <Content Include="script\loginValidation.js" />
@@ -178,6 +182,7 @@
     <Content Include="fonts\OpenSans-SemiBold.ttf" />
     <Content Include="fonts\OpenSans-SemiBoldItalic.ttf" />
     <Content Include="UI\Index.Master" />
+    <Content Include="WebServices\IsEmailExists.asmx" />
     <Content Include="WebServices\IsUserNameExists.asmx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -354,6 +359,10 @@
     </Compile>
     <Compile Include="UI\Welcome.aspx.designer.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\IsEmailExists.asmx.cs">
+      <DependentUpon>IsEmailExists.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\IsUserNameExists.asmx.cs">
       <DependentUpon>IsUserNameExists.asmx</DependentUpon>

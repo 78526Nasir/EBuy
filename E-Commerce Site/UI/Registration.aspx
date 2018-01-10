@@ -39,8 +39,8 @@
                         </td>
                         <td class="required">
                             <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="Username required" ControlToValidate="txtUsername">&nbsp;</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="rev3" runat="server" ControlToValidate="txtUsername" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z_-]{3,}"
-                                ErrorMessage="Username must contain: <br/> Atleast 3 character <br/> 1 uppercase letter<br/> 1 lowercase letter<br/>no blank space.">
+                            <asp:RegularExpressionValidator ID="rev3" runat="server" ControlToValidate="txtUsername" ValidationExpression="^(?=.*[a-z])[a-z_-]{3,}"
+                                ErrorMessage="Username must contain: <br/> Atleast 3 alphabet <br/>no blank space.">
                                 &nbsp;</asp:RegularExpressionValidator>
                         </td>
                     </tr>
@@ -146,7 +146,7 @@
                             <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="Password required" ControlToValidate="txtPassword">&nbsp;</asp:RequiredFieldValidator>
 
                             <asp:RegularExpressionValidator ID="rev2" runat="server" ControlToValidate="txtPassword"
-                                ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}"
+                                ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}"
                                 ErrorMessage="Password must contain:<br/> Minimum 8 characters <br/> atleast 1 UpperCase Alphabet <br/> 1 LowerCase Alphabet <br/> 1 Number <br/> 1 Special Character." Display="Dynamic">&nbsp;
                             </asp:RegularExpressionValidator>
 

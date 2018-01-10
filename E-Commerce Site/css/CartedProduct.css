@@ -42,10 +42,11 @@
     width:135px;
     border:1px solid #bbb;
     border-radius: 2px;
-    background:white;
+    
     font:12px 'OpenSans-Regular';
     cursor:pointer;
     outline:none;
+    border:none;
     margin: 0px 5px 10px 5px;
     transition:all 0.33s ease-in-out;
     float:left;
@@ -53,35 +54,36 @@
 
 .btn-full{
     width: 96%;
-    border:1px solid #4caf50;
-    color:#4caf50;
+    background:#4caf50;
+    color:white;
 }
 
 .btn-full:hover{
-    color:white;
-    background:#4caf50;
+    background:#357b39;
 }
 
 .c-p-btn-remove{
-    border:1px solid red;
-    color:red;
-}
-
-.c-p-btn-remove:hover{
     background:red;
     color:white;
 }
 
+.c-p-btn-remove:hover{
+    background:#d60000;
+}
+
 .btn-view{
-    border:1px solid #3388dd;
-    color:#3388dd;
+    background:#3388dd;
+     color:white;
 }
 
 .btn-view:hover{
-    background:#3388dd;
-    color:white;
+    background:#235e9a;
+   
 }
 
+.btn-full:hover, .btn-view:hover, .c-p-btn-remove:hover{
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
 
 .cart-enable{
     visibility:visible;

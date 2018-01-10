@@ -214,3 +214,14 @@ a{
     background: #53a0c5;
     color:black;
 }
+
+.badge{
+    position:absolute;
+    padding:2px 7px;
+    background: #f1f2f3;
+    color: #3388dd;
+    font:bold 12px consolas;
+    border-radius:10px;
+    top:5px;
+    visibility:hidden;
+}

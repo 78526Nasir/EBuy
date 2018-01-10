@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BusinessAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,6 +31,21 @@ namespace E_Commerce_Site.UI
                         userImage.ImageUrl = Session["UserImage"].ToString();
                         userImage2.ImageUrl = Session["UserImage"].ToString();
                     }
+                }
+
+                DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+                int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+
+                ECommerceBusiness ecb = new ECommerceBusiness();
+
+                dt = ecb.SelectAllCartedProduct(userID);
+                string noOfCartedProduct = dt.Rows.Count.ToString();
+
+                if (Convert.ToInt32(noOfCartedProduct) > 0)
+                {
+                    cartBadge.InnerText = noOfCartedProduct;
+                    cartBadge.Style.Add("visibility", "visible");
                 }
             }
         }

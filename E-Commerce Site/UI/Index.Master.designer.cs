@@ -121,6 +121,24 @@ namespace E_Commerce_Site.UI {
         protected global::System.Web.UI.WebControls.Button btnLogout;
         
         /// <summary>
+        /// upMenuBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upMenuBar;
+        
+        /// <summary>
+        /// cartBadge control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartBadge;
+        
+        /// <summary>
         /// cphBody control.
         /// </summary>
         /// <remarks>

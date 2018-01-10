@@ -38,7 +38,8 @@ namespace E_Commerce_Site.UI
                 rpCartedProduct.DataSource = dt;
                 rpCartedProduct.DataBind();
 
-            }else
+            }
+            else
             {
                 rpCartedProduct.DataSource = dt;
                 rpCartedProduct.DataBind();
@@ -61,6 +62,7 @@ namespace E_Commerce_Site.UI
                 ecb.DeleteCartedProduct(productID, userID);
                 GetCartedProducts(userID);
 
+                UpdateBadge();
             }
             else if (e.CommandName.Equals("ViewProduct"))
             {
@@ -69,7 +71,8 @@ namespace E_Commerce_Site.UI
 
                 Response.Redirect("Product.aspx?id=" + productID);
 
-            }else if (e.CommandName.Equals("OrderProduct"))
+            }
+            else if (e.CommandName.Equals("OrderProduct"))
             {
                 HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
                 string productID = hf.Value;
@@ -78,22 +81,19 @@ namespace E_Commerce_Site.UI
             }
         }
 
-        private void AddToCart(string productID)
+        private void UpdateBadge()
         {
-            DataTable dt = (DataTable)Session["UserWholeRecord"];
+            var span = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Master.FindControl("cartBadge");
+            int noOfCartedProduct = Convert.ToInt32(span.InnerText);
 
-            BusinessAccessLayer.Cart cart = new BusinessAccessLayer.Cart
+            noOfCartedProduct--;
+            span.InnerText = noOfCartedProduct.ToString();
+
+            if (noOfCartedProduct == 0)
             {
-                ProductID = Convert.ToInt32(productID),
-                UserID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString())
-            };
+                span.Style.Add("visibility", "hidden");
+            }
 
-            ECommerceBusiness ecb = new ECommerceBusiness
-            {
-                CartObj = cart
-            };
-
-            ecb.AddToCart();
         }
     }
 }

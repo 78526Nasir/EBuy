@@ -120,6 +120,7 @@ namespace E_Commerce_Site.UI
                     string productID = hf.Value;
 
                     AddToCart(productID);
+                    UpdateBadge();
                 }
                 else
                 {
@@ -132,6 +133,26 @@ namespace E_Commerce_Site.UI
             }
         }
 
+
+        private void UpdateBadge()
+        {
+            var span = (System.Web.UI.HtmlControls.HtmlGenericControl)this.Master.FindControl("cartBadge");
+            ECommerceBusiness ecb = new ECommerceBusiness();
+            DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+            int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+            dt = ecb.SelectAllCartedProduct(userID);
+
+            if (dt.Rows.Count == 1)
+            {
+                span.Style.Add("visibility", "visible");
+                span.InnerText = "1";
+            }
+            else
+            {
+                span.InnerText = dt.Rows.Count.ToString();
+            }
+        }
 
         private void AddToCart(string productID)
         {

@@ -61,6 +61,9 @@
 # Home Page (After Login) 
 ![Home_page_after_login](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1514473402/homepage_UI_after_login_rykxrh.jpg)
 
+# Cart
+![Cart_Page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1515668195/Untitled_xeuaog.png)
+
 # User Profile
 ![User_profile](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1514473407/profile_lnby29.png)
 

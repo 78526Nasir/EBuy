@@ -40,7 +40,10 @@
 * `Password hashing and salting`
 <br/>
 
-**`Exception management`**
+**`Exception Handling`**
+* `All page and application level Exceptions are handled`
+
+**`Password Reset Management`**
 * `Reset password throgh gmail SMTP service`
 <br/>
 

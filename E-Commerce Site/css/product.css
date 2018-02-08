@@ -142,3 +142,11 @@
     color:white !important;
     box-shadow:none !important;
 }
+
+#cphBody_ErrorMessage{
+    display: none;
+    text-align: center;
+    margin-top: 200px;
+    font: 40px 'OpenSans-Light';
+    color: #ff4444;
+}

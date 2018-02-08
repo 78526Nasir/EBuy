@@ -30,6 +30,7 @@ select * from admin
 select * from [user]
 
 
+
 select product.product_id from Product 
 join Cart on Product.Product_ID=Cart.Product_ID
 
@@ -108,6 +109,7 @@ create table Product
 	Category_ID			INT NOT NULL,
 	Company_ID			int NOT NULL,
 	ImageUrl			varchar(500),
+	Quantity			INT,
 	
 	CONSTRAINT FK_P_CAID FOREIGN KEY(Category_ID)
 	REFERENCES Category(Category_ID) ON DELETE CASCADE,
@@ -116,11 +118,11 @@ create table Product
 	REFERENCES Company(Company_ID) ON DELETE CASCADE
 )
 
+
 DROP TABLE Product
 
-ALTER table PRODUCT add Quantity int
+ALTER table PRODUCT alter column GUID UNIQUEIDENTIFIER NOT NULL;
 
-select * from product
 select * from Cart
 
 select * from [user]
@@ -132,16 +134,18 @@ create proc sp_addNewProduct
 @price				varchar(20),
 @categoryID			int,
 @companyID			int,
-@imageUrl			varchar(500)
+@imageUrl			varchar(500),
+@quantity			int
 as 
 begin
-	insert into Product values(@productCode,@productName,@description,@price,@categoryID,@companyID,@imageUrl)
+	insert into Product values(@productCode,@productName,@description,@price,@categoryID,@companyID,@imageUrl,@quantity,NEWID())
 end
 
+select * from product
 drop proc sp_addNewProduct
 
 -- Category TABLE --
-
+select * from product
 create table Category
 (
 	Category_ID				int primary key identity,
@@ -279,14 +283,15 @@ insert into Cart values(1,2)
 CREATE TABLE [Order](
 	Order_ID			INT PRIMARY KEY IDENTITY,
 	[User_ID]			INT NOT NULL,
+	Product_ID			INT NOT NULL,
 	Order_Date			DATETIME NOT NULL,
-	Order_Amount		INT NOT NULL,
-	
+		
 	CONSTRAINT FK_O_CID FOREIGN KEY([User_ID]) 
-	REFERENCES [User]([User_ID]) ON DELETE CASCADE
-
-)
-
+	REFERENCES [User]([User_ID]) ON DELETE CASCADE,
+	
+	CONSTRAINT FK_P_OID FOREIGN KEY(Product_ID) 
+	REFERENCES Product(Product_ID) ON DELETE CASCADE,
+);
 
 DROP TABLE [Order] 
 
@@ -306,6 +311,8 @@ CREATE TABLE ProductOrderDetails(
 	REFERENCES Product(Product_ID) ON DELETE CASCADE
 
 )
+
+select * from ProductOrderDetails
 
 drop table ProductOrderDetails 
 drop table cart
@@ -513,11 +520,11 @@ END
 
 -- STORE PROCEDURE FOR GET PRODUCTS BY CATEGORY --
 
-CREATE PROC SP_GET_PRODUCT_BY_CATEGORY 'bed'
+CREATE PROC SP_GET_PRODUCT_BY_CATEGORY 'laptop'
 @categoryname VARCHAR(50)
 AS
 BEGIN
-	select product_id, ProductCode, Product_Name, [Description],Price, ImageUrl
+	select product_id, ProductCode, Product_Name, [Description],Price, ImageUrl, [GUID]
 	from product join CATEGORY
 	on product.CATEGORY_ID= CATEGORY.category_ID
 	where CATEGORY_Name =@categoryname
@@ -563,17 +570,20 @@ END
 
 -- STORE PROCEDURE FOR GET PRODUCTS BY ProductID --
 
-CREATE PROC SP_GET_PRODUCT_BY_PRODUCT_ID
-@productid int
+CREATE PROC SP_GET_PRODUCT_BY_PRODUCT_GUID 'bd50e6c3-d727-4f95-bc2d-2a8d689ac8cd465'
+@productGUID	VARCHAR(MAX)
 AS
 BEGIN
-	select * from product 
-	where Product_ID =@productid
+	SELECT * FROM product 
+	WHERE [GUID] = @productGUID AND LEN(@productGUID) = LEN(NEWID())
 END
+
+drop  proc SP_GET_PRODUCT_BY_PRODUCT_GUID
+select len(GUID) as length  from product
 
 select * from product
 
--- STORE PROCEDURE FOR GET DEFAULT ONE PRODUCTS  --
+-- STORE PROCEDURE FOR GET DEFAULT ONE PRODUCTS  -- 
 
 CREATE PROC SP_SELECT_DEFAULT_PRODUCT
 AS
@@ -665,11 +675,12 @@ CREATE PROC SP_GET_ALL_CARTED_PRODUCTS
 @userid int
 AS
 BEGIN
-	SELECT Product.Product_ID, ProductCode, Product_Name, [Description], Price, ImageUrl
+	SELECT Product.Product_ID, ProductCode, Product_Name, [Description], Price, ImageUrl, [GUID]
 	FROM Product JOIN Cart on Product.Product_ID=Cart.Product_ID 
 	WHERE UserID = @userid
 END
 
+drop proc SP_GET_ALL_CARTED_PRODUCTS
 
 select * from product
 DBCC CHECKIDENT (CART,RESEED,0)
@@ -692,3 +703,46 @@ BEGIN
 END
 
 select * from ProductOrderDetails
+
+ USE E_Commerce
+CREATE TABLE ExceptionLog
+(
+	ID				INT PRIMARY KEY IDENTITY,
+	[DATE]			DATETIME,
+	[DESCRIPTION]	VARCHAR(MAX)
+	
+);
+
+select * from ExceptionLog
+
+CREATE PROC SP_INSERT_LOG
+@description VARCHAR(MAX)
+AS
+BEGIN
+	INSERT INTO ExceptionLog VALUES 
+	(GETDATE(),@description)
+END
+
+
+select * from [User]
+delete from [user]
+
+select * from [order]
+delete From [order]
+
+CREATE PROC SP_TRIGGER_CART_TO_ORDER
+@productid	INT,
+@userid		INT
+AS
+BEGIN
+	DELETE FROM CART WHERE PRODUCT_ID = @productid AND USERID = @userid
+	INSERT INTO [ORDER] VALUES (@userid, @productid, GETDATE())
+END
+
+CREATE PROC SP_CANCEL_ORDER
+@productid	INT,
+@userid		INT
+AS
+BEGIN
+	DELETE FROM [Order] WHERE PRODUCT_ID = @productid AND [USER_ID] = @userid
+END

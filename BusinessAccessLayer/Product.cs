@@ -15,6 +15,7 @@ namespace BusinessAccessLayer
         public string ProductPrice { get; set; } // TODO
         public string ProductImage { get; set; }
         public int ProductCompany { get; set; }
+        public int ProductQuantity { get; set; }
 
         // objects are initialize dynamically on the fly
 

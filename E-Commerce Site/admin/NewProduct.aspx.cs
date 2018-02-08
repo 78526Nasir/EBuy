@@ -49,7 +49,8 @@ namespace E_Commerce_Site.admin
                         ProductDescription = taProductDesc.InnerText,
                         ProductPrice = txtProductPrice.Text,
                         ProductImage = path,
-                        ProductCompany =Convert.ToInt32(ddlProductCompany.SelectedValue)
+                        ProductCompany = Convert.ToInt32(ddlProductCompany.SelectedValue),
+                        ProductQuantity = Convert.ToInt32(txtProductQuantity.Text)
                     };
 
                     ECommerceBusiness ecb = new ECommerceBusiness

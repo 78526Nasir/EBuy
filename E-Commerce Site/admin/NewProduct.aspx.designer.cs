@@ -220,6 +220,33 @@ namespace E_Commerce_Site.admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rvf6;
         
         /// <summary>
+        /// lblQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblQuantity;
+        
+        /// <summary>
+        /// txtProductQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProductQuantity;
+        
+        /// <summary>
+        /// rfv8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv8;
+        
+        /// <summary>
         /// btnAdd control.
         /// </summary>
         /// <remarks>

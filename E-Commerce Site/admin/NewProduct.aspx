@@ -119,6 +119,19 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td>
+                        <label class="anc-label" id="lblQuantity" runat="server">Product Quantity</label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtProductQuantity"  TextMode="Number" runat="server" placeholder="Enter product quantity" CssClass="anc-textbox"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfv8" runat="server" ErrorMessage="Product quantity required" ControlToValidate="txtProductQuantity">&nbsp;
+                        </asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
                 <!-- Button Control -->
                 <tr>
                     <td></td>

@@ -66,19 +66,35 @@ namespace E_Commerce_Site.UI
             }
             else if (e.CommandName.Equals("ViewProduct"))
             {
-                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
-                string productID = hf.Value;
+                HiddenField hf = (HiddenField)e.Item.FindControl("hfGUID");
+                string productGUID = hf.Value;
 
-                Response.Redirect("Product.aspx?id=" + productID);
+                Response.Redirect("Product.aspx?id=" + productGUID);
 
             }
             else if (e.CommandName.Equals("OrderProduct"))
             {
-                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
-                string productID = hf.Value;
+                HiddenField hf = (HiddenField)e.Item.FindControl("hfGUID");
+                string productGUID = hf.Value;
 
-                Response.Redirect("Order.aspx?id=" + productID);
+                hf = (HiddenField)e.Item.FindControl("hiddenField");
+
+                int productID = Convert.ToInt32(hf.Value);
+
+                DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+                int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+
+                RemoveFromCart(productID, userID);
+
+                Response.Redirect("Order.aspx?id=" + productGUID);
             }
+        }
+
+        private void RemoveFromCart(int productID, int userID)
+        {
+            ECommerceBusiness ecb = new ECommerceBusiness();
+            ecb.TriggerCartToOrder(productID, userID);
         }
 
         private void UpdateBadge()

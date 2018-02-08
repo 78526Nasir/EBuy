@@ -13,6 +13,8 @@
                         <ItemTemplate>
                             <div class="col-md-3 card c-p-card">
                                 <asp:HiddenField ID="hiddenField" runat="server" Value='<%# Eval("Product_ID")%>' />
+                                <asp:HiddenField ID="hfGUID" runat="server" Value='<%# Eval("GUID")%>' />
+
                                 <div class="link">
                                     <div class="middle">
                                         <asp:Image ID="img" runat="server" ImageUrl='<%# Eval("ImageUrl") %>' />

@@ -68,6 +68,8 @@ namespace E_Commerce_Site.UI
         {
             LinkButton btn = (LinkButton)sender;
             string categoryName = btn.Text;
+            //var div = (HtmlGenericControl)this.Master.FindControl("cphBody_sscPanel");
+            //div.Style.Add("display", "none");
             GetProducts(categoryName);
         }
 

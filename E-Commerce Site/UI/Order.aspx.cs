@@ -19,8 +19,8 @@ namespace E_Commerce_Site.UI
                 {
                     if (Request.QueryString["id"] != null)
                     {
-                        string productID = Request.QueryString["id"].ToString();
-                        GetProductsByProdctId(Convert.ToInt32(productID));
+                        string productGUID = Request.QueryString["id"].ToString();
+                        GetProductsByProdctId(productGUID);
                     }
                     else
                     {
@@ -46,13 +46,34 @@ namespace E_Commerce_Site.UI
             }
         }
 
-        private void GetProductsByProdctId(int productId)
+        private void GetProductsByProdctId(string productGUID)
         {
             ECommerceBusiness ecb = new ECommerceBusiness();
-            DataTable dt = ecb.GetProductsByProductID(productId);
+            DataTable dt = ecb.GetProductsByProductID(productGUID);
 
-            if (dt.Rows.Count > 0)
+            if (dt == null)
             {
+                dt = new DataTable();
+            }
+
+            if (dt.Rows.Count <= 0)
+            {
+                Panel p = OrderBody;
+                p.Style.Add("display", "none");
+
+                p = pCPOD;
+                p.Style.Add("display", "none");
+
+                lblMessage.Text = "Sorry something went wrong!";
+                lblMessage.Style.Add("display", "block");
+            }
+            else
+            {
+                // TODO 
+                ListedProduct.DataSource = dt;
+                ListedProduct.DataBind();
+                // End TODO //
+            
                 lblProductName.Text = dt.Rows[0]["Product_Name"].ToString();
                 lblProductCode.Text = dt.Rows[0]["ProductCode"].ToString();
                 Session["price"] = Convert.ToInt32(dt.Rows[0]["Price"].ToString());
@@ -119,6 +140,41 @@ namespace E_Commerce_Site.UI
 
             lblMessage.Text = "Your order will be placed within 24 hours!";
             lblMessage.Style.Add("display", "block");
+        }
+
+        protected void repeaterItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("CancelOrder"))
+            {
+                HiddenField hf = (HiddenField)e.Item.FindControl("hiddenField");
+                int productID = Convert.ToInt32(hf.Value);
+
+                ECommerceBusiness ecb = new ECommerceBusiness();
+                DataTable dt = (DataTable)Session["UserWholeRecord"];
+
+                int userID = Convert.ToInt32(dt.Rows[0]["user_id"].ToString());
+
+                Panel p = OrderBody;
+                p.Style.Add("display", "none");
+
+                p = pCPOD;
+                p.Style.Add("display", "none");
+
+                lblMessage.Text = "Order Cancelled!";
+                lblMessage.Style.Add("display", "block");
+
+                ecb.CancelOrder(productID, userID);
+
+            }
+            else if (e.CommandName.Equals("ViewProduct"))
+            {
+                HiddenField hf = (HiddenField)e.Item.FindControl("hfGUID");
+                string productGUID = hf.Value;
+
+                Response.Redirect("Product.aspx?id=" + productGUID);
+
+            }
+            
         }
     }
 }

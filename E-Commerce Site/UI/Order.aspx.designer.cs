@@ -31,6 +31,24 @@ namespace E_Commerce_Site.UI {
         protected global::System.Web.UI.WebControls.Panel OrderBody;
         
         /// <summary>
+        /// orderProductList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl orderProductList;
+        
+        /// <summary>
+        /// ListedProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ListedProduct;
+        
+        /// <summary>
         /// lblProductCode control.
         /// </summary>
         /// <remarks>

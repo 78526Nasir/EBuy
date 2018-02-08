@@ -20,30 +20,6 @@
     <link rel="stylesheet" href="../css/cartedProduct.css" />
     <link rel="stylesheet" href="../css/order.css" />
 
-    <script src="../script/jQuery-3.2.1.js" type="text/javascript"></script>
-    <script src="../script/editButton.js" type="text/javascript"></script>
-
-
-    <script type="text/javascript">
-        var isAuthUser=<%=flag%>;
-        
-        function isAuthenticated() {
-            if(isAuthUser===1){
-                var btn=document.getElementById("btnLogin");
-                btn.style.display="none";
-                var div = document.getElementById("userDetails");
-                div.style.display="none";
-            }
-
-            if(isAuthUser===0){
-                var img=document.getElementById("userImage");
-                var div = document.getElementById("userDetails");
-                div.style.display="none";
-                img.style.display="none";
-            }
-        }
-    </script>
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -112,6 +88,30 @@
         </div>
 
     </form>
+
+    <script src="../script/jQuery-3.2.1.js" type="text/javascript"></script>
+    <script src="../script/editButton.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        var isAuthUser=<%=flag%>;
+        
+        function isAuthenticated() {
+            if(isAuthUser===1){
+                var btn=document.getElementById("btnLogin");
+                btn.style.display="none";
+                var div = document.getElementById("userDetails");
+                div.style.display="none";
+            }
+
+            if(isAuthUser===0){
+                var img=document.getElementById("userImage");
+                var div = document.getElementById("userDetails");
+                div.style.display="none";
+                img.style.display="none";
+            }
+        }
+    </script>
+
 
     <script type="text/javascript">
         isAuthenticated();

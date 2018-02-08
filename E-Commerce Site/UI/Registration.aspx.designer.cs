@@ -85,6 +85,15 @@ namespace E_Commerce_Site {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rbv2;
         
         /// <summary>
+        /// regEV1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regEV1;
+        
+        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>

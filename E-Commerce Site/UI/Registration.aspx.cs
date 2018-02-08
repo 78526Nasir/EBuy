@@ -44,7 +44,6 @@ namespace E_Commerce_Site
                 {
                     lblStatus.Text = "Username or Email already exists!";
                 }
-
             }
             else
             {

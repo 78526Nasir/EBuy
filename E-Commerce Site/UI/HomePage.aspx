@@ -37,111 +37,113 @@
 
     <div class="right-panel">
 
-        <!-- Image Slideshow -->
-        <div class="slideshow-container">
+            <!-- Image Slideshow -->   
+        <asp:Panel ID="sscPanel" runat="server">
+            <div class="slideshow-container">
 
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=4" target="_blank">
-                    <img runat="server" src="../slider_images/iphone-X.jpg" style="width: 100%" />
-                </a>
-                <div class="text">iPhone X</div>
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=BD50E6C3-D727-4F95-BC2D-2A8D689AC8CD" target="_blank">
+                        <img runat="server" src="../slider_images/iphone-X.jpg" style="width: 100%" />
+                    </a>
+                    <div class="text">iPhone X</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=3510B401-1216-479A-AAD4-E28EBEADB08F" target="_blank">
+                        <img runat="server" src="../slider_images/Nokia_6.jpg" style="width: 100%; margin-top: -20px" />
+                    </a>
+                    <div class="text">Nokia 6</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=1F5F18EA-B507-440F-A990-4EEBD8996062" target="_blank">
+                        <img runat="server" src="../slider_images/hero_large%20copy.jpg" style="width: 100%; margin-top: -20px" />
+                    </a>
+                    <div class="text">Apple Watch Series 3</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=B7017242-0BD0-4552-8AFE-03E82FE5795B" target="_blank">
+                        <img runat="server" src="../slider_images/hero%20honda.jpg" style="width: 100%; margin-top: -50px" />
+                    </a>
+                    <div class="text">Hero Honda DE789</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=594CB91C-0A5C-40B8-847F-A595B16867BE" target="_blank">
+                        <img runat="server" src="../slider_images/samsung_j5_c.jpg" style="width: 100%" />
+                    </a>
+                    <div class="text">Samsung Galaxy J5</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=F6C8BB81-FA44-4E5C-9103-97DC5675AE09" target="_blank">
+                        <img runat="server" src="../slider_images/yamaha_fz.jpg" style="width: 100%;" />
+                    </a>
+                    <div class="text">Yamaha FZ</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=7758FF4D-5FA1-4E9A-A04C-7D1BC6B8F1AE" target="_blank">
+                        <img runat="server" src="../slider_images/iphone%208.jpg" style="width: 100%; margin-top: -20px" />
+                    </a>
+                    <div class="text">iPhone 8</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=A95563B2-1323-4213-8EFC-A27778ED65BB" target="_blank">
+                        <img runat="server" src="../slider_images/ferrari.jpg" style="width: 100%; margin-top: -10px;" />
+                    </a>
+                    <div class="text">Ferrari F40</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=C1CCD2AA-0C79-4E84-8C35-52E466E57B94" target="_blank">
+                        <img runat="server" src="../slider_images/macbook.jpg" style="width: 100%" />
+                    </a>
+                    <div class="text">Apple Macbook Air 3</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=EBD3AEE2-9232-4E74-A561-FC6E42E57575" target="_blank">
+                        <img runat="server" src="../slider_images/note%204.jpg" style="width: 100%; margin-top: -20px" />
+                    </a>
+                    <div class="text">Samsung Galaxy Note 4</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <a href="Product.aspx?id=DEB36E3C-4C43-48E8-8569-59CB64F4B585" target="_blank">
+                        <img runat="server" src="../slider_images/computer_desk.png" style="width: 100%; margin-top: -20px" />
+                    </a>
+                    <div class="text">Computer Desk</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
             </div>
+        
+            <br />
 
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=1" target="_blank">
-                    <img runat="server" src="../slider_images/Nokia_6.jpg" style="width: 100%; margin-top: -20px" />
-                </a>
-                <div class="text">Nokia 6</div>
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
             </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=7" target="_blank">
-                    <img runat="server" src="../slider_images/hero_large%20copy.jpg" style="width: 100%; margin-top: -20px" />
-                </a>
-                <div class="text">Apple Watch Series 3</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=8" target="_blank">
-                    <img runat="server" src="../slider_images/hero%20honda.jpg" style="width: 100%; margin-top: -50px" />
-                </a>
-                <div class="text">Hero Honda DE789</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=2" target="_blank">
-                    <img runat="server" src="../slider_images/samsung_j5_c.jpg" style="width: 100%" />
-                </a>
-                <div class="text">Samsung Galaxy J5</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=9" target="_blank">
-                    <img runat="server" src="../slider_images/yamaha_fz.jpg" style="width: 100%;" />
-                </a>
-                <div class="text">Yamaha FZ</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=18" target="_blank">
-                    <img runat="server" src="../slider_images/iphone%208.jpg" style="width: 100%; margin-top: -20px" />
-                </a>
-                <div class="text">iPhone 8</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=27" target="_blank">
-                    <img runat="server" src="../slider_images/ferrari.jpg" style="width: 100%; margin-top: -10px;" />
-                </a>
-                <div class="text">Ferrari F40</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=6" target="_blank">
-                    <img runat="server" src="../slider_images/macbook.jpg" style="width: 100%" />
-                </a>
-                <div class="text">Apple Macbook Air 3</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=3" target="_blank">
-                    <img runat="server" src="../slider_images/note%204.jpg" style="width: 100%; margin-top: -20px" />
-                </a>
-                <div class="text">Samsung Galaxy Note 4</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <a href="Product.aspx?id=11" target="_blank">
-                    <img runat="server" src="../slider_images/computer_desk.png" style="width: 100%; margin-top: -20px" />
-                </a>
-                <div class="text">Computer Desk</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        </div>
-
-        <br />
-
-        <div style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
+        </asp:Panel>
 
         <!-- Redering all products from database -->
         <div class="body-content">
@@ -159,7 +161,7 @@
                                     <div class="overlay">
                                     </div>
 
-                                    <a href="Product.aspx?id=<%# Eval("Product_ID")%>" target="_blank">View Product</a>
+                                    <a href="Product.aspx?id=<%# Eval("GUID")%>" target="_blank">View Product</a>
                                 </div>
 
                                 <div class="title">
@@ -178,7 +180,7 @@
 
                                 <div class="event-section">
                                     <asp:Button ID="btnCart" CommandName="btnAddToCart" CssClass="btn" runat="server" Text="Add To Cart" />
-                                    <a class="btn-view-product" href="Product.aspx?id=<%# Eval("Product_ID")%>" target="_blank">View Product</a>
+                                    <a class="btn-view-product" href="Product.aspx?id=<%# Eval("GUID")%>" target="_blank">View Product</a>
                                 </div>
 
                                 <asp:Label ID="lblCart" CssClass="cart" runat="server">

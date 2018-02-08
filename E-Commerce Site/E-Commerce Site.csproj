@@ -18,8 +18,8 @@
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -129,7 +133,9 @@
     <Content Include="css\userlogin.css" />
     <Content Include="css\userProfile.css" />
     <Content Include="css\zoom.css" />
+    <Content Include="Errors_UI\PageNotFoundError.aspx" />
     <Content Include="fonts\LICENSE.txt" />
+    <Content Include="Global.asax" />
     <Content Include="images\admin.jpg" />
     <Content Include="images\admin2.jpg" />
     <Content Include="images\Calendar-icon.png" />
@@ -160,6 +166,7 @@
     <Content Include="UI\Cart.aspx" />
     <Content Include="UI\ChangePassword.aspx" />
     <Content Include="UI\Contact.aspx" />
+    <Content Include="Errors_UI\Error.aspx" />
     <Content Include="UI\ForgetPasswordRedirect.aspx" />
     <Content Include="UI\HomePage.aspx" />
     <Content Include="UI\Order.aspx" />
@@ -184,6 +191,9 @@
     <Content Include="UI\Index.Master" />
     <Content Include="WebServices\IsEmailExists.asmx" />
     <Content Include="WebServices\IsUserNameExists.asmx" />
+    <Content Include="admin\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -253,6 +263,16 @@
     <Compile Include="admin\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Errors_UI\PageNotFoundError.aspx.cs">
+      <DependentUpon>PageNotFoundError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors_UI\PageNotFoundError.aspx.designer.cs">
+      <DependentUpon>PageNotFoundError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Libraries\HashingAndSalting.cs" />
     <Compile Include="UI\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -281,6 +301,13 @@
     </Compile>
     <Compile Include="UI\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors_UI\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors_UI\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ForgetPasswordRedirect.aspx.cs">
       <DependentUpon>ForgetPasswordRedirect.aspx</DependentUpon>

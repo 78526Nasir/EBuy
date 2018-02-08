@@ -11,17 +11,18 @@ namespace DataAccessLayer
 {
     public class DataAccess
     {
-        static string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
         public static SqlConnection connectDB()
         {
             try
             {
+                string connectionString = ConfigurationManager.ConnectionStrings["ECDB"].ConnectionString;
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
                 return con;
             }
             catch(Exception ex)
             {
+                DataBaseExceptionLogger.Log(ex);
                 return new SqlConnection();
             }
         }
@@ -66,9 +67,10 @@ namespace DataAccessLayer
                 {
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
-                }catch(Exception e)
+                }catch(Exception ex)
                 {
-                    return new DataTable();
+                    DataBaseExceptionLogger.Log(ex);
+                    return null; //new DataTable();
                 }
 
                 return dt;

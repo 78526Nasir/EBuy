@@ -1,4 +1,4 @@
-# E-Buy
+# EBuy
     An E-commerce site, developed in ASP.NET
     
 ## Main Features

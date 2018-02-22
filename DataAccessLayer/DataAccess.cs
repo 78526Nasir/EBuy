@@ -70,7 +70,7 @@ namespace DataAccessLayer
                 }catch(Exception ex)
                 {
                     DataBaseExceptionLogger.Log(ex);
-                    return null; //new DataTable();
+                    return new DataTable();
                 }
 
                 return dt;

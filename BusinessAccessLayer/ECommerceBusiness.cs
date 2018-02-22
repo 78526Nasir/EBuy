@@ -325,7 +325,7 @@ namespace BusinessAccessLayer
         public void AddNewCustomerOrderDetails()
         {
             SqlParameter[] parameters = new SqlParameter[6];
-            parameters[0] = DataAccess.AddParameter("@productid", CODObj.ProductID);
+            parameters[0] = DataAccess.AddParameter("@GUID", CODObj.GUID);
             parameters[1] = DataAccess.AddParameter("@customerid", CODObj.CustomerID);
             parameters[2] = DataAccess.AddParameter("@address", CODObj.Address);
             parameters[3] = DataAccess.AddParameter("@phonenumber", CODObj.PhoneNumber);

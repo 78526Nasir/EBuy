@@ -24,7 +24,7 @@
                                         <div class="overlay">
                                         </div>
 
-                                        <a href="Product.aspx?id=<%# Eval("Product_ID")%>" target="_blank">View Product</a>
+                                        <a href="Product.aspx?id=<%# Eval("GUID")%>" target="_blank">View Product</a>
                                     </div>
 
                                     <div class="title">

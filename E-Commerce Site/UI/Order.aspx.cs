@@ -118,7 +118,7 @@ namespace E_Commerce_Site.UI
             CustomerOrderDetails cod = new CustomerOrderDetails
             {
                 CustomerID = customerID,
-                ProductID = Convert.ToInt32(Request.QueryString["id"].ToString()),
+                GUID = Request.QueryString["id"].ToString(),
                 Address = txtAddress.InnerText,
                 PhoneNumber = txtPhoneNumber.Text,
                 Quantity = ddlProductQuantity.SelectedValue.Equals("-1") ? 1 : ddlProductQuantity.SelectedIndex,

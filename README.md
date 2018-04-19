@@ -4,6 +4,21 @@
  
  > **Project video documentation [link](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
     
+## Security Related Functionalities
+* Input validation
+    * Both client and server side validation
+* Authentication
+    * User authentication
+    * admin authentication  
+* Authorization
+    * Control user accessiablity
+* Cryptography
+    * Password hashing and salting
+* Exception Handling
+    * All page and application level Exceptions are handled
+* Password Reset Management
+    * Reset password throgh gmail SMTP service
+    
 ## Main Features
 * Admin level
     * Admin login
@@ -24,22 +39,6 @@
     * Profile
     * About
     * Contact
-
-## Security Related Functionalities
-* Input validation
-    * Both client and server side validation
-* Authentication
-    * User authentication
-    * admin authentication  
-* Authorization
-    * Control user accessiablity
-* Cryptography
-    * Password hashing and salting
-* Exception Handling
-    * All page and application level Exceptions are handled
-* Password Reset Management
-    * Reset password throgh gmail SMTP service
-* Auditing and Logging
 
 ### Home Page
 ![Home_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513867470/Homepage_im4ij8.jpg)

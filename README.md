@@ -2,7 +2,7 @@
     An E-commerce site, developed in ASP.NET
  
  
- Project video documentation [link](https://www.youtube.com/watch?v=BYWlrxLEG5g).
+ > **Project video documentation [link](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
     
 ## Main Features
 * Admin level

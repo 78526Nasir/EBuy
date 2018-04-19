@@ -2,52 +2,41 @@
     An E-commerce site, developed in ASP.NET
     
 ## Main Features
-* `Admin level`
-    * `Admin login`
-    * `Add new product`
-    * `Add new category`
-    * `Customer orders`
-    * `Control business`
-    * `Admin profile`
+* Admin level
+    * Admin login
+    * Add new product
+    * Add new category
+    * Customer orders
+    * Control business
+    * Admin profile
 
-* `User level`
-    * `Login`
-    * `Registration`
-    * `Home Page`
-    * `Product`
-    * `Cart`
-    * `Order`
-    * `Checkout`
-    * `Profile`
-    * `About`
-    * `Contact`
+* User level
+    * Login
+    * Registration
+    * Home Page
+    * Product
+    * Cart
+    * Order
+    * Checkout
+    * Profile
+    * About
+    * Contact
 
 ## Other Functionalities
-**`Input validation`**
-* `Both client and server side validation`
-<br/>
-
-**`Authentication`**
-* `User authentication`
-* `admin authentication`
-<br/>
-
-**`Authorization`**
-* `Control user accessiablity`
-<br/>
-
-**`Cryptography`**
-* `Password hashing and salting`
-<br/>
-
-**`Exception Handling`**
-* `All page and application level Exceptions are handled`
-
-**`Password Reset Management`**
-* `Reset password throgh gmail SMTP service`
-<br/>
-
-**` Auditing and Logging`**
+* Input validation
+    * Both client and server side validation
+* Authentication
+    * User authentication
+    * admin authentication  
+* Authorization
+    * Control user accessiablity
+* Cryptography
+    * Password hashing and salting
+* Exception Handling
+    * All page and application level Exceptions are handled
+* Password Reset Management
+    * Reset password throgh gmail SMTP service
+* Auditing and Logging
 
 # Home Page
 ![Home_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513867470/Homepage_im4ij8.jpg)

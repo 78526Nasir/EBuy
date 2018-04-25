@@ -2,7 +2,7 @@
     An E-commerce site, developed in ASP.NET
  
  
-**Project video documentation [link](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
+**Watch video [documentation](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
     
 ## Security Related Functionalities
 * Input validation
@@ -41,7 +41,7 @@
     * Contact
 
 ### Home Page
-![Home_page](http://res.cloudinary.com/nasir78526/image/upload/q_100/v1513867470/Homepage_im4ij8.jpg)
+![Home_page](https://res.cloudinary.com/nasir78526/image/upload/q_100/v1524638500/HomePage_Ebuy_odnwal.png)
 
 ### User login
 ![Login_page](http://res.cloudinary.com/nasir78526/image/upload/q_100,r_0/v1513865759/login_qswzbl.png)

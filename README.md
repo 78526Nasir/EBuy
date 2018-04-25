@@ -2,7 +2,7 @@
     An E-commerce site, developed in ASP.NET
  
  
-* **Watch Ebuy video [documentation](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
+> **Watch Ebuy video [documentation](https://www.youtube.com/watch?v=BYWlrxLEG5g).**
     
 ## Security Related Functionalities
 * Input validation
